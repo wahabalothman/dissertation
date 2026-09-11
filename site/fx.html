@@ -5,11 +5,9 @@
   var on;
   try{
     var saved = localStorage.getItem("fx");
-    on = saved === null
-       ? !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-       : saved === "on";
+    on = saved === null ? true : saved === "on";
   }catch(e){
-    on = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    on = true;
   }
   document.documentElement.dataset.fx = on ? "on" : "off";
 })();
