@@ -8,28 +8,76 @@ toc: false
 ```{=html}
 <div id="desk">
 
+  <svg class="wall" viewBox="0 0 1240 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+    <g class="wl">
+      <line x1="150" y1="110" x2="352" y2="110"/><path d="M352 110 l-13 -6 v12 z"/>
+      <line x1="452" y1="110" x2="654" y2="110"/><path d="M654 110 l-13 -6 v12 z"/>
+      <line x1="754" y1="110" x2="956" y2="110"/><path d="M956 110 l-13 -6 v12 z"/>
+      <rect x="30" y="72" width="120" height="76"/>
+      <rect x="332" y="72" width="120" height="76"/>
+      <rect x="634" y="72" width="120" height="76"/>
+      <rect x="936" y="72" width="120" height="76"/>
+    </g>
+    <g class="wt">
+      <text x="90"   y="106" text-anchor="middle">FRINGE</text>
+      <text x="90"   y="128" text-anchor="middle" class="s">imageboard</text>
+      <text x="392"  y="106" text-anchor="middle">ALT-MEDIA</text>
+      <text x="392"  y="128" text-anchor="middle" class="s">podcast · stream</text>
+      <text x="694"  y="106" text-anchor="middle">ELITE</text>
+      <text x="694"  y="128" text-anchor="middle" class="s">floor · stage</text>
+      <text x="996"  y="106" text-anchor="middle">ELECTORATE</text>
+      <text x="996"  y="128" text-anchor="middle" class="s">belief · acceptability</text>
+      <text x="90"   y="222">named</text>
+      <text x="392"  y="222">obscured</text>
+      <text x="694"  y="222">"people are saying"</text>
+      <text x="30"   y="266" class="s">attributed origin, by stage — stigma stripped in transit</text>
+      <text x="30"   y="44"  class="s">TRANSMISSION · انتقال · hypothesis under test</text>
+    </g>
+    <g class="wl">
+      <line x1="34" y1="188" x2="1056" y2="188"/>
+      <line x1="90"  y1="182" x2="90"  y2="194"/>
+      <line x1="392" y1="182" x2="392" y2="194"/>
+      <line x1="694" y1="182" x2="694" y2="194"/>
+      <line x1="996" y1="182" x2="996" y2="194"/>
+    </g>
+  </svg>
+
   <div id="icons">
     <button class="icon" data-open="w-archive" type="button">
       <svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><path d="M1 5h11l3 3h18v20H1z" fill="#e8c34a" stroke="#7a5c10" stroke-width="1.5" stroke-linejoin="round"/><path d="M1 13h32v15H1z" fill="#f6dd8e" stroke="#7a5c10" stroke-width="1.5" stroke-linejoin="round"/></svg>
       <span>ARCHIVE</span>
     </button>
-    <a class="icon" href="/research/" data-nav data-icon="research">
+    <a class="icon" href="/research/" data-icon="research">
       <svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><path d="M1 5h11l3 3h18v20H1z" fill="#e8c34a" stroke="#7a5c10" stroke-width="1.5" stroke-linejoin="round"/></svg>
       <span>research</span>
     </a>
-    <a class="icon" href="/notes/" data-nav>
+    <a class="icon" href="/theory/">
+      <svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><path d="M1 5h11l3 3h18v20H1z" fill="#e8c34a" stroke="#7a5c10" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <span>theory</span>
+    </a>
+    <a class="icon" href="/design/">
+      <svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><path d="M1 5h11l3 3h18v20H1z" fill="#e8c34a" stroke="#7a5c10" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <span>design</span>
+    </a>
+    <a class="icon" href="/data/">
+      <svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><ellipse cx="17" cy="7" rx="13" ry="4.5" fill="#cdd6e2" stroke="#5a5a5a" stroke-width="1.5"/><path d="M4 7v16c0 2.5 5.8 4.5 13 4.5s13-2 13-4.5V7" fill="#e8edf4" stroke="#5a5a5a" stroke-width="1.5"/><path d="M4 15c0 2.5 5.8 4.5 13 4.5s13-2 13-4.5" fill="none" stroke="#5a5a5a" stroke-width="1.2"/></svg>
+      <span>data</span>
+    </a>
+    <a class="icon" href="/notes/">
       <svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><path d="M8 2h13l6 6v20H8z" fill="#fff" stroke="#5a5a5a" stroke-width="1.5" stroke-linejoin="round"/><path d="M21 2v6h6" fill="none" stroke="#5a5a5a" stroke-width="1.5"/><path d="M12 13h11M12 17h11M12 21h7" stroke="#8f8f8f" stroke-width="1.5"/></svg>
       <span>log.txt</span>
     </a>
-    <a class="icon" href="/site/cv.html" data-nav>
+    <a class="icon" href="/site/cv.html">
       <svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><path d="M8 2h13l6 6v20H8z" fill="#fff" stroke="#5a5a5a" stroke-width="1.5" stroke-linejoin="round"/><path d="M21 2v6h6" fill="none" stroke="#5a5a5a" stroke-width="1.5"/><rect x="9" y="18" width="17" height="9" fill="#c1272d"/><text x="17.5" y="25" font-family="Tahoma,sans-serif" font-size="7" font-weight="bold" fill="#fff" text-anchor="middle">PDF</text></svg>
       <span>cv.pdf</span>
     </a>
   </div>
 
+  <div id="plane">
+
   <section class="win" id="w-archive" data-task="ARCHIVE">
     <header class="tb">
-      <span class="ti"><i aria-hidden="true"><svg width="13" height="12" viewBox="0 0 34 30"><path d="M1 5h11l3 3h18v20H1z" fill="#e8c34a" stroke="#5a4208" stroke-width="2" stroke-linejoin="round"/></svg></i>ARCHIVE — \\AL-OTHMAN\files<em>الأرشيف</em></span>
+      <span class="ti"><i aria-hidden="true"><svg viewBox="0 0 34 30"><path d="M1 5h11l3 3h18v20H1z" fill="#e8c34a" stroke="#5a4208" stroke-width="2.4" stroke-linejoin="round"/></svg></i>ARCHIVE — \\AL-OTHMAN\files<em>الأرشيف</em></span>
       <span class="btns">
         <button type="button" data-act="min" title="Minimize">_</button>
         <button type="button" data-act="max" title="Maximize">&#9633;</button>
@@ -41,12 +89,12 @@ toc: false
       <table class="fl">
         <thead><tr><th>ID</th><th>Name</th><th class="ar">العنوان</th><th style="text-align:right">Status</th></tr></thead>
         <tbody>
-          <tr class="sel"><td class="id">01</td><td class="nm"><a href="/research/" data-nav>conspiratorial_claims</a></td><td class="ar">سلطة الادعاءات</td><td class="st">OPEN</td></tr>
-          <tr><td class="id">02</td><td class="nm"><a href="/theory/" data-nav>transmission_theory</a></td><td class="ar">نظرية الانتقال</td><td class="st">OPEN</td></tr>
-          <tr><td class="id">03</td><td class="nm"><a href="/design/" data-nav>research_design</a></td><td class="ar">تصميم البحث</td><td class="st">OPEN</td></tr>
-          <tr><td class="id">04</td><td class="nm"><a href="/data/" data-nav>data_sources</a></td><td class="ar">مصادر البيانات</td><td class="st">OPEN</td></tr>
-          <tr><td class="id">05</td><td class="nm"><a href="/notes/" data-nav>working_log</a></td><td class="ar">سجل العمل</td><td class="st">OPEN</td></tr>
-          <tr><td class="id">06</td><td class="nm"><a href="/site/cv.html" data-nav>curriculum_vitae</a></td><td class="ar">سيرة ذاتية</td><td class="st">PENDING</td></tr>
+          <tr class="sel"><td class="id">01</td><td class="nm"><a href="/research/">conspiratorial_claims</a></td><td class="ar">سلطة الادعاءات</td><td class="st">OPEN</td></tr>
+          <tr><td class="id">02</td><td class="nm"><a href="/theory/">transmission_theory</a></td><td class="ar">نظرية الانتقال</td><td class="st">OPEN</td></tr>
+          <tr><td class="id">03</td><td class="nm"><a href="/design/">research_design</a></td><td class="ar">تصميم البحث</td><td class="st">OPEN</td></tr>
+          <tr><td class="id">04</td><td class="nm"><a href="/data/">data_sources</a></td><td class="ar">مصادر البيانات</td><td class="st">OPEN</td></tr>
+          <tr><td class="id">05</td><td class="nm"><a href="/notes/">working_log</a></td><td class="ar">سجل العمل</td><td class="st">OPEN</td></tr>
+          <tr><td class="id">06</td><td class="nm"><a href="/site/cv.html">curriculum_vitae</a></td><td class="ar">سيرة ذاتية</td><td class="st">PENDING</td></tr>
         </tbody>
       </table>
     </div>
@@ -55,7 +103,7 @@ toc: false
 
   <section class="win" id="w-feed" data-task="RESEARCH FEED">
     <header class="tb red">
-      <span class="ti">media — RESEARCH FEED<em>بث</em></span>
+      <span class="ti"><i aria-hidden="true"><svg viewBox="0 0 34 30"><rect x="2" y="4" width="30" height="20" rx="1" fill="#2b2b33" stroke="#12121a" stroke-width="2.4"/><rect x="6" y="8" width="22" height="12" fill="#c1272d"/><path d="M12 28h10" stroke="#12121a" stroke-width="2.6"/></svg></i>media — RESEARCH FEED<em>بث</em></span>
       <span class="btns">
         <button type="button" data-act="min" title="Minimize">_</button>
         <button type="button" data-act="max" title="Maximize">&#9633;</button>
@@ -76,7 +124,7 @@ toc: false
         </div>
         <div class="bands">
           <div class="band b1"><span class="m" id="f-b1">WAKE UP AMERICA</span><span class="r" id="f-t1">DEVELOPING</span></div>
-          <div class="band b2"><span class="m" id="f-b2">WHAT THEY DON'T WANT YOU TO SEE</span><span class="r">SHARE THIS NOW</span></div>
+          <div class="band b2"><span class="m" id="f-b2">WHAT THEY DON'T WANT YOU TO SEE</span><button class="r" id="f-share" type="button" title="Don't.">SHARE THIS NOW</button></div>
           <div class="band b3"><span class="m">SOURCES SAY · INDEPENDENT · MAINSTREAM SILENT</span><span class="r">UNVERIFIED</span></div>
           <div class="tick"><div id="f-tick"></div></div>
         </div>
@@ -87,7 +135,7 @@ toc: false
 
   <section class="win" id="w-note" data-task="statement.txt">
     <header class="tb">
-      <span class="ti">statement.txt — Notepad</span>
+      <span class="ti"><i aria-hidden="true"><svg viewBox="0 0 34 30"><path d="M8 2h13l6 6v20H8z" fill="#fff" stroke="#3a3a3a" stroke-width="2.4" stroke-linejoin="round"/><path d="M12 13h11M12 18h11M12 23h7" stroke="#7a7a7a" stroke-width="2"/></svg></i>statement.txt — Notepad</span>
       <span class="btns">
         <button type="button" data-act="min" title="Minimize">_</button>
         <button type="button" data-act="max" title="Maximize">&#9633;</button>
@@ -104,7 +152,7 @@ toc: false
 
   <section class="win" id="w-props" data-task="Properties">
     <header class="tb">
-      <span class="ti">Properties</span>
+      <span class="ti"><i aria-hidden="true"><svg viewBox="0 0 34 30"><rect x="5" y="3" width="24" height="24" fill="#fff" stroke="#3a3a3a" stroke-width="2.4"/><path d="M9 10h16M9 15h16M9 20h10" stroke="#0a246a" stroke-width="2"/></svg></i>Properties</span>
       <span class="btns"><button type="button" data-act="close" title="Close">&#10005;</button></span>
     </header>
     <div class="body">
@@ -118,214 +166,9 @@ toc: false
     </div>
   </section>
 
+  </div>
 </div>
 
-<script>
-(function(){
-  "use strict";
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var wide   = function(){ return window.matchMedia("(min-width: 981px)").matches; };
-  var desk   = document.getElementById("desk");
-  var wins   = Array.prototype.slice.call(document.querySelectorAll(".win"));
-  var z      = 10;
-  /* The taskbar is injected after this block (include-after-body), so it is
-     looked up lazily and filled again once the document has finished parsing. */
-  function tasksEl(){ return document.getElementById("tasks"); }
-
-  /* ── focus / z-order ── */
-  function focusWin(w){
-    wins.forEach(function(o){ o.classList.add("blur"); });
-    w.classList.remove("blur");
-    w.style.zIndex = ++z;
-    syncTasks();
-  }
-  wins.forEach(function(w){
-    w.classList.add("blur");
-    w.addEventListener("pointerdown", function(){ focusWin(w); });
-  });
-
-  /* ── open / close / minimize ── */
-  function openWin(id){
-    var w = document.getElementById(id);
-    if(!w) return;
-    w.style.display = "";
-    w.dataset.min = "";
-    focusWin(w);
-    if(!wide()) w.scrollIntoView({behavior: reduce ? "auto" : "smooth", block:"center"});
-  }
-  function closeWin(w){ w.style.display = "none"; w.dataset.min = ""; syncTasks(); }
-  function minWin(w){ w.style.display = "none"; w.dataset.min = "1"; syncTasks(); }
-  document.addEventListener("desk:open", function(e){ openWin(e.detail); });
-
-  document.addEventListener("click", function(e){
-    var act = e.target.closest("[data-act]");
-    if(act){
-      e.preventDefault();
-      var w = act.closest(".win"), a = act.dataset.act;
-      if(a === "close") closeWin(w);
-      else if(a === "min") minWin(w);
-      else if(a === "max" && wide()){
-        if(w.dataset.max === "1"){
-          w.style.cssText = w.dataset.prev || "";
-          w.dataset.max = "";
-        } else {
-          w.dataset.prev = w.style.cssText;
-          w.dataset.max = "1";
-          var r = desk.getBoundingClientRect();
-          w.style.left = "10px"; w.style.top = "10px";
-          w.style.right = "auto"; w.style.bottom = "auto";
-          w.style.width = (r.width - 36) + "px";
-        }
-        focusWin(w);
-      }
-      return;
-    }
-    var op = e.target.closest("[data-open]");
-    if(op){ e.preventDefault(); markIcon(op); openWin(op.dataset.open); return; }
-    var nav = e.target.closest("[data-nav]");
-    if(nav) markIcon(nav);
-  });
-
-  /* ── desktop icon selection ── */
-  function markIcon(el){
-    var ic = el && el.closest(".icon");
-    document.querySelectorAll(".icon.on").forEach(function(o){ o.classList.remove("on"); });
-    if(ic) ic.classList.add("on");
-  }
-  var firstIcon = document.querySelector('.icon[data-icon="research"]');
-  if(firstIcon) firstIcon.classList.add("on");
-
-  /* ── drag by title bar ── */
-  wins.forEach(function(w){
-    var tb = w.querySelector(".tb");
-    tb.addEventListener("pointerdown", function(e){
-      if(!wide() || e.target.closest("button") || w.dataset.max === "1") return;
-      var r = w.getBoundingClientRect(), dr = desk.getBoundingClientRect();
-      w.style.left = (r.left - dr.left) + "px";
-      w.style.top  = (r.top  - dr.top ) + "px";
-      w.style.right = "auto"; w.style.bottom = "auto";
-      var ox = e.clientX - r.left, oy = e.clientY - r.top;
-      tb.setPointerCapture(e.pointerId);
-      function move(ev){
-        var d = desk.getBoundingClientRect();
-        var x = Math.max(-r.width + 60, Math.min(ev.clientX - d.left - ox, d.width - 60));
-        var y = Math.max(0, Math.min(ev.clientY - d.top - oy, d.height - 24));
-        w.style.left = x + "px"; w.style.top = y + "px";
-      }
-      function up(ev){
-        tb.releasePointerCapture(ev.pointerId);
-        tb.removeEventListener("pointermove", move);
-        tb.removeEventListener("pointerup", up);
-      }
-      tb.addEventListener("pointermove", move);
-      tb.addEventListener("pointerup", up);
-    });
-  });
-
-  /* ── keep windows on the desk ── */
-  function clamp(){
-    if(!wide()) return;
-    var d = desk.getBoundingClientRect();
-    wins.forEach(function(w){
-      if(w.style.display === "none") return;
-      var r = w.getBoundingClientRect();
-      if(r.right > d.right - 6){
-        w.style.left = Math.max(6, d.width - r.width - 12) + "px";
-        w.style.right = "auto";
-      }
-    });
-  }
-  window.addEventListener("resize", clamp);
-
-  /* ── taskbar ── */
-  function syncTasks(){
-    var tasks = tasksEl();
-    if(!tasks) return;
-    tasks.textContent = "";
-    wins.forEach(function(w){
-      if(w.style.display === "none" && w.dataset.min !== "1") return;
-      var b = document.createElement("button");
-      b.type = "button";
-      b.textContent = w.dataset.task;
-      if(w.style.display !== "none" && !w.classList.contains("blur")) b.className = "down";
-      b.addEventListener("click", function(){
-        if(w.style.display === "none") openWin(w.id);
-        else if(!w.classList.contains("blur")) minWin(w);
-        else focusWin(w);
-      });
-      tasks.appendChild(b);
-    });
-  }
-
-  /* ── the feed ── */
-  var STORIES = [
-    { h:"THEY PUT IT IN THE", hi:"WATER",
-      sub:"and they are counting on you not to look up",
-      src:["posted by @deep_well_44 · 03:12","an independent researcher","people are saying"],
-      b1:"WAKE UP AMERICA", b2:"WHAT THEY DON'T WANT YOU TO SEE", tag:"DEVELOPING" },
-    { h:"THE BIRDS WERE REPLACED IN", hi:"1974",
-      sub:"count them. they never land on the same wire twice",
-      src:["posted by u/wirewatch_71 · 22:40","a former employee","people are saying"],
-      b1:"NOBODY IS ASKING THIS", b2:"THE FOOTAGE SPEAKS FOR ITSELF", tag:"BREAKING" },
-    { h:"THE MOON IS", hi:"RENTED",
-      sub:"ask who signed the lease and why it expires in march",
-      src:["posted by @lunar_lease · 01:07","documents obtained","people are saying"],
-      b1:"FOLLOW THE PAPERWORK", b2:"THEY CHANGED THE RECORD", tag:"EXCLUSIVE" },
-    { h:"YOUR MATTRESS IS", hi:"LISTENING",
-      sub:"why else would it know when you wake up",
-      src:["posted by @springcoil_9 · 04:55","a whistleblower","people are saying"],
-      b1:"JUST ASKING QUESTIONS", b2:"WHY IS NOBODY COVERING THIS", tag:"UNCONFIRMED" }
-  ];
-  var TICK = ["THEY DON'T WANT YOU ASKING","DO YOUR OWN RESEARCH","WHY IS NOBODY COVERING THIS",
-              "FOLLOW THE MONEY","JUST ASKING QUESTIONS","CONNECT THE DOTS","SOURCES SAY"];
-
-  var tickEl = document.getElementById("f-tick");
-  var line = TICK.join(" ··· ") + " ··· ";
-  for(var k = 0; k < 2; k++){
-    var sEl = document.createElement("s");
-    sEl.textContent = line;
-    tickEl.appendChild(sEl);
-  }
-
-  var eH = document.getElementById("f-head"), eS = document.getElementById("f-sub"),
-      eR = document.getElementById("f-src"),  e1 = document.getElementById("f-b1"),
-      e2 = document.getElementById("f-b2"),   eT = document.getElementById("f-t1");
-  var tiers = Array.prototype.slice.call(document.querySelectorAll(".tier"));
-  var si = 0, beat = 0;
-
-  function flick(el){
-    if(reduce) return;
-    el.classList.remove("flick");
-    void el.offsetWidth;
-    el.classList.add("flick");
-  }
-  function paint(full){
-    var st = STORIES[si];
-    if(full){
-      eH.innerHTML = st.h + " <em>" + st.hi + "</em>";
-      eS.textContent = st.sub;
-      e1.textContent = st.b1;
-      e2.textContent = st.b2;
-      eT.textContent = st.tag;
-      flick(eH); flick(eS);
-    }
-    eR.textContent = st.src[beat];
-    flick(eR.parentNode);
-    tiers.forEach(function(t){ t.classList.toggle("on", +t.dataset.t === beat); });
-  }
-  paint(true);
-  if(!reduce){
-    setInterval(function(){
-      beat++;
-      if(beat > 2){ beat = 0; si = (si + 1) % STORIES.length; paint(true); }
-      else paint(false);
-    }, 3200);
-  }
-
-  /* ── boot ── */
-  focusWin(document.getElementById("w-archive"));
-  clamp();
-  document.addEventListener("DOMContentLoaded", syncTasks);
-})();
-</script>
+<div id="vx" aria-hidden="true"></div>
+<script src="/site/desk.js" defer></script>
 ```
