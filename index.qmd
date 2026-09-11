@@ -1,65 +1,24 @@
 ---
 title: "Abdulwahab Al-Othman"
-subtitle: "Doctoral researcher // Political Science // Georgia State University"
+subtitle: "عبد الوهاب العثمان"
 toc: false
 ---
 
-::: {.docblock}
-<span class="k">Subject</span><span class="v">Al-Othman, Abdulwahab</span>  
-<span class="k">Affiliation</span><span class="v">Georgia State University, Dept. of Political Science</span>  
-<span class="k">Field</span><span class="v">Political communication / political behavior</span>  
-<span class="k">Standing</span><span class="v">Doctoral candidate, second year</span>  
-<span class="k">Location</span><span class="v">Atlanta, Georgia</span>  
-<span class="k">Status</span><span class="v pending">Prospectus in preparation</span>
+```{=html}
+<div class="crawl"><span>ARCHIVE ONLINE  ·  الأرشيف متاح  ·  RECORDS UPDATED 2026-09-11  ·  WORKING DRAFT — NOT FOR CITATION  ·  مسودة عمل  ·  ARCHIVE ONLINE  ·  الأرشيف متاح  ·  RECORDS UPDATED 2026-09-11  ·  WORKING DRAFT — NOT FOR CITATION  ·  مسودة عمل  · </span></div>
+```
+
+::: {.frow}
+<span class="n">01 // RESEARCH · بحث</span>
+[The political authority of conspiratorial claims](research/index.qmd){.t}
 :::
 
-::: {.lede}
-I study how claims that begin outside legitimate institutions end up inside them: which conspiratorial allegations circulating on fringe platforms get taken up by American political elites, what happens to those allegations along the way, and whether the public treats a claim differently depending on where it is said to have come from.
-:::
-
-The working hypothesis is that allegations are **laundered** in transit. A claim leaves an imageboard carrying a stigma. Somewhere between there and a debate stage the stigma comes off: the wording is recoded, the messenger changes, and the named source is replaced with *people are saying*. By the time an officeholder repeats it, it is no longer a fringe claim with a traceable origin; it is a constituent concern. I treat laundering as a mechanism to be tested, not a label, and I build the evidence so it can fail.
-
-## 01 // Active files
-
-::: {.panels}
-::: {.panel}
-<span class="idx">FILE 01 &nbsp;·&nbsp; DISSERTATION</span>
-[Political authority of conspiratorial claims](research/index.qmd){.t}
-
-Three empirical chapters sharing one claim database: a cohort that includes the claims that went nowhere, a model of elite selection, and a randomized test of attributed origin.
-:::
-
-::: {.panel}
-<span class="idx">FILE 02 &nbsp;·&nbsp; THEORY</span>
-[Gap in the literature](theory/gap-summary.qmd){.t}
-
-What the field has established at each stage of transmission, what competes with the model, and the narrow thing that remains untested.
-:::
-
-::: {.panel}
-<span class="idx">FILE 03 &nbsp;·&nbsp; METHOD</span>
-[Transmission framework](theory/transmission-framework.qmd){.t}
-
-Four stages as hypotheses, three routes into the intermediary, laundering decomposed into separable transformations, and the conditions under which each claim fails.
-:::
-
-::: {.panel}
-<span class="idx">FILE 04 &nbsp;·&nbsp; LOG</span>
+::: {.frow}
+<span class="n">02 // LOG · سجل</span>
 [Working log](notes/index.qmd){.t}
-
-Decisions, dead ends, and what changed each week. Kept in the open.
-:::
 :::
 
-## 02 // Interests
-
-| Area | Detail |
-|---|---|
-| Substantive | Conspiracy theories and political elites; fringe and alternative media; legitimacy and political norms |
-| Methods | Computational text analysis; claim-level corpus construction; survey experiments; event-history models |
-| Regional | United States; Gulf authoritarian politics |
-
-## 03 // Contact
-
-Department of Political Science, Georgia State University, Atlanta.  
-Correspondence and the current CV are on the [record](site/cv.qmd) page.
+::: {.frow}
+<span class="n">03 // RECORD · سيرة</span>
+[Curriculum vitae](site/cv.qmd){.t}
+:::

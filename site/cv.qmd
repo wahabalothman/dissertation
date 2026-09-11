@@ -1,28 +1,12 @@
 ---
 title: "Record"
-subtitle: "Curriculum vitae // appointments // correspondence"
+subtitle: "سيرة ذاتية"
+toc: false
 ---
 
-::: {.docblock}
-<span class="k">Name</span><span class="v">Abdulwahab Al-Othman</span>  
-<span class="k">Position</span><span class="v">Doctoral researcher, Political Science</span>  
-<span class="k">Institution</span><span class="v">Georgia State University</span>  
-<span class="k">Field</span><span class="v">Political communication; political behavior</span>  
-<span class="k">CV</span><span class="v pending">To be posted</span>
+::: {.rec}
+<span class="k">Name · الاسم</span><span class="v">Abdulwahab Al-Othman</span>  
+<span class="k">CV</span><span class="v hot">Not yet posted</span>
 :::
 
-## 01 // Research
-
-Conspiracy theories and political elites; fringe and alternative media ecosystems; legitimacy and the norms governing political speech; computational text analysis; survey experiments.
-
-## 02 // Education
-
-| Years | Degree | Institution |
-|---|---|---|
-| — | PhD, Political Science (in progress) | Georgia State University |
-
-## 03 // Correspondence
-
-Department of Political Science, Georgia State University, Atlanta, Georgia.
-
-*(Replace this page with the full CV, or link a PDF placed in this folder.)*
+*(Your CV goes here. Paste it in, or drop a PDF in this folder and link it.)*

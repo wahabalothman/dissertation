@@ -1,322 +1,177 @@
 /*-- scss:defaults --*/
+$font-family-sans-serif: Tahoma, Verdana, "Segoe UI", Geneva, sans-serif;
+$font-family-monospace: "DejaVu Sans Mono", Consolas, "Courier New", monospace;
 
-$font-family-sans-serif: "IBM Plex Sans", -apple-system, "Segoe UI", Arial, sans-serif;
-$font-family-monospace: "IBM Plex Mono", ui-monospace, "Courier New", monospace;
-
-$black:        #0a0a0a;
-$body-bg:      #101010;
-$panel-bg:     #161616;
-$body-color:   #cfcac0;
-$dim:          #8b8579;
-$rule:         #2a2a28;
-$rule-strong:  #3d3d39;
-$amber:        #c9a227;
-$amber-bright: #e3bb3d;
-$green:        #7f9a5c;
-$red:          #a8442e;
-
-$link-color:      $amber;
-$link-hover-color: $amber-bright;
-$body-secondary:  $dim;
-
-$navbar-bg: $black;
-$navbar-fg: $body-color;
+$body-bg: #0b0b0c;
+$panel: #141416;
+$panel-hi: #1c1c1f;
+$ink: #d6d2c8;
+$dim: #85807a;
+$rule: #2b2b2f;
+$bevel-lt: #3a3a40;
+$bevel-dk: #08080a;
+$amber: #d4a017;
+$gold: #e8c25a;
+$green: #6f9c4a;
+$blood: #8f1d14;
+$navbar-bg: #0e0e10;
+$navbar-fg: $ink;
 $navbar-hl: $amber;
-
-$font-size-root: 16px;
+$link-color: $gold;
 $border-radius: 0;
-$border-radius-sm: 0;
-$border-radius-lg: 0;
-
-$toc-color: $dim;
-$toc-active-border: $amber;
 
 /*-- scss:rules --*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+*{border-radius:0!important;box-shadow:none!important}
+html{scrollbar-color:#3a3a40 #0b0b0c}
+body{background:$body-bg;color:$ink;font-size:13.5px;line-height:1.6}
 
-* { border-radius: 0 !important; box-shadow: none !important; }
-
-body {
-  background: $body-bg;
-  color: $body-color;
-  font-size: 16px;
-  line-height: 1.62;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ---------- classification strip ---------- */
-body::before {
-  content: "WORKING DRAFT // RESEARCH IN PROGRESS // NOT FOR CITATION";
-  display: block;
-  background: $black;
-  color: $amber;
-  font-family: $font-family-monospace;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-align: center;
-  padding: 5px 8px 4px;
-  border-bottom: 1px solid $rule;
+/* ============ top bar: bilingual, beveled ============ */
+body::before{
+  content:"وثائق // DOCUMENTS  ·  أرشيف // ARCHIVE  ·  غير مصنف // UNCLASSIFIED";
+  display:block;background:#111113;color:$dim;
+  font-family:"Noto Kufi Arabic",$font-family-monospace;
+  font-size:10px;letter-spacing:.1em;padding:4px 14px;
+  border-bottom:1px solid $bevel-dk;border-top:1px solid $bevel-lt;
 }
 
-/* ---------- navbar ---------- */
-.navbar {
-  background: $black !important;
-  border-bottom: 1px solid $rule;
-  padding: 0;
-  min-height: 0;
+/* ============ marquee crawl ============ */
+.crawl{
+  background:#1a0d0c;border-top:1px solid #451a15;border-bottom:1px solid #451a15;
+  overflow:hidden;white-space:nowrap;padding:5px 0;margin:0 0 1.6rem;
+  font-family:$font-family-monospace;font-size:11px;color:#c98a80;letter-spacing:.08em;
 }
-.navbar-brand {
-  font-family: $font-family-monospace;
-  font-size: 13px !important;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: $body-color !important;
-  padding: 14px 0 13px;
-  margin-right: 40px;
-}
-.navbar-brand:hover { color: $amber !important; }
-.navbar-nav .nav-link {
-  font-family: $font-family-monospace;
-  font-size: 11px !important;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: $dim !important;
-  padding: 15px 16px 13px !important;
-  border-bottom: 2px solid transparent;
-}
-.navbar-nav .nav-link:hover { color: $body-color !important; background: #161616; }
-.navbar-nav .nav-link.active {
-  color: $amber !important;
-  border-bottom-color: $amber;
-  background: transparent;
-}
-.navbar .quarto-navbar-tools a { color: $dim !important; }
+.crawl span{display:inline-block;padding-left:100%;animation:crawl 38s linear infinite}
+@keyframes crawl{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.crawl span{animation:none;padding-left:0}}
 
-/* ---------- layout ---------- */
-main.content { padding-top: 2.6rem; padding-bottom: 5rem; max-width: 46rem; }
-#quarto-content > * { padding-top: 0; }
+/* ============ navbar: forum tabs ============ */
+.navbar{background:#0e0e10!important;border-bottom:2px solid $bevel-dk;padding:0;min-height:0}
+.navbar-brand{
+  font-family:$font-family-monospace;font-size:12px;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:$ink!important;padding:9px 14px;margin:0 18px 0 0;
+  border-right:1px solid $rule;
+}
+.navbar-nav .nav-link{
+  font-family:$font-family-monospace;font-size:11px!important;letter-spacing:.13em;
+  text-transform:uppercase;color:$dim!important;padding:9px 14px!important;
+  border-left:1px solid $bevel-dk;border-right:1px solid $bevel-dk;
+}
+.navbar-nav .nav-link:hover{color:$ink!important;background:$panel-hi}
+.navbar-nav .nav-link.active{color:#000!important;background:$amber;font-weight:700}
 
-/* ---------- headings ---------- */
-h1, h2, h3, h4 {
-  font-family: $font-family-sans-serif;
-  color: #efeadf;
-  letter-spacing: -0.005em;
-  font-weight: 600;
-}
-h1.title {
-  font-size: 1.55rem;
-  line-height: 1.25;
-  font-weight: 600;
-  margin-bottom: .35rem;
-  padding-bottom: 0;
-  border: 0;
-}
-.subtitle, p.subtitle {
-  font-family: $font-family-monospace;
-  font-size: 11.5px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: $dim;
-  margin-bottom: 1.6rem;
-}
-#title-block-header {
-  border-bottom: 1px solid $rule;
-  padding-bottom: 1.1rem;
-  margin-bottom: 2rem;
-}
-h2 {
-  font-size: 1.02rem;
-  text-transform: uppercase;
-  letter-spacing: 0.11em;
-  color: $amber;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  padding-bottom: .45rem;
-  border-bottom: 1px solid $rule;
-  font-weight: 600;
-}
-h3 {
-  font-size: .95rem;
-  margin-top: 2rem;
-  margin-bottom: .6rem;
-  color: #efeadf;
-}
+/* ============ layout ============ */
+main.content{max-width:44rem;padding:1.6rem 0 5rem}
 
-/* ---------- text ---------- */
-p { margin-bottom: 1.05rem; }
-a { text-decoration: none; border-bottom: 1px solid rgba(201,162,39,.35); }
-a:hover { border-bottom-color: $amber-bright; }
-strong { color: #efeadf; font-weight: 600; }
-hr { border-top: 1px solid $rule; opacity: 1; margin: 2.5rem 0; }
-ul, ol { margin-bottom: 1.05rem; }
-li { margin-bottom: .3rem; }
-blockquote {
-  border-left: 2px solid $amber;
-  padding: .2rem 0 .2rem 1.1rem;
-  margin-left: 0;
-  color: $dim;
-  font-size: .95rem;
+/* ============ headings ============ */
+h1,h2,h3{font-family:$font-family-sans-serif;font-weight:700;color:#efeadf}
+h1.title{font-size:1.5rem;letter-spacing:-.01em;margin:0 0 .2rem}
+.subtitle{font-family:$font-family-monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:$dim}
+#title-block-header{border-bottom:2px solid $rule;padding-bottom:.8rem;margin-bottom:1.6rem}
+h2{
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:$dim;
+  background:$panel;border:1px solid $bevel-dk;border-top-color:$bevel-lt;
+  padding:6px 10px;margin:2.6rem 0 1rem;font-weight:700;
 }
+h3{font-size:.95rem;margin:1.8rem 0 .5rem;color:#efeadf}
 
-/* ---------- tables: data readout ---------- */
-table {
-  width: 100%;
-  font-size: .875rem;
-  border-collapse: collapse;
-  margin: 1.4rem 0 1.8rem;
-  font-variant-numeric: tabular-nums;
-}
-thead th {
-  font-family: $font-family-monospace;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: $dim;
-  text-align: left;
-  padding: 0 .9rem .5rem 0;
-  border-bottom: 1px solid $rule-strong;
-}
-tbody td {
-  padding: .55rem .9rem .55rem 0;
-  border-bottom: 1px solid $rule;
-  vertical-align: top;
-  line-height: 1.5;
-}
-tbody tr:hover td { background: #151515; }
-td code, th code { background: transparent; color: $green; }
+/* ============ text ============ */
+a{color:$gold;text-decoration:none;border-bottom:1px dotted rgba(232,194,90,.4)}
+a:hover{border-bottom-style:solid}
+hr{border-top:1px solid $rule;opacity:1;margin:2rem 0}
+strong{color:#efeadf}
+blockquote{border-left:3px solid $amber;padding-left:1rem;color:$dim;margin-left:0}
 
-/* ---------- code ---------- */
-code {
-  font-family: $font-family-monospace;
-  font-size: .86em;
-  color: $green;
-  background: #1a1a18;
-  padding: .08em .32em;
-}
-pre {
-  background: #0d0d0d;
-  border: 1px solid $rule;
-  border-left: 2px solid $rule-strong;
-  padding: .9rem 1rem;
-  font-size: .82rem;
-}
-pre code { background: transparent; padding: 0; }
+/* ============ tables: 2008 forum ============ */
+table{width:100%;font-size:12px;border-collapse:collapse;margin:1.2rem 0 1.6rem;
+  border:1px solid $bevel-dk;border-top-color:$bevel-lt}
+thead th{background:$panel-hi;color:$dim;font-family:$font-family-monospace;font-size:10px;
+  letter-spacing:.13em;text-transform:uppercase;text-align:left;padding:6px 9px;
+  border-bottom:1px solid $bevel-dk;font-weight:700}
+tbody td{padding:6px 9px;border-bottom:1px solid #1b1b1e;vertical-align:top}
+tbody tr:nth-child(even){background:#121214}
+tbody tr:hover{background:#191a1d}
 
-/* ---------- document control block (reusable) ---------- */
-.docblock {
-  border: 1px solid $rule;
-  background: $panel-bg;
-  padding: .9rem 1.1rem;
-  margin: 0 0 2.2rem;
-  font-family: $font-family-monospace;
-  font-size: 11.5px;
-  line-height: 1.85;
-  color: $dim;
-}
-.docblock .k {
-  display: inline-block;
-  min-width: 8.5rem;
-  color: #6f6a60;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-size: 10px;
-}
-.docblock .v { color: $body-color; }
-.docblock .v.ok { color: $green; }
-.docblock .v.pending { color: $amber; }
+/* ============ code ============ */
+code{font-family:$font-family-monospace;font-size:.87em;color:$green;background:#151517;padding:1px 4px}
+pre{background:#0e0e10;border:1px solid $bevel-dk;border-top-color:$bevel-lt;padding:.8rem}
 
-/* ---------- index panels ---------- */
-.panels { margin: 2rem 0 0; }
-.panel {
-  border: 1px solid $rule;
-  border-left: 2px solid $rule-strong;
-  padding: 1rem 1.15rem 1.05rem;
-  margin-bottom: -1px;
-  background: transparent;
-  transition: background .12s ease, border-left-color .12s ease;
+/* ============ beveled record panel ============ */
+.rec{
+  background:$panel;border:1px solid $bevel-dk;border-top-color:$bevel-lt;border-left-color:$bevel-lt;
+  padding:9px 12px;margin:0 0 1.6rem;font-family:$font-family-monospace;font-size:11px;line-height:1.9;color:$dim;
 }
-.panel:hover { background: $panel-bg; border-left-color: $amber; }
-.panel .idx {
-  font-family: $font-family-monospace;
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  color: #6f6a60;
-  display: block;
-  margin-bottom: .35rem;
-}
-.panel a.t {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #efeadf;
-  border: 0;
-  display: block;
-  margin-bottom: .3rem;
-}
-.panel:hover a.t { color: $amber; }
-.panel p { font-size: .875rem; color: $dim; margin: 0; line-height: 1.55; }
+.rec .k{display:inline-block;min-width:9rem;color:#63605c;text-transform:uppercase;letter-spacing:.1em;font-size:10px}
+.rec .v{color:$ink}.rec .v.hot{color:$amber}
 
-/* ---------- lede ---------- */
-.lede {
-  font-size: 1.06rem;
-  line-height: 1.66;
-  color: #ddd8cd;
-  border-left: 2px solid $amber;
-  padding-left: 1.15rem;
-  margin: 0 0 2rem;
+/* ============ file rows ============ */
+.frow{
+  display:block;background:$panel;border:1px solid $bevel-dk;border-top-color:$bevel-lt;
+  padding:9px 12px;margin-bottom:4px;border-left:3px solid $rule;
 }
+.frow:hover{background:$panel-hi;border-left-color:$amber}
+.frow .n{font-family:$font-family-monospace;font-size:10px;letter-spacing:.14em;color:#63605c}
+.frow a.t{display:block;font-weight:700;color:#efeadf;border:0;font-size:13.5px;margin:2px 0}
+.frow:hover a.t{color:$gold}
+.frow p{margin:0;font-size:12px;color:$dim}
 
-/* ---------- callouts ---------- */
-.callout { border: 1px solid $rule !important; background: $panel-bg !important; }
-.callout .callout-title { background: transparent !important; border-bottom: 1px solid $rule; }
-.callout-body { font-size: .9rem; }
+/* ============ arabic ============ */
+.ar{font-family:"Noto Kufi Arabic",sans-serif;direction:rtl;color:$dim}
 
-/* ---------- TOC ---------- */
-#TOC, .sidebar nav[role=doc-toc] { font-family: $font-family-monospace; font-size: 10.5px; }
-nav[role=doc-toc] > h2, .sidebar-title {
-  font-family: $font-family-monospace;
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #6f6a60;
-  border: 0;
-  margin-bottom: .7rem;
+/* ================================================================
+   CONSPIRACY BOARD — research section only
+   ================================================================ */
+.board{
+  background:
+    repeating-linear-gradient(45deg,#17120c 0 2px,#1a140d 2px 4px);
+  border:6px solid #0a0a0b;outline:1px solid #2a2016;
+  padding:1.6rem 1.4rem 1.8rem;margin:1.4rem 0 2rem;position:relative;overflow:hidden;
 }
-nav[role=doc-toc] ul li a {
-  border: 0;
-  color: $dim;
-  letter-spacing: 0.06em;
-  padding: .18rem 0;
-  text-transform: uppercase;
-  font-size: 10.5px;
+.board::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(115deg,transparent 46%,rgba(210,210,220,.05) 47%,transparent 48%),
+    linear-gradient(112deg,transparent 60%,rgba(210,210,220,.04) 61%,transparent 62%),
+    linear-gradient(118deg,transparent 74%,rgba(210,210,220,.045) 75%,transparent 76%);
 }
-nav[role=doc-toc] ul li a:hover,
-nav[role=doc-toc] ul li a.active { color: $amber; }
+.board>*{position:relative}
+.board h2{background:transparent;border:0;color:#c0392b;letter-spacing:.24em;padding:0;margin:1.6rem 0 .6rem}
 
-/* ---------- footer ---------- */
-.nav-footer {
-  background: $black;
-  border-top: 1px solid $rule;
-  color: #6f6a60;
-  font-family: $font-family-monospace;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 1.4rem 0;
-  margin-top: 4rem;
-}
-.nav-footer a { color: #6f6a60; border: 0; }
-.nav-footer a:hover { color: $amber; }
+.eye{display:block;margin:.4rem auto 1.2rem;width:120px;height:auto;opacity:.85}
 
-/* ---------- listing (log) ---------- */
-.quarto-listing table { font-size: .875rem; }
-.listing-date {
-  font-family: $font-family-monospace;
-  font-size: 11px;
-  color: $dim;
-  letter-spacing: 0.06em;
-  white-space: nowrap;
+.stamp{
+  display:inline-block;border:3px solid #a02b1f;color:#c0392b;
+  font-family:$font-family-monospace;font-weight:700;font-size:12px;letter-spacing:.2em;
+  padding:5px 12px;transform:rotate(-6deg);opacity:.9;margin:.3rem .6rem .8rem 0;
 }
+.stamp.b{border-color:#7a6a2a;color:#b39227;transform:rotate(3deg)}
+
+.redact{background:#000;color:#000;padding:0 .28em;user-select:none}
+.redact:hover{color:#4a4a4a}
+
+.note{
+  display:block;background:#f3e9c6;color:#1a1408;font-family:$font-family-monospace;
+  font-size:11.5px;line-height:1.55;padding:10px 12px;margin:.9rem 0;
+  border:1px solid #b9a878;transform:rotate(-.5deg);
+}
+.note.r{transform:rotate(.6deg);background:#efe0cf}
+.note b{color:#7a1c12}
+
+.thread{border-left:2px dashed #8f1d14;padding-left:1rem;margin:1.2rem 0}
+.shout{
+  font-family:$font-family-monospace;font-weight:700;color:#d9534f;letter-spacing:.06em;
+  font-size:13px;line-height:1.5;text-transform:uppercase;margin:.8rem 0;
+}
+.wake{text-align:center;font-family:$font-family-monospace;color:#8f1d14;letter-spacing:.5em;font-size:11px;margin:1.4rem 0 0}
+
+/* ============ footer ============ */
+.nav-footer{background:#0e0e10;border-top:2px solid $bevel-dk;color:#5c5955;
+  font-family:$font-family-monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:1rem 0;margin-top:3rem}
+.nav-footer a{color:#5c5955;border:0}
+
+/* ============ toc ============ */
+nav[role=doc-toc]{font-family:$font-family-monospace;font-size:10px}
+nav[role=doc-toc] a{color:$dim;border:0;text-transform:uppercase;letter-spacing:.08em}
+nav[role=doc-toc] a:hover,nav[role=doc-toc] a.active{color:$amber}
+.sidebar-title{font-family:$font-family-monospace;font-size:10px;letter-spacing:.18em;color:#5c5955;text-transform:uppercase}

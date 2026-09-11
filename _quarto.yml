@@ -4,7 +4,6 @@ project:
 
 website:
   title: "AL-OTHMAN"
-  description: "Abdulwahab Al-Othman. Political science, Georgia State University. Research on how conspiratorial claims acquire political authority."
   navbar:
     left:
       - href: index.qmd
@@ -15,10 +14,9 @@ website:
         text: Log
       - href: site/cv.qmd
         text: Record
-  page-navigation: true
   page-footer:
-    left: "A. AL-OTHMAN &nbsp;//&nbsp; DEPT. OF POLITICAL SCIENCE &nbsp;//&nbsp; GEORGIA STATE UNIVERSITY"
-    right: "LAST REVISION 2026-09-11"
+    left: "A. AL-OTHMAN &nbsp;·&nbsp; العثمان"
+    right: "2026"
 
 format:
   html:
@@ -27,5 +25,4 @@ format:
     toc-depth: 2
     toc-title: "Contents"
     anchor-sections: false
-    link-external-newwindow: true
     code-fold: true

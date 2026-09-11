@@ -1,51 +1,107 @@
 ---
-title: "How conspiratorial claims acquire political authority"
-subtitle: "Dissertation // in preparation // Georgia State University"
+title: "The political authority of conspiratorial claims"
+subtitle: "Dissertation in progress // أطروحة قيد الإعداد"
 ---
 
 ::: {.callout-warning appearance="simple"}
-**PLACEHOLDER.** Drafted with AI assistance and not yet written or verified by me. To be rewritten.
+**PLACEHOLDER.** Drafted with AI assistance, not yet written or verified by me.
 :::
 
-::: {.docblock}
+```{=html}
+<div class="crawl"><span>FILE 01  ·  ملف  ·  CLAIM COHORT PENDING  ·  ELITE UPTAKE UNRESOLVED  ·  PROVENANCE UNTESTED  ·  FILE 01  ·  ملف  ·  CLAIM COHORT PENDING  ·  ELITE UPTAKE UNRESOLVED  ·  PROVENANCE UNTESTED  · </span></div>
+```
+
+::: {.rec}
 <span class="k">Designation</span><span class="v">Dissertation, three papers</span>  
-<span class="k">Committee</span><span class="v">In formation</span>  
-<span class="k">Window</span><span class="v">1 Sept – 15 Oct 2024 (pilot)</span>  
-<span class="k">Prospectus</span><span class="v pending">Due end of October 2026</span>  
-<span class="k">Pilot cohort</span><span class="v pending">Not started</span>  
-<span class="k">Experiment</span><span class="v pending">Not started</span>
+<span class="k">Window</span><span class="v">8–21 July 2024 (pilot entry)</span>  
+<span class="k">Prospectus</span><span class="v hot">Due end of October 2026</span>  
+<span class="k">Status</span><span class="v hot">Not started</span>
 :::
 
-## 01 // Question
+## Question
 
 Which conspiratorial allegations circulating on fringe platforms are taken up by U.S. political elites, what do intermediaries do to those allegations on the way, and does a claim's attributed origin change whether the public accepts a politician using it?
 
-The four-stage sequence below is a hypothesis to be tested against alternatives, not a frame that every case must satisfy. The literature already documents claims that begin with elites, claims assembled jointly by elites and audiences, and claims that never reach elites at all.
+---
 
-| Stage | Object | Status in the literature |
+```{=html}
+<div class="board">
+
+<svg class="eye" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="All-seeing eye in a triangle">
+  <polygon points="120,16 226,190 14,190" fill="none" stroke="#b39227" stroke-width="2"/>
+  <polygon points="120,34 210,182 30,182" fill="none" stroke="#6b5a1e" stroke-width="1"/>
+  <path d="M52 130 Q120 74 188 130 Q120 186 52 130 Z" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <circle cx="120" cy="130" r="24" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <circle cx="120" cy="130" r="9" fill="#c0392b"/>
+  <g stroke="#6b5a1e" stroke-width="1">
+    <line x1="120" y1="8" x2="120" y2="0"/><line x1="30" y1="196" x2="24" y2="200"/><line x1="210" y1="196" x2="216" y2="200"/>
+  </g>
+</svg>
+
+<div style="text-align:center">
+<span class="stamp">EXHIBIT A</span><span class="stamp b">SOURCE UNKNOWN</span>
+</div>
+
+<p class="shout">They don't want you to ask who said it first.</p>
+
+<div class="note">
+<b>FIELD NOTE — 5 SEPT 2024, 21:14</b><br>
+Post appears on a local page. No byline. No verification. Within 72 hours it is on a national stage, sourced to nobody: <em>people are saying</em>. The name of the first speaker is gone. Ask yourself who benefits from that deletion.
+</div>
+
+<div class="thread">
+<p class="shout">The chain:</p>
+<p style="font-family:monospace;font-size:12px;line-height:2;color:#c8c2b6">
+IMAGEBOARD &nbsp;→&nbsp; <span class="redact">REDACTED</span> &nbsp;→&nbsp; PODCAST &nbsp;→&nbsp; <span class="redact">REDACTED</span> &nbsp;→&nbsp; DEBATE STAGE<br>
+<span style="color:#8f1d14">↑ stigma attached</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#b39227">↑ stigma gone</span>
+</p>
+</div>
+
+<div class="note r">
+<b>WHAT CHANGED IN TRANSIT</b><br>
+1. The wording was recoded.<br>
+2. The messenger changed.<br>
+3. The named source was replaced with <em>people are saying</em>.<br>
+By arrival it is no longer a fringe claim with a traceable origin. It is a constituent concern.
+</div>
+
+<p class="shout">This page performs the aesthetic it studies. The analysis is below.</p>
+
+<p class="wake">WAKE UP</p>
+
+</div>
+```
+
+---
+
+## The actual argument
+
+The visual grammar above — the eye, the red thread, the redaction, the shouting — is the object of study, not the method. Conspiratorial claims arrive wrapped in it and are stripped of it somewhere in transit. I call that **laundering**, and I treat it as a mechanism to be tested rather than a label to apply.
+
+Three transformations are coded separately, because they occur independently: the **wording** changes; the **messenger** changes; the **attributed origin** changes. A fourth code, the allegation itself being altered, is not laundering.
+
+## Stages
+
+| Stage | Object | Standing in the literature |
 |---|---|---|
-| 01 Origin | Allegation appears on a fringe platform | Theorized (Barkun); crossing point never dated |
-| 02 Spread | Intermediaries carry and transform it | Well covered computationally; provenance unresolved |
+| 01 Origin | Allegation appears on a fringe platform | Theorized; crossing point never dated |
+| 02 Spread | Intermediaries carry and transform it | Covered computationally; provenance unresolved |
 | 03 Uptake | An officeholder endorses or raises it | Competing accounts, unadjudicated |
 | 04 Response | The electorate accepts or sanctions the use | Belief measured; acceptability not |
 
-## 02 // Mechanism
+The sequence is a hypothesis tested against alternatives, not a frame every case must satisfy.
 
-**Laundering.** Attributing a claim to grassroots origin lowers the reputational cost of advancing it, for elites and for the citizens who tolerate them, by signaling that the claim is already socially validated and that endorsing it is responsiveness rather than invention.
+## Rival accounts
 
-Three transformations are coded separately, because they can occur independently: the **wording** changes; the **messenger** changes; the **attributed origin** changes. A fourth code, the allegation itself being altered, is not laundering.
+| Account | Claim |
+|---|---|
+| Persuasion | Attribution moves acceptance only through belief |
+| Partisan usefulness | Acceptance tracks what the claim does for one's side |
+| Authenticity | A lying elite reads as authentic where the system looks illegitimate |
+| Participatory production | Elites frame, audiences supply evidence, elites amplify |
+| Elite-led | Elites and mass media drive; social media supports |
 
-## 03 // Rival accounts
-
-| Account | Claim | Source |
-|---|---|---|
-| Persuasion | Attribution moves acceptance only through belief | — |
-| Partisan usefulness | Acceptance tracks what the claim does for one's side | — |
-| Authenticity | A lying elite reads as authentic to voters who see the system as illegitimate | Hahl, Kim & Zuckerman Sivan 2018 |
-| Participatory production | Elites frame, audiences supply evidence, elites amplify | Starbird, DiResta & DeButts 2023 |
-| Elite-led | Elites and mass media drive; social media supports | Benkler et al. 2020 |
-
-## 04 // Papers
+## Papers
 
 | No. | Question | Method |
 |---|---|---|
@@ -53,17 +109,13 @@ Three transformations are coded separately, because they can occur independently
 | II | Why these claims and not others? | Claim × elite × week event history; paired process tracing |
 | III | Does attributed origin change acceptability independent of belief? | Preregistered 2×2 survey experiment |
 
-## 05 // Documents
+## Documents
 
-- [Gap in the literature](../theory/gap-summary.qmd) — what is settled, what competes, what is open
-- [Transmission framework](../theory/transmission-framework.qmd) — methods by stage, with diagrams
-- [Research design](../design/index.qmd) — the three papers in full
-- [Codebook](../design/codebook.qmd) — case definition, unit, coded fields
-- [Sampling rule](../design/sampling-rule.qmd) — window, sources, enumeration, follow-up
-- [Falsification table](../design/falsification.qmd) — what result forces revision
-- [Data manifest](../data/index.qmd) — sources, coverage, access
-- [Pilot plan](pilot.qmd) — six-week feasibility demonstration
-
-## 06 // Disconfirmation
-
-The design is built to fail in specified ways. A null on the grassroots-versus-elite origin contrast with adequate power kills the provenance mechanism. Acceptance and belief moving together, with a direct test of the difference returning null, replaces normalization with ordinary persuasion. A corpus in which elites rarely assert provenance at all would mean the experiment tests a counterfactual rather than a practice. Each of these is stated in advance in the [falsification table](../design/falsification.qmd).
+- [Gap in the literature](../theory/gap-summary.qmd)
+- [Transmission framework](../theory/transmission-framework.qmd)
+- [Research design](../design/index.qmd)
+- [Codebook](../design/codebook.qmd)
+- [Sampling rule](../design/sampling-rule.qmd)
+- [Falsification table](../design/falsification.qmd)
+- [Pilot plan](pilot.qmd)
+- [Data manifest](../data/index.qmd)
