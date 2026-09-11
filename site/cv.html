@@ -184,15 +184,17 @@ ul.task-list li input[type="checkbox"] {
 </main> <!-- /main -->
 <!-- Sitewide: Office-Assistant + taskbar. Injected on every page via
      _quarto.yml -> format.html.include-after-body. Links are root-relative
-     because this same markup is served from every directory depth. -->
+     because this same markup is served from every directory depth.
+     On the homepage, site/desk.js adopts #assistant and #balloon into the
+     desk plane and pins them to the broadcast window. -->
 
 <div id="balloon" role="note">
   <p>It looks like you're reading an unverified claim.<br><br>Would you like help?</p>
   <button class="op" type="button" data-balloon="who"><i></i><span>Show me who benefits</span></button>
   <button class="op" type="button" data-balloon="know"><i></i><span>I already know</span></button>
   <button class="cb" type="button" data-balloon="cb"><i id="b-cb"></i><span>Don't show me this tip again</span></button>
-  <span class="tail" style="right:-20px;border-left-color:#000;border-right:0"></span>
-  <span class="tail" style="right:-18px;border-left-color:#fff;border-right:0"></span>
+  <span class="tail" style="left:-20px;border-right-color:#000;border-left:0"></span>
+  <span class="tail" style="left:-18px;border-right-color:#fff;border-left:0"></span>
 </div>
 
 <div id="assistant">
@@ -241,8 +243,10 @@ ul.task-list li input[type="checkbox"] {
   </button>
   <div id="tasks"></div>
   <div id="tray">
-    <span class="sq" style="background:#d4d0c8;border:1px solid #808080"></span>
-    <span class="sq" style="background:#c1272d"></span>
+    <button id="fxtoggle" type="button" title="Motion effects">
+      <svg viewbox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="2"></circle><path d="M8 4v4l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+    </button>
+    <span class="sq" style="background:#c1272d" title="Unverified source"></span>
     <time id="clock">--:--</time>
     <span class="arn" id="clock-ar">--:--</span>
   </div>
@@ -272,8 +276,6 @@ ul.task-list li input[type="checkbox"] {
   });
   document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeStart(); });
 
-  /* Window entries reopen a window when we're already on the desktop;
-     otherwise they're plain links home. */
   startMenu.addEventListener("click", function(e){
     var d = e.target.closest("[data-desk]");
     if(!d || !onDesk) return;
@@ -282,14 +284,31 @@ ul.task-list li input[type="checkbox"] {
     closeStart();
   });
 
+  /* ── effects toggle ──────────────────────────────────────────── */
+  var fxBtn = document.getElementById("fxtoggle");
+  function paintFx(){
+    var on = document.documentElement.dataset.fx === "on";
+    fxBtn.classList.toggle("on", on);
+    fxBtn.title = on ? "Motion effects: on — click to reduce" : "Motion effects: reduced — click to enable";
+    fxBtn.setAttribute("aria-pressed", on ? "true" : "false");
+  }
+  fxBtn.addEventListener("click", function(){
+    var next = document.documentElement.dataset.fx === "on" ? "off" : "on";
+    document.documentElement.dataset.fx = next;
+    try{ localStorage.setItem("fx", next); }catch(e){}
+    paintFx();
+  });
+  paintFx();
+
   /* ── assistant ───────────────────────────────────────────────── */
   var balloonEl = document.getElementById("balloon");
   var assistEl  = document.getElementById("assistant");
   document.addEventListener("click", function(e){
     var b = e.target.closest("[data-balloon]");
     if(!b) return;
-    e.preventDefault();
     var k = b.dataset.balloon;
+    if(k === "restore") return;           /* handled by desk.js */
+    e.preventDefault();
     if(k === "who"){
       document.dispatchEvent(new CustomEvent("desk:open",{detail:"w-props"}));
     } else if(k === "know"){
