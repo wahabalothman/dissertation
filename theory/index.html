@@ -182,6 +182,150 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
+<!-- Sitewide: Office-Assistant + taskbar. Injected on every page via
+     _quarto.yml -> format.html.include-after-body. Links are root-relative
+     because this same markup is served from every directory depth. -->
+
+<div id="balloon" role="note">
+  <p>It looks like you're reading an unverified claim.<br><br>Would you like help?</p>
+  <button class="op" type="button" data-balloon="who"><i></i><span>Show me who benefits</span></button>
+  <button class="op" type="button" data-balloon="know"><i></i><span>I already know</span></button>
+  <button class="cb" type="button" data-balloon="cb"><i id="b-cb"></i><span>Don't show me this tip again</span></button>
+  <span class="tail" style="right:-20px;border-left-color:#000;border-right:0"></span>
+  <span class="tail" style="right:-18px;border-left-color:#fff;border-right:0"></span>
+</div>
+
+<div id="assistant">
+  <div class="t"><span>Assistant</span><button type="button" data-balloon="hide" title="Close">✕</button></div>
+  <div class="c">
+    <svg viewbox="0 0 120 200" role="img" aria-label="A paperclip assistant with slit pupils and a pyramid and eye floating above it">
+      <polygon points="60,6 95,54 25,54" fill="none" stroke="#6b5a1e" stroke-width="2.4" stroke-linejoin="round"></polygon>
+      <path d="M31 40 Q60 18 89 40" fill="none" stroke="#b39227" stroke-width="1.6"></path>
+      <path d="M36 42 Q60 26 84 42 Q60 58 36 42 Z" fill="#fdf6e0" stroke="#6b5a1e" stroke-width="2.2"></path>
+      <circle cx="60" cy="42" r="7.5" fill="#c1272d" stroke="#6b1216" stroke-width="1.4"></circle>
+      <ellipse cx="60" cy="42" rx="2.1" ry="6" fill="#1a0505"></ellipse>
+      <path d="M26 186 L26 100 A24 24 0 0 1 74 100 L74 176 A16 16 0 0 1 42 176 L42 110 A8 8 0 0 1 58 110 L58 158" fill="none" stroke="#2f2f2f" stroke-width="11" stroke-linecap="round"></path>
+      <path d="M26 186 L26 100 A24 24 0 0 1 74 100 L74 176 A16 16 0 0 1 42 176 L42 110 A8 8 0 0 1 58 110 L58 158" fill="none" stroke="#cfcfcf" stroke-width="6" stroke-linecap="round"></path>
+      <path d="M28.5 168 L28.5 104" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"></path>
+      <ellipse cx="44" cy="92" rx="10" ry="11" fill="#fff" stroke="#2f2f2f" stroke-width="2.4"></ellipse>
+      <ellipse cx="70" cy="92" rx="10" ry="11" fill="#fff" stroke="#2f2f2f" stroke-width="2.4"></ellipse>
+      <ellipse cx="45.5" cy="93" rx="2.3" ry="6.6" fill="#101010"></ellipse>
+      <ellipse cx="71.5" cy="93" rx="2.3" ry="6.6" fill="#101010"></ellipse>
+    </svg>
+  </div>
+</div>
+
+<div id="startmenu">
+  <div class="spine">AL-OTHMAN</div>
+  <ul>
+    <li class="hd">ARCHIVE</li>
+    <li><a href="../research/">Conspiratorial claims<span class="ar">بحث</span></a></li>
+    <li><a href="../theory/">Transmission theory<span class="ar">نظرية</span></a></li>
+    <li><a href="../design/">Research design<span class="ar">تصميم</span></a></li>
+    <li><a href="../data/">Data sources<span class="ar">بيانات</span></a></li>
+    <li><a href="../notes/">Working log<span class="ar">سجل</span></a></li>
+    <li><a href="../site/cv.html">Curriculum vitae<span class="ar">سيرة</span></a></li>
+    <li class="sep"></li>
+    <li class="hd">WINDOWS</li>
+    <li><a href="../" data-desk="w-archive">ARCHIVE</a></li>
+    <li><a href="../" data-desk="w-feed">RESEARCH FEED</a></li>
+    <li><a href="../" data-desk="w-note">statement.txt</a></li>
+    <li><a href="../" data-desk="w-props">Properties</a></li>
+  </ul>
+</div>
+
+<div id="taskbar">
+  <button id="start" type="button" aria-haspopup="true" aria-expanded="false">
+    <svg width="15" height="15" viewbox="0 0 16 16" aria-hidden="true"><rect x="0" y="1" width="7" height="6" fill="#d94f4f"></rect><rect x="8" y="0" width="7" height="7" fill="#4f9a4f"></rect><rect x="0" y="8" width="7" height="7" fill="#4f6fd9"></rect><rect x="8" y="8" width="7" height="7" fill="#e0c04f"></rect></svg>
+    Start
+  </button>
+  <div id="tasks"></div>
+  <div id="tray">
+    <span class="sq" style="background:#d4d0c8;border:1px solid #808080"></span>
+    <span class="sq" style="background:#c1272d"></span>
+    <time id="clock">--:--</time>
+    <span class="arn" id="clock-ar">--:--</span>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var onDesk = !!document.getElementById("desk");
+
+  /* ── start menu ──────────────────────────────────────────────── */
+  var startBtn  = document.getElementById("start");
+  var startMenu = document.getElementById("startmenu");
+  function closeStart(){
+    startMenu.classList.remove("open");
+    startBtn.classList.remove("on");
+    startBtn.setAttribute("aria-expanded","false");
+  }
+  startBtn.addEventListener("click", function(e){
+    e.stopPropagation();
+    var on = startMenu.classList.toggle("open");
+    startBtn.classList.toggle("on", on);
+    startBtn.setAttribute("aria-expanded", on ? "true" : "false");
+  });
+  document.addEventListener("click", function(e){
+    if(!e.target.closest("#startmenu") && !e.target.closest("#start")) closeStart();
+  });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeStart(); });
+
+  /* Window entries reopen a window when we're already on the desktop;
+     otherwise they're plain links home. */
+  startMenu.addEventListener("click", function(e){
+    var d = e.target.closest("[data-desk]");
+    if(!d || !onDesk) return;
+    e.preventDefault();
+    document.dispatchEvent(new CustomEvent("desk:open",{detail:d.dataset.desk}));
+    closeStart();
+  });
+
+  /* ── assistant ───────────────────────────────────────────────── */
+  var balloonEl = document.getElementById("balloon");
+  var assistEl  = document.getElementById("assistant");
+  document.addEventListener("click", function(e){
+    var b = e.target.closest("[data-balloon]");
+    if(!b) return;
+    e.preventDefault();
+    var k = b.dataset.balloon;
+    if(k === "who"){
+      document.dispatchEvent(new CustomEvent("desk:open",{detail:"w-props"}));
+    } else if(k === "know"){
+      balloonEl.style.display = "none";
+    } else if(k === "cb"){
+      var box = document.getElementById("b-cb");
+      box.textContent = box.textContent ? "" : "✓";
+    } else if(k === "hide"){
+      balloonEl.style.display = "none";
+      assistEl.style.display  = "none";
+    }
+  });
+
+  /* ── taskbar buttons on inner pages (the desktop fills these itself) ── */
+  if(!onDesk){
+    var t  = document.getElementById("tasks");
+    var h1 = document.querySelector("h1.title");
+    var b  = document.createElement("button");
+    b.type = "button";
+    b.className = "down";
+    b.textContent = (h1 ? h1.textContent : document.title).trim();
+    b.addEventListener("click", function(){ window.scrollTo({top:0,behavior:"smooth"}); });
+    t.appendChild(b);
+  }
+
+  /* ── clock ───────────────────────────────────────────────────── */
+  var AR = ["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"];
+  function tick(){
+    var d = new Date();
+    var s = String(d.getHours()).padStart(2,"0") + ":" + String(d.getMinutes()).padStart(2,"0");
+    document.getElementById("clock").textContent = s;
+    document.getElementById("clock-ar").textContent = s.replace(/\d/g, function(n){ return AR[+n]; });
+  }
+  tick(); setInterval(tick, 20000);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const isCodeAnnotation = (el) => {
