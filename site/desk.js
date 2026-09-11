@@ -329,6 +329,11 @@
   function vxStart(){
     if(VX.on || !vxLayer) return;
     VX.on = true; VX.n = 0;
+    /* The infection is opt-in: clicking a button marked SHARE THIS NOW is
+       consent to the consequences, so it plays in full even when motion is
+       otherwise reduced. The flag is put back the way it was on stop. */
+    VX.fxWas = document.documentElement.dataset.fx;
+    document.documentElement.dataset.fx = "on";
     document.body.classList.add("infected");
     vxLayer.classList.add("on");
     if(balloonEl){
@@ -351,6 +356,7 @@
     if(!VX.on) return;
     VX.on = false;
     clearTimeout(VX.timer);
+    if(VX.fxWas) document.documentElement.dataset.fx = VX.fxWas;
     document.body.classList.remove("infected");
     vxLayer.classList.remove("on");
     vxLayer.textContent = "";
