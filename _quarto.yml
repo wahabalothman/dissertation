@@ -1,9 +1,13 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - site/desk.js
+    - site/favicon.svg
 
 website:
   title: "AL-OTHMAN"
+  favicon: site/favicon.svg
   navbar:
     left:
       - href: index.qmd
@@ -31,5 +35,6 @@ format:
     toc-depth: 2
     toc-title: "Contents"
     anchor-sections: false
+    include-in-header: site/fx.html
     include-after-body: site/taskbar.html
     code-fold: true
