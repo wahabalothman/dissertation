@@ -7,9 +7,15 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Index
+        text: Desktop
       - href: research/index.qmd
         text: Research
+      - href: theory/index.qmd
+        text: Theory
+      - href: design/index.qmd
+        text: Design
+      - href: data/index.qmd
+        text: Data
       - href: notes/index.qmd
         text: Log
       - href: site/cv.qmd
@@ -25,5 +31,5 @@ format:
     toc-depth: 2
     toc-title: "Contents"
     anchor-sections: false
-    include-after-body: site/assistant.html
+    include-after-body: site/taskbar.html
     code-fold: true
