@@ -170,5 +170,5 @@ toc: false
 </div>
 
 <div id="vx" aria-hidden="true"></div>
-<script src="/site/desk.js" defer></script>
+<script src="/site/desk.js?v=2" defer></script>
 ```
