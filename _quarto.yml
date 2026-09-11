@@ -3,50 +3,29 @@ project:
   output-dir: _site
 
 website:
-  title: "Conspiracy Transmission Project"
-  description: "How conspiratorial allegations acquire political authority: a dissertation in progress"
+  title: "AL-OTHMAN"
+  description: "Abdulwahab Al-Othman. Political science, Georgia State University. Research on how conspiratorial claims acquire political authority."
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - href: theory/index.qmd
-        text: Theory
-      - href: design/index.qmd
-        text: Design
-      - href: data/index.qmd
-        text: Data
+        text: Index
+      - href: research/index.qmd
+        text: Research
       - href: notes/index.qmd
         text: Log
       - href: site/cv.qmd
-        text: CV
-    right:
-      - icon: github
-        href: https://github.com/wahabalothman/dissertation
-  sidebar:
-    - title: Theory
-      contents:
-        - theory/index.qmd
-        - theory/gap-summary.qmd
-        - theory/transmission-framework.qmd
-    - title: Design
-      contents:
-        - design/index.qmd
-        - design/codebook.qmd
-        - design/sampling-rule.qmd
-        - design/falsification.qmd
-    - title: Data
-      contents:
-        - data/index.qmd
-        - data/manifest.qmd
-        - data/coverage-log.qmd
+        text: Record
+  page-navigation: true
   page-footer:
-    left: "Abdulwahab Al-Othman · Georgia State University"
-    right: "Built with Quarto"
+    left: "A. AL-OTHMAN &nbsp;//&nbsp; DEPT. OF POLITICAL SCIENCE &nbsp;//&nbsp; GEORGIA STATE UNIVERSITY"
+    right: "LAST REVISION 2026-09-11"
 
 format:
   html:
-    theme: [cosmo, site/custom.scss]
+    theme: [darkly, site/custom.scss]
     toc: true
-    toc-depth: 3
+    toc-depth: 2
+    toc-title: "Contents"
+    anchor-sections: false
+    link-external-newwindow: true
     code-fold: true
-    smooth-scroll: true

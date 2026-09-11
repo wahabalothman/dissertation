@@ -2,6 +2,10 @@
 title: "Codebook (v0.1, draft)"
 ---
 
+::: {.callout-warning appearance="simple"}
+**PLACEHOLDER.** Drafted with AI assistance and not yet written or verified by me. To be rewritten.
+:::
+
 ## Case definition
 
 A passage counts as a **conspiratorial claim** if it asserts that identifiable actors are secretly coordinating an action for a hidden purpose. Excluded: allegations of incompetence without coordination; ordinary rumor without a covert actor; policy criticism.

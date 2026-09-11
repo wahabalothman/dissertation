@@ -2,6 +2,10 @@
 title: "Data manifest"
 ---
 
+::: {.callout-warning appearance="simple"}
+**PLACEHOLDER.** Drafted with AI assistance and not yet written or verified by me. To be rewritten.
+:::
+
 | Tier | Dataset | Coverage | Access | Location | Status |
 |---|---|---|---|---|---|
 | Fringe | USC Telegram 2024 election dataset (Blas, Luceri & Ferrara) | 30k+ chats, 500M+ messages, 2024 | GitHub, CC-BY | bucket:/raw/telegram-usc-2024/ | not downloaded |

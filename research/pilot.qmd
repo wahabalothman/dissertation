@@ -1,0 +1,78 @@
+---
+title: "Pilot: claim-tracking demonstration"
+subtitle: "Six weeks // 14 Sept – 25 Oct 2026 // feasibility, not findings"
+---
+
+::: {.callout-warning appearance="simple"}
+**PLACEHOLDER.** Drafted with AI assistance and not yet written or verified by me. To be rewritten before anything here is cited or shown.
+:::
+
+::: {.docblock}
+<span class="k">Purpose</span><span class="v">Test whether the measurement system is workable</span>  
+<span class="k">Cohort window</span><span class="v">8–21 July 2024 (entry)</span>  
+<span class="k">Follow-up</span><span class="v">28 days per claim, to 18 Aug 2024</span>  
+<span class="k">Cash budget</span><span class="v">~$125 departmental pool / ~$445 with paid pretest</span>  
+<span class="k">Effort</span><span class="v">20–25 hrs/week including learning</span>  
+<span class="k">Status</span><span class="v pending">Not started</span>
+:::
+
+The pilot cannot establish an adoption effect, separate the three causal routes statistically, or estimate an electorate treatment effect. It tests whether claims can be enumerated, matched, and followed reliably enough to justify building the full cohort.
+
+## 01 // Frozen scope
+
+Scope is fixed before any search for successful claims. The window is a calendar-based stress test of measurement, not a random sample of 2024.
+
+| Decision | Fixed rule |
+|---|---|
+| Fringe frame | Retrievable r/conspiracy submissions dated 8–21 July UTC; up to 50 IDs/day by fixed hash; max 700 |
+| Eligible text | Title and body screened for an allegation of covert coordination plus a specific action; missing bodies marked unavailable, never "no allegation" |
+| Unit | Claim ID = actors, secret coordinated action, target, purpose, time qualifiers; unknowns stored explicitly |
+| Cohort | Enumerate all claims in the 700 posts; deduplicate before viewing elite matches; follow all if ≤60, else 60 by second fixed hash |
+| Lookback | 24 June to first sampled appearance, for prior occurrence and prior elite endorsement |
+| Follow-up | 28 days from entry; later occurrences retained separately |
+| Intermediaries | 52 Tenet records 8 July – 18 Aug, plus available weekday Anderson Cooper 360 broadcasts |
+| Elites | Sitting members in the Congressional Record, plus sitting officeholders and major-party tickets quoted directly in the selected material |
+
+Fallback window is 17–30 June 2024, chosen only if the July access gate fails, documented before enumeration. The window is never changed because few July claims were adopted.
+
+The 60-claim cap is a workload ceiling, not a target. Twenty well-defined claims beat sixty ambiguous topics; a low yield is retained and reported.
+
+## 02 // Sources and verified access
+
+Access observations dated 11 September 2026. "Free" means no identified purchase fee, not a grant of collection or redistribution rights.
+
+| Source | Access | Verified | Principal risk |
+|---|---|---|---|
+| r/conspiracy via Arctic Shift | Posts search API, JSON to Parquet | A 8 July 2024 query returned HTTP 200 | Archive incompleteness, deleted text, reuse terms |
+| Tenet Media (Zenodo 14768418) | JSON by video ID with transcripts | 560 records, 20.7 MB, downloaded | License conflict in the record; one selected operation |
+| Rumble audio | yt-dlp metadata, audio only where authorized | Media endpoint 200; page 403 | A working link is not a license |
+| CNN *Anderson Cooper 360* | Public daily transcript pages | 12 July retrieved; 15 July did not air | Rush transcripts change; preserve hash and date |
+| Congressional Record | GovInfo API, HTML/text plus PDF audit copy | 15 July PDF retrieved | Publication is not verbatim delivery; exclude Digest |
+
+## 03 // Method boundaries
+
+Use an LLM to propose structured extractions and sentence embeddings to retrieve candidate matches; decide same-allegation and endorsement questions by hand. Do not fine-tune, build agent systems, fit Hawkes processes, or train aligned embeddings for this demonstration. A held-out benchmark decides which affordable model is adequate; there is no universal best model.
+
+Population prevalence is not estimated here. Online posting, source popularity, elite rhetoric, political acceptability, and belief stay distinct variables.
+
+## 04 // Weekly gates
+
+| Week | Work | Gate |
+|---|---|---|
+| 1 | Access checks on all five sources; freeze codebook v1 | All five retrievable, or fallback window invoked |
+| 2 | Enumerate claims from the sampled frame; second coder on a subsample | Coders agree on claim identity at an acceptable rate |
+| 3 | Build retrieval; match claims into intermediary corpus | Candidate matches recoverable; precision/recall reported |
+| 4 | Follow claims into the elite corpus; count endorsement events | Enough events to describe, or chapter narrows to cases |
+| 5 | Survey pretest: do respondents separate acceptance from belief | Items load separately |
+| 6 | Validation, error report, committee presentation | Demonstration stands on its own |
+
+Prospectus writing is reserved for 26–31 October.
+
+## 05 // Budget
+
+| Item | Low | Expected | High |
+|---|---|---|---|
+| Pilot cash | — | $125 (dept. pool) | $445 (paid n=100 pretest) |
+| Full 18-month compute and pretesting | $1,005 | $3,600 | $12,930 |
+
+Excludes respondent costs for the confirmatory experiment. The scarce resource is the time needed to verify claims and transmission evidence, not money.

@@ -2,6 +2,10 @@
 title: "Theory"
 ---
 
+::: {.callout-warning appearance="simple"}
+**PLACEHOLDER.** Drafted with AI assistance and not yet written or verified by me. To be rewritten.
+:::
+
 Two documents anchor the project.
 
 1. **[The gap in the literature](gap-summary.qmd)**: what the field has established at each stage, what competes with the model, and what remains untested.

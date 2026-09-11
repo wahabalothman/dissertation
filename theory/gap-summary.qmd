@@ -2,6 +2,10 @@
 title: "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature"
 ---
 
+::: {.callout-warning appearance="simple"}
+**PLACEHOLDER.** Drafted with AI assistance and not yet written or verified by me. To be rewritten.
+:::
+
 ## The question and the model
 
 This dissertation asks under what conditions political elites adopt conspiratorial claims circulating outside established institutions, and whether the origin attributed to such a claim affects its political acceptability independently of its content and its endorser. I approach it through a four-stage sequence: fringe origin (imageboards such as 4chan/pol), spread through alt-media (Rumble, long-form podcasts, Telegram), elite uptake, and non-uniform electorate response. The sequence is a hypothesis, not an organizing assumption. The literature reviewed below already documents claims that begin with elites, claims assembled jointly by elites and audiences, and claims that never reach elites, and a design that cannot represent those cases cannot test the pathway. The gap this review identifies is bounded. It is not that transmission, elite amplification, or heterogeneous response are unstudied; each is. It is that, within the population of claims circulating in the U.S. alt-media ecosystem, no located study explains which claims elites select against a comparison set of claims they did not, or tests whether attributed origin moves political acceptance separately from belief.

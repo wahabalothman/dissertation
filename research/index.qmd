@@ -1,0 +1,69 @@
+---
+title: "How conspiratorial claims acquire political authority"
+subtitle: "Dissertation // in preparation // Georgia State University"
+---
+
+::: {.callout-warning appearance="simple"}
+**PLACEHOLDER.** Drafted with AI assistance and not yet written or verified by me. To be rewritten.
+:::
+
+::: {.docblock}
+<span class="k">Designation</span><span class="v">Dissertation, three papers</span>  
+<span class="k">Committee</span><span class="v">In formation</span>  
+<span class="k">Window</span><span class="v">1 Sept – 15 Oct 2024 (pilot)</span>  
+<span class="k">Prospectus</span><span class="v pending">Due end of October 2026</span>  
+<span class="k">Pilot cohort</span><span class="v pending">Not started</span>  
+<span class="k">Experiment</span><span class="v pending">Not started</span>
+:::
+
+## 01 // Question
+
+Which conspiratorial allegations circulating on fringe platforms are taken up by U.S. political elites, what do intermediaries do to those allegations on the way, and does a claim's attributed origin change whether the public accepts a politician using it?
+
+The four-stage sequence below is a hypothesis to be tested against alternatives, not a frame that every case must satisfy. The literature already documents claims that begin with elites, claims assembled jointly by elites and audiences, and claims that never reach elites at all.
+
+| Stage | Object | Status in the literature |
+|---|---|---|
+| 01 Origin | Allegation appears on a fringe platform | Theorized (Barkun); crossing point never dated |
+| 02 Spread | Intermediaries carry and transform it | Well covered computationally; provenance unresolved |
+| 03 Uptake | An officeholder endorses or raises it | Competing accounts, unadjudicated |
+| 04 Response | The electorate accepts or sanctions the use | Belief measured; acceptability not |
+
+## 02 // Mechanism
+
+**Laundering.** Attributing a claim to grassroots origin lowers the reputational cost of advancing it, for elites and for the citizens who tolerate them, by signaling that the claim is already socially validated and that endorsing it is responsiveness rather than invention.
+
+Three transformations are coded separately, because they can occur independently: the **wording** changes; the **messenger** changes; the **attributed origin** changes. A fourth code, the allegation itself being altered, is not laundering.
+
+## 03 // Rival accounts
+
+| Account | Claim | Source |
+|---|---|---|
+| Persuasion | Attribution moves acceptance only through belief | — |
+| Partisan usefulness | Acceptance tracks what the claim does for one's side | — |
+| Authenticity | A lying elite reads as authentic to voters who see the system as illegitimate | Hahl, Kim & Zuckerman Sivan 2018 |
+| Participatory production | Elites frame, audiences supply evidence, elites amplify | Starbird, DiResta & DeButts 2023 |
+| Elite-led | Elites and mass media drive; social media supports | Benkler et al. 2020 |
+
+## 04 // Papers
+
+| No. | Question | Method |
+|---|---|---|
+| I | What happens to allegations between fringe and elite? | Outcome-independent claim cohort; transformation coding |
+| II | Why these claims and not others? | Claim × elite × week event history; paired process tracing |
+| III | Does attributed origin change acceptability independent of belief? | Preregistered 2×2 survey experiment |
+
+## 05 // Documents
+
+- [Gap in the literature](../theory/gap-summary.qmd) — what is settled, what competes, what is open
+- [Transmission framework](../theory/transmission-framework.qmd) — methods by stage, with diagrams
+- [Research design](../design/index.qmd) — the three papers in full
+- [Codebook](../design/codebook.qmd) — case definition, unit, coded fields
+- [Sampling rule](../design/sampling-rule.qmd) — window, sources, enumeration, follow-up
+- [Falsification table](../design/falsification.qmd) — what result forces revision
+- [Data manifest](../data/index.qmd) — sources, coverage, access
+- [Pilot plan](pilot.qmd) — six-week feasibility demonstration
+
+## 06 // Disconfirmation
+
+The design is built to fail in specified ways. A null on the grassroots-versus-elite origin contrast with adequate power kills the provenance mechanism. Acceptance and belief moving together, with a direct test of the difference returning null, replaces normalization with ordinary persuasion. A corpus in which elites rarely assert provenance at all would mean the experiment tests a counterfactual rather than a practice. Each of these is stated in advance in the [falsification table](../design/falsification.qmd).

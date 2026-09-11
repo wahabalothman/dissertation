@@ -2,6 +2,10 @@
 title: "Sampling rule (draft, to preregister)"
 ---
 
+::: {.callout-warning appearance="simple"}
+**PLACEHOLDER.** Drafted with AI assistance and not yet written or verified by me. To be rewritten.
+:::
+
 **Window:** 1 September to 15 October 2024.
 
 **Fringe sources:** (a) the 500 most central English-language chats in the USC Telegram 2024 dataset, by the authors' chat-network centrality; (b) /pol/ via the 4plebs archive.

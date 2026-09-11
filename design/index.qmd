@@ -2,6 +2,10 @@
 title: "Research design"
 ---
 
+::: {.callout-warning appearance="simple"}
+**PLACEHOLDER.** Drafted with AI assistance and not yet written or verified by me. To be rewritten.
+:::
+
 Three empirical chapters sharing one database.
 
 | Chapter | Question | Method | Data |

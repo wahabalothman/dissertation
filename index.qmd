@@ -1,29 +1,65 @@
 ---
-title: "How conspiratorial claims acquire political authority"
-subtitle: "A dissertation in progress · Political Science, Georgia State University"
+title: "Abdulwahab Al-Othman"
+subtitle: "Doctoral researcher // Political Science // Georgia State University"
+toc: false
 ---
 
-## The question
+::: {.docblock}
+<span class="k">Subject</span><span class="v">Al-Othman, Abdulwahab</span>  
+<span class="k">Affiliation</span><span class="v">Georgia State University, Dept. of Political Science</span>  
+<span class="k">Field</span><span class="v">Political communication / political behavior</span>  
+<span class="k">Standing</span><span class="v">Doctoral candidate, second year</span>  
+<span class="k">Location</span><span class="v">Atlanta, Georgia</span>  
+<span class="k">Status</span><span class="v pending">Prospectus in preparation</span>
+:::
 
-Which conspiratorial allegations circulating on fringe platforms are taken up by U.S. political elites, what do intermediaries (podcasts, alt-video, cable) do to those allegations on the way, and does a claim's attributed origin change whether the public accepts a politician using it?
+::: {.lede}
+I study how claims that begin outside legitimate institutions end up inside them: which conspiratorial allegations circulating on fringe platforms get taken up by American political elites, what happens to those allegations along the way, and whether the public treats a claim differently depending on where it is said to have come from.
+:::
 
-## The argument, in one paragraph
+The working hypothesis is that allegations are **laundered** in transit. A claim leaves an imageboard carrying a stigma. Somewhere between there and a debate stage the stigma comes off: the wording is recoded, the messenger changes, and the named source is replaced with *people are saying*. By the time an officeholder repeats it, it is no longer a fringe claim with a traceable origin; it is a constituent concern. I treat laundering as a mechanism to be tested, not a label, and I build the evidence so it can fail.
 
-Allegations leave the fringe carrying a stigma. Somewhere between an imageboard and a debate stage the stigma comes off: the wording is recoded, the messenger changes, and the source is replaced by "people are saying." I call this laundering and treat it as a mechanism to test, not a label. The dissertation builds a cohort of claims that includes the ones that went nowhere, asks which claims elites selected and whether laundered versions were selected more, and tests experimentally whether hiding a claim's origin raises political acceptability more than it raises belief.
+## 01 // Active files
 
-## Status
+::: {.panels}
+::: {.panel}
+<span class="idx">FILE 01 &nbsp;·&nbsp; DISSERTATION</span>
+[Political authority of conspiratorial claims](research/index.qmd){.t}
 
-| Milestone | Target | State |
-|---|---|---|
-| Gap paper (POLS 8860) | Sept 2026 | drafted |
-| Prospectus | end Oct 2026 | in progress |
-| Pilot cohort (Sept–Oct 2024 window) | Nov 2026–Jan 2027 | not started |
-| Acceptance-measure pretest | spring 2027 | not started |
+Three empirical chapters sharing one claim database: a cohort that includes the claims that went nowhere, a model of elite selection, and a randomized test of attributed origin.
+:::
 
-## Read next
+::: {.panel}
+<span class="idx">FILE 02 &nbsp;·&nbsp; THEORY</span>
+[Gap in the literature](theory/gap-summary.qmd){.t}
 
-- [Theory: the gap in the literature](theory/gap-summary.qmd)
-- [Transmission framework: methods by stage](theory/transmission-framework.qmd)
-- [Design: codebook, sampling rule, falsification table](design/index.qmd)
-- [Data: what exists and where it lives](data/index.qmd)
-- [Weekly log](notes/index.qmd)
+What the field has established at each stage of transmission, what competes with the model, and the narrow thing that remains untested.
+:::
+
+::: {.panel}
+<span class="idx">FILE 03 &nbsp;·&nbsp; METHOD</span>
+[Transmission framework](theory/transmission-framework.qmd){.t}
+
+Four stages as hypotheses, three routes into the intermediary, laundering decomposed into separable transformations, and the conditions under which each claim fails.
+:::
+
+::: {.panel}
+<span class="idx">FILE 04 &nbsp;·&nbsp; LOG</span>
+[Working log](notes/index.qmd){.t}
+
+Decisions, dead ends, and what changed each week. Kept in the open.
+:::
+:::
+
+## 02 // Interests
+
+| Area | Detail |
+|---|---|
+| Substantive | Conspiracy theories and political elites; fringe and alternative media; legitimacy and political norms |
+| Methods | Computational text analysis; claim-level corpus construction; survey experiments; event-history models |
+| Regional | United States; Gulf authoritarian politics |
+
+## 03 // Contact
+
+Department of Political Science, Georgia State University, Atlanta.  
+Correspondence and the current CV are on the [record](site/cv.qmd) page.

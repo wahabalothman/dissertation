@@ -2,6 +2,10 @@
 title: "Transmission framework: theory and methods by stage"
 ---
 
+::: {.callout-warning appearance="simple"}
+**PLACEHOLDER.** Drafted with AI assistance and not yet written or verified by me. To be rewritten.
+:::
+
 ::: {.callout-note}
 The four diagrams are in the [figure version](transmission-framework-figures.html) of this memo. This page carries the text.
 :::

@@ -1,8 +1,322 @@
 /*-- scss:defaults --*/
-$font-family-sans-serif: Georgia, "Times New Roman", serif;
-$body-color: #1f1e1b;
-$link-color: #534ab7;
-$navbar-bg: #fbfaf7;
-$navbar-fg: #1f1e1b;
+
+$font-family-sans-serif: "IBM Plex Sans", -apple-system, "Segoe UI", Arial, sans-serif;
+$font-family-monospace: "IBM Plex Mono", ui-monospace, "Courier New", monospace;
+
+$black:        #0a0a0a;
+$body-bg:      #101010;
+$panel-bg:     #161616;
+$body-color:   #cfcac0;
+$dim:          #8b8579;
+$rule:         #2a2a28;
+$rule-strong:  #3d3d39;
+$amber:        #c9a227;
+$amber-bright: #e3bb3d;
+$green:        #7f9a5c;
+$red:          #a8442e;
+
+$link-color:      $amber;
+$link-hover-color: $amber-bright;
+$body-secondary:  $dim;
+
+$navbar-bg: $black;
+$navbar-fg: $body-color;
+$navbar-hl: $amber;
+
+$font-size-root: 16px;
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+
+$toc-color: $dim;
+$toc-active-border: $amber;
+
 /*-- scss:rules --*/
-h1, h2, h3 { font-weight: 600; }
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+* { border-radius: 0 !important; box-shadow: none !important; }
+
+body {
+  background: $body-bg;
+  color: $body-color;
+  font-size: 16px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- classification strip ---------- */
+body::before {
+  content: "WORKING DRAFT // RESEARCH IN PROGRESS // NOT FOR CITATION";
+  display: block;
+  background: $black;
+  color: $amber;
+  font-family: $font-family-monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-align: center;
+  padding: 5px 8px 4px;
+  border-bottom: 1px solid $rule;
+}
+
+/* ---------- navbar ---------- */
+.navbar {
+  background: $black !important;
+  border-bottom: 1px solid $rule;
+  padding: 0;
+  min-height: 0;
+}
+.navbar-brand {
+  font-family: $font-family-monospace;
+  font-size: 13px !important;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $body-color !important;
+  padding: 14px 0 13px;
+  margin-right: 40px;
+}
+.navbar-brand:hover { color: $amber !important; }
+.navbar-nav .nav-link {
+  font-family: $font-family-monospace;
+  font-size: 11px !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $dim !important;
+  padding: 15px 16px 13px !important;
+  border-bottom: 2px solid transparent;
+}
+.navbar-nav .nav-link:hover { color: $body-color !important; background: #161616; }
+.navbar-nav .nav-link.active {
+  color: $amber !important;
+  border-bottom-color: $amber;
+  background: transparent;
+}
+.navbar .quarto-navbar-tools a { color: $dim !important; }
+
+/* ---------- layout ---------- */
+main.content { padding-top: 2.6rem; padding-bottom: 5rem; max-width: 46rem; }
+#quarto-content > * { padding-top: 0; }
+
+/* ---------- headings ---------- */
+h1, h2, h3, h4 {
+  font-family: $font-family-sans-serif;
+  color: #efeadf;
+  letter-spacing: -0.005em;
+  font-weight: 600;
+}
+h1.title {
+  font-size: 1.55rem;
+  line-height: 1.25;
+  font-weight: 600;
+  margin-bottom: .35rem;
+  padding-bottom: 0;
+  border: 0;
+}
+.subtitle, p.subtitle {
+  font-family: $font-family-monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $dim;
+  margin-bottom: 1.6rem;
+}
+#title-block-header {
+  border-bottom: 1px solid $rule;
+  padding-bottom: 1.1rem;
+  margin-bottom: 2rem;
+}
+h2 {
+  font-size: 1.02rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: $amber;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: .45rem;
+  border-bottom: 1px solid $rule;
+  font-weight: 600;
+}
+h3 {
+  font-size: .95rem;
+  margin-top: 2rem;
+  margin-bottom: .6rem;
+  color: #efeadf;
+}
+
+/* ---------- text ---------- */
+p { margin-bottom: 1.05rem; }
+a { text-decoration: none; border-bottom: 1px solid rgba(201,162,39,.35); }
+a:hover { border-bottom-color: $amber-bright; }
+strong { color: #efeadf; font-weight: 600; }
+hr { border-top: 1px solid $rule; opacity: 1; margin: 2.5rem 0; }
+ul, ol { margin-bottom: 1.05rem; }
+li { margin-bottom: .3rem; }
+blockquote {
+  border-left: 2px solid $amber;
+  padding: .2rem 0 .2rem 1.1rem;
+  margin-left: 0;
+  color: $dim;
+  font-size: .95rem;
+}
+
+/* ---------- tables: data readout ---------- */
+table {
+  width: 100%;
+  font-size: .875rem;
+  border-collapse: collapse;
+  margin: 1.4rem 0 1.8rem;
+  font-variant-numeric: tabular-nums;
+}
+thead th {
+  font-family: $font-family-monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $dim;
+  text-align: left;
+  padding: 0 .9rem .5rem 0;
+  border-bottom: 1px solid $rule-strong;
+}
+tbody td {
+  padding: .55rem .9rem .55rem 0;
+  border-bottom: 1px solid $rule;
+  vertical-align: top;
+  line-height: 1.5;
+}
+tbody tr:hover td { background: #151515; }
+td code, th code { background: transparent; color: $green; }
+
+/* ---------- code ---------- */
+code {
+  font-family: $font-family-monospace;
+  font-size: .86em;
+  color: $green;
+  background: #1a1a18;
+  padding: .08em .32em;
+}
+pre {
+  background: #0d0d0d;
+  border: 1px solid $rule;
+  border-left: 2px solid $rule-strong;
+  padding: .9rem 1rem;
+  font-size: .82rem;
+}
+pre code { background: transparent; padding: 0; }
+
+/* ---------- document control block (reusable) ---------- */
+.docblock {
+  border: 1px solid $rule;
+  background: $panel-bg;
+  padding: .9rem 1.1rem;
+  margin: 0 0 2.2rem;
+  font-family: $font-family-monospace;
+  font-size: 11.5px;
+  line-height: 1.85;
+  color: $dim;
+}
+.docblock .k {
+  display: inline-block;
+  min-width: 8.5rem;
+  color: #6f6a60;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+.docblock .v { color: $body-color; }
+.docblock .v.ok { color: $green; }
+.docblock .v.pending { color: $amber; }
+
+/* ---------- index panels ---------- */
+.panels { margin: 2rem 0 0; }
+.panel {
+  border: 1px solid $rule;
+  border-left: 2px solid $rule-strong;
+  padding: 1rem 1.15rem 1.05rem;
+  margin-bottom: -1px;
+  background: transparent;
+  transition: background .12s ease, border-left-color .12s ease;
+}
+.panel:hover { background: $panel-bg; border-left-color: $amber; }
+.panel .idx {
+  font-family: $font-family-monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: #6f6a60;
+  display: block;
+  margin-bottom: .35rem;
+}
+.panel a.t {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #efeadf;
+  border: 0;
+  display: block;
+  margin-bottom: .3rem;
+}
+.panel:hover a.t { color: $amber; }
+.panel p { font-size: .875rem; color: $dim; margin: 0; line-height: 1.55; }
+
+/* ---------- lede ---------- */
+.lede {
+  font-size: 1.06rem;
+  line-height: 1.66;
+  color: #ddd8cd;
+  border-left: 2px solid $amber;
+  padding-left: 1.15rem;
+  margin: 0 0 2rem;
+}
+
+/* ---------- callouts ---------- */
+.callout { border: 1px solid $rule !important; background: $panel-bg !important; }
+.callout .callout-title { background: transparent !important; border-bottom: 1px solid $rule; }
+.callout-body { font-size: .9rem; }
+
+/* ---------- TOC ---------- */
+#TOC, .sidebar nav[role=doc-toc] { font-family: $font-family-monospace; font-size: 10.5px; }
+nav[role=doc-toc] > h2, .sidebar-title {
+  font-family: $font-family-monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6f6a60;
+  border: 0;
+  margin-bottom: .7rem;
+}
+nav[role=doc-toc] ul li a {
+  border: 0;
+  color: $dim;
+  letter-spacing: 0.06em;
+  padding: .18rem 0;
+  text-transform: uppercase;
+  font-size: 10.5px;
+}
+nav[role=doc-toc] ul li a:hover,
+nav[role=doc-toc] ul li a.active { color: $amber; }
+
+/* ---------- footer ---------- */
+.nav-footer {
+  background: $black;
+  border-top: 1px solid $rule;
+  color: #6f6a60;
+  font-family: $font-family-monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1.4rem 0;
+  margin-top: 4rem;
+}
+.nav-footer a { color: #6f6a60; border: 0; }
+.nav-footer a:hover { color: $amber; }
+
+/* ---------- listing (log) ---------- */
+.quarto-listing table { font-size: .875rem; }
+.listing-date {
+  font-family: $font-family-monospace;
+  font-size: 11px;
+  color: $dim;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
