@@ -73,6 +73,22 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+/* Decide the effects flag before first paint. The OS "reduce motion" setting
+   picks the default; the system-tray toggle overrides it and is remembered. */
+(function(){
+  var on;
+  try{
+    var saved = localStorage.getItem("fx");
+    on = saved === null
+       ? !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+       : saved === "on";
+  }catch(e){
+    on = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+  document.documentElement.dataset.fx = on ? "on" : "off";
+})();
+</script>
 
 
 </head>
