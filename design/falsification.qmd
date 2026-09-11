@@ -1,0 +1,10 @@
+---
+title: "Falsification table"
+---
+
+| Test | Prediction if the theory is right | Result that forces revision | Uninformative result |
+|---|---|---|---|
+| 0. Provenance cues exist in elite rhetoric | "People are saying" attaches disproportionately to claims with traceable fringe origin | Elites rarely assert provenance | Corpus too small to count |
+| 1. Allegation survives | Adopted claims keep conspirators/action/purpose across tiers | Elites mostly adopt rebuilt allegations | Coders cannot agree on "same allegation" |
+| 2. Source obscured predicts adoption | Positive coefficient on "source-obscured version exists," holding survival constant | Precise null or negative | Noisy null on few adoption events |
+| 3. Obscuring moves acceptance more than belief | Wording × disclosure interaction on acceptance; belief within equivalence margin | Acceptance and belief move together; or disclosure has no effect | Nonsignificant belief result with wide interval |

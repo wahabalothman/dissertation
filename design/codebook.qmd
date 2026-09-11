@@ -1,0 +1,30 @@
+---
+title: "Codebook (v0.1, draft)"
+---
+
+## Case definition
+
+A passage counts as a **conspiratorial claim** if it asserts that identifiable actors are secretly coordinating an action for a hidden purpose. Excluded: allegations of incompetence without coordination; ordinary rumor without a covert actor; policy criticism.
+
+## Unit
+
+The **claim variant**: (alleged conspirators, covert action, target, stated purpose, evidence offered). A change in conspirators, action, or purpose creates a new variant with a recorded parent.
+
+## Fields coded per occurrence
+
+| Field | Values | Notes |
+|---|---|---|
+| Tier | fringe / intermediary / elite | Source role, fixed before coding |
+| Timestamp | ISO datetime; recording vs. upload noted | Retain uncertainty |
+| Speaker identity | account / host / guest / writer / pseudonym | For the personnel route |
+| Stance | endorse / raise as concern / neutral quote / reject | Adoption = endorse or raise-as-concern only |
+| Asserted provenance | named fringe source / "people are saying" / anonymous reports / constituents / expert / other elite / none | Transformation C |
+| Wording register | explicit / coded / euphemistic; stigmatized terms present (0/1) | Transformation A |
+| Messenger | same actor as prior occurrence / new actor | Transformation B |
+| Constituency frame | present / absent | Responsiveness justification |
+| Evidence of transmission | explicit citation / link or screenshot / distinctive borrowed detail / chronology only | Sequence is not borrowing |
+| Exact span | quoted text or audio time | Required for every coded field |
+
+## Reliability plan
+
+Two coders on a 300-passage subsample; report Krippendorff's alpha for stance and same-allegation judgments; freeze rules before the held-out evaluation set.

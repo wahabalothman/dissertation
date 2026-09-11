@@ -1,0 +1,21 @@
+---
+title: "Week 37: gap paper, design memos, data inventory"
+date: 2026-09-11
+---
+
+## Decisions
+- Four-stage sequence is a hypothesis, not a frame. Elite-first and joint-production cases enter the cohort.
+- Laundering coded as three separable transformations: wording, messenger, attributed origin. Allegation-altered is a fourth code, not laundering.
+- Pilot window: 1 Sept to 15 Oct 2024. No scraping, no transcription: USC Telegram + 4plebs (fringe); Tenet transcripts + YouTube captions (intermediary); Truth Social dataset + Factba.se (elite).
+- Experiment is a separate chapter; computational cohort is the core.
+- Repository + Quarto site is the workspace. Raw data lives in a bucket, never in the repo.
+
+## Done
+- Gap paper drafted and revised against three rounds of feedback.
+- Transmission framework memo with diagrams.
+- Data inventory: existing 2024 datasets cover three of four tiers.
+
+## Open
+- Verify: Jin & Huang (ICLR 2026); Consoli et al. (Scientific Data); Corso et al. (ACL 2025).
+- Email Bolsen re: student pool pretest, TESS, committee.
+- Ask DGS about GSU research computing.

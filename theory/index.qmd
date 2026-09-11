@@ -1,0 +1,16 @@
+---
+title: "Theory"
+---
+
+Two documents anchor the project.
+
+1. **[The gap in the literature](gap-summary.qmd)**: what the field has established at each stage, what competes with the model, and what remains untested.
+2. **[Transmission framework](transmission-framework.qmd)**: the four stages as hypotheses, three routes into the intermediary, the decomposition of laundering, the cohort logic, and the falsification table.
+
+### Mechanism, rivals, and disconfirmation
+
+**Mechanism.** Attributing a claim to grassroots origin lowers the reputational cost of advancing it, for elites and for the citizens who tolerate them, by signaling that the claim is already socially validated and that endorsing it is responsiveness rather than invention.
+
+**Rivals.** *Persuasion*: attribution moves acceptance only through belief. *Partisan usefulness*: acceptance tracks what the claim does for the respondent's side regardless of attribution. *Authenticity* (Hahl, Kim & Zuckerman Sivan 2018): a lying elite reads as authentic to voters who see the system as illegitimate. *Responsiveness without concealment*: "I'm responding to constituents" works even when the fringe source is fully visible.
+
+**What would force revision.** A null on the grassroots-vs-elite origin contrast with adequate power; acceptance and belief moving together with a direct test of the difference null; a corpus in which elites rarely assert provenance at all.

@@ -1,0 +1,5 @@
+---
+title: "Data"
+---
+
+Raw data never lives in this repository. It lives in the storage bucket listed in the [manifest](manifest.qmd); the repo holds derived tables small enough to version and the scripts that produce them. The [coverage log](coverage-log.qmd) records what each source does and does not contain for the study window.

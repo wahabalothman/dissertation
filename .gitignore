@@ -1,0 +1,11 @@
+_site/
+.quarto/
+data/raw/
+data/derived/*.parquet
+analysis/**/output/*
+!analysis/**/output/*.csv
+.Rhistory
+.Rproj.user/
+__pycache__/
+.env
+*.log

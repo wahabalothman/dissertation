@@ -1,0 +1,9 @@
+---
+title: "Coverage log"
+---
+
+One entry per source per window. Record: date range actually present, known gaps, keyword seeding (if the dataset was built from search terms), language filters applied, and retrieval date.
+
+| Source | Window present | Known gaps | Seeded by keywords? | Retrieved |
+|---|---|---|---|---|
+| (fill in) | | | | |

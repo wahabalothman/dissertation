@@ -1,0 +1,13 @@
+---
+title: "Research design"
+---
+
+Three empirical chapters sharing one database.
+
+| Chapter | Question | Method | Data |
+|---|---|---|---|
+| 1. Claim cohort | What happens to allegations between fringe and elite? | Outcome-independent enumeration; claim-tuple coding; transformation coding (wording, messenger, attributed origin) | Telegram (USC 2024), /pol/ (4plebs), podcast transcripts, Truth Social, Factba.se |
+| 2. Elite selection | Why these claims and not others? | Discrete-time event history (claim × elite × week); paired process tracing of adopted vs. stalled cases | Same database |
+| 3. Provenance experiment | Does attributed origin change acceptability independent of belief? | 2×2 (wording × source disclosed), preregistered; acceptance and belief measured separately | Student-pool pretest; TESS or quota sample for confirmatory |
+
+Pages: [Codebook](codebook.qmd) · [Sampling rule](sampling-rule.qmd) · [Falsification table](falsification.qmd)

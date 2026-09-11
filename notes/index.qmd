@@ -1,0 +1,10 @@
+---
+title: "Weekly log"
+listing:
+  contents: "20*.qmd"
+  sort: "date desc"
+  type: table
+  fields: [date, title]
+---
+
+One file per week. Decisions go under a **Decisions** heading so they can be found later; everything else is scratch.

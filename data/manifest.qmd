@@ -1,0 +1,16 @@
+---
+title: "Data manifest"
+---
+
+| Tier | Dataset | Coverage | Access | Location | Status |
+|---|---|---|---|---|---|
+| Fringe | USC Telegram 2024 election dataset (Blas, Luceri & Ferrara) | 30k+ chats, 500M+ messages, 2024 | GitHub, CC-BY | bucket:/raw/telegram-usc-2024/ | not downloaded |
+| Fringe | 4plebs /pol/ archive | continuous | public API | bucket:/raw/pol-4plebs/ | not pulled |
+| Intermediary | Tenet Media corpus (Kurek et al.) | 560 videos, Nov 2023 to Sep 2024, transcribed | Zenodo | bucket:/raw/tenet/ | not downloaded |
+| Intermediary | YouTube auto-captions, two shows | window | yt-dlp | bucket:/raw/captions/ | not pulled |
+| Elite | Truth Social 2024 (Shah et al.) | 1.5M posts, Feb to Oct 2024 | GitHub | bucket:/raw/truthsocial-usc-2024/ | not downloaded |
+| Elite | Factba.se transcripts | Trump/Vance speech | web export | bucket:/raw/factbase/ | not pulled |
+| Elite | Congressional Record | complete | govinfo API | bucket:/raw/congrec/ | optional |
+| Skip | USC X 2024 (tweet IDs) | needs hydration | none | none | skipped |
+
+Precedent to read before touching Truth Social data: arXiv 2601.04631, "Beyond the 'Truth': Investigating Election Rumors on Truth Social During the 2024 Election."

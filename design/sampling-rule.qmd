@@ -1,0 +1,15 @@
+---
+title: "Sampling rule (draft, to preregister)"
+---
+
+**Window:** 1 September to 15 October 2024.
+
+**Fringe sources:** (a) the 500 most central English-language chats in the USC Telegram 2024 dataset, by the authors' chat-network centrality; (b) /pol/ via the 4plebs archive.
+
+**Enumeration:** for each week in the window, draw a random sample of *n* threads from /pol/ and *n* messages from the selected Telegram chats. Apply the case definition to every sampled passage. Deduplicate into claim variants. Record sampling probabilities.
+
+**Elite-first claims:** apply the same case definition to a random sample of Trump Truth Social posts and Factba.se transcripts in the window; enroll qualifying claims in a separate elite cohort. Do not pool the two cohorts.
+
+**Follow-up:** search every enrolled claim across the intermediary corpus (Tenet transcripts; YouTube auto-captions for two named shows) and the elite corpus (Truth Social, Factba.se, Congressional Record) through 15 November 2024. Record: first qualifying appearance per tier; "no appearance in complete coverage"; "coverage incomplete"; "censored at end of follow-up."
+
+**Decision gates (pilot):** at least 40 claim variants enumerated; second-coder agreement on same-allegation judgments acceptable; count of elite adoption events reported before any modeling decision.

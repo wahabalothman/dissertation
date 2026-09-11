@@ -1,0 +1,29 @@
+---
+title: "How conspiratorial claims acquire political authority"
+subtitle: "A dissertation in progress · Political Science, Georgia State University"
+---
+
+## The question
+
+Which conspiratorial allegations circulating on fringe platforms are taken up by U.S. political elites, what do intermediaries (podcasts, alt-video, cable) do to those allegations on the way, and does a claim's attributed origin change whether the public accepts a politician using it?
+
+## The argument, in one paragraph
+
+Allegations leave the fringe carrying a stigma. Somewhere between an imageboard and a debate stage the stigma comes off: the wording is recoded, the messenger changes, and the source is replaced by "people are saying." I call this laundering and treat it as a mechanism to test, not a label. The dissertation builds a cohort of claims that includes the ones that went nowhere, asks which claims elites selected and whether laundered versions were selected more, and tests experimentally whether hiding a claim's origin raises political acceptability more than it raises belief.
+
+## Status
+
+| Milestone | Target | State |
+|---|---|---|
+| Gap paper (POLS 8860) | Sept 2026 | drafted |
+| Prospectus | end Oct 2026 | in progress |
+| Pilot cohort (Sept–Oct 2024 window) | Nov 2026–Jan 2027 | not started |
+| Acceptance-measure pretest | spring 2027 | not started |
+
+## Read next
+
+- [Theory: the gap in the literature](theory/gap-summary.qmd)
+- [Transmission framework: methods by stage](theory/transmission-framework.qmd)
+- [Design: codebook, sampling rule, falsification table](design/index.qmd)
+- [Data: what exists and where it lives](data/index.qmd)
+- [Weekly log](notes/index.qmd)
