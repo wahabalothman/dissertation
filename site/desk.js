@@ -23,7 +23,7 @@
     if(!wide()){ plane.style.left = ""; plane.style.top = ""; return; }
     var d = desk.getBoundingClientRect();
     plane.style.left = Math.max(100, Math.round((d.width - 1000) / 2)) + "px";
-    plane.style.top  = Math.max(10, Math.min(Math.round((d.height - 660) / 2), 110)) + "px";
+    plane.style.top  = Math.max(10, Math.min(Math.round((d.height - 690) / 2), 110)) + "px";
   }
 
   /* ── focus / z-order ── */
@@ -270,6 +270,50 @@
       else paint(false);
     }, 3200);
   }
+
+  /* ═══════════ pilot status ═══════════
+     Single source of truth is site/pilot.json — edit that one file (or have
+     the pilot's own tooling write it) and this window follows. */
+  var LABEL = {done:"DONE", running:"RUNNING", pending:"PENDING", blocked:"BLOCKED"};
+  function fmt(d){
+    return d.getUTCDate() + " " +
+      ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"][d.getUTCMonth()];
+  }
+  function paintPilot(p){
+    var rows = document.getElementById("p-rows");
+    if(!rows || !p || !p.steps) return;
+    var start = new Date(p.start + "T00:00:00Z");
+    var week  = Math.floor((Date.now() - start.getTime()) / 604800000) + 1;
+    var live  = week >= 1 && week <= p.steps.length;
+
+    var when = document.getElementById("p-when");
+    if(when) when.textContent = fmt(start) + " – " + fmt(new Date(p.end + "T00:00:00Z")) + " " +
+      new Date(p.end + "T00:00:00Z").getUTCFullYear();
+    var wk = document.getElementById("p-week");
+    if(wk) wk.innerHTML = live ? ("week <b>" + week + "</b> of " + p.steps.length)
+         : (week < 1 ? "begins <b>" + fmt(start) + "</b>" : "<b>complete</b>");
+    var upd = document.getElementById("p-upd");
+    if(upd) upd.textContent = p.updated;
+
+    rows.textContent = "";
+    p.steps.forEach(function(s){
+      var tr = document.createElement("tr");
+      if(live && s.w === week) tr.className = "now";
+      var a = document.createElement("td"); a.className = "w"; a.textContent = s.w;
+      var b = document.createElement("td"); b.textContent = s.work; b.title = "Gate: " + s.gate;
+      var c = document.createElement("td"); c.className = "k";
+      c.dataset.s = s.status; c.textContent = LABEL[s.status] || s.status.toUpperCase();
+      tr.appendChild(a); tr.appendChild(b); tr.appendChild(c);
+      rows.appendChild(tr);
+    });
+  }
+  fetch("/site/pilot.json", {cache:"no-cache"})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(paintPilot)
+    .catch(function(){
+      var rows = document.getElementById("p-rows");
+      if(rows) rows.innerHTML = '<tr><td class="w">—</td><td>schedule unavailable</td><td class="k"></td></tr>';
+    });
 
   /* ═══════════ easter egg: share the claim, catch the claim ═══════════
      Triggered by the one control on the page that begs to be clicked. */
