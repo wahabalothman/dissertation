@@ -130,6 +130,23 @@ nav[role=doc-toc] a{color:#0000cc;text-decoration:none}
 .rec .v{display:inline-block;font:bold 11px var(--ui);color:#000}
 .rec .v.hot{color:#8f1d14}
 
+/* wide comparison tables scroll in their own box instead of bursting the window */
+.wrap{overflow-x:auto;margin:10px 0}
+.wrap table{margin:0;min-width:660px}
+
+/* document header block — the same key/value shape as .rec */
+.docblock{background:var(--paper);padding:7px 10px;margin:12px 0;
+  border:2px solid;border-color:var(--md) var(--lt) var(--lt) var(--md)}
+.docblock p{margin:0;font:11px/2 var(--ui)}
+.docblock .k{display:inline-block;width:134px;color:#555;font:11px var(--ui)}
+.docblock .v{display:inline-block;font:bold 11px var(--ui);color:#000}
+.docblock .v.hot{color:#8f1d14}
+.docblock .v.pending{color:#6f6224;font-weight:400;font-style:italic}
+
+.wake{margin:18px 0 10px;text-align:center;text-transform:uppercase;color:#c0392b;
+  font:bold 30px/1 "Archivo Black",Impact,var(--ui);letter-spacing:.06em;
+  text-shadow:0 2px 0 rgba(0,0,0,.5)}
+
 /* the evidence board */
 .board{position:relative;margin:18px 0;padding:20px 18px 24px;color:#c8c2b6;
   background:
@@ -184,11 +201,11 @@ body:has(#desk) #quarto-content{
   background:none;border:0;box-shadow:none;max-width:none;margin:0;padding:0;color:inherit}
 body:has(#desk) main.content > *{margin-left:0;margin-right:0}
 
-#desk{position:relative;min-height:max(626px,calc(100vh - var(--bar)));
+#desk{position:relative;min-height:max(700px,calc(100vh - var(--bar)));
   padding:10px 16px var(--bar);overflow:hidden}
 
 /* the window cluster travels as one group and centres on wide screens */
-#plane{position:absolute;left:100px;top:16px;width:1000px;height:660px;z-index:2}
+#plane{position:absolute;left:100px;top:16px;width:1000px;height:690px;z-index:2}
 
 /* ── desktop icons ── */
 #icons{position:absolute;left:14px;top:14px;width:76px;display:flex;flex-direction:column;gap:4px;z-index:3}
@@ -333,8 +350,30 @@ button#f-share:hover{background:var(--red3);animation:none}
 @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 #w-feed .sb i.warn{color:#6b1f1f}
 
+/* ── PILOT: the one window on this desktop that is played straight ── */
+#w-pilot{left:0;top:483px;width:392px}
+#w-pilot .body{padding:3px;background:var(--face);overflow-x:auto}
+#w-pilot .hdr{display:flex;justify-content:space-between;gap:8px;padding:3px 5px 5px;
+  font:11px var(--ui);color:#333}
+#w-pilot .hdr b{color:#000}
+table.pl{width:100%;border-collapse:collapse;font:11px var(--ui);margin:0;background:var(--paper);
+  border:2px solid;border-color:var(--md) var(--lt) var(--lt) var(--md)}
+table.pl th{font-weight:400;text-align:left;padding:2px 5px;background:var(--face);
+  border:1px solid;border-color:var(--lt) var(--md) var(--md) var(--lt);white-space:nowrap}
+table.pl td{padding:2px 5px;border-bottom:1px solid #edeae3;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+table.pl td:nth-child(2){max-width:0}
+table.pl td.w{width:26px;color:#555;font-variant-numeric:tabular-nums}
+table.pl td.k{font:bold 10px var(--ui);letter-spacing:.03em;text-align:right;width:64px;white-space:nowrap}
+table.pl tr.now td{background:#eef3fb}
+table.pl tr.now td.w{font-weight:700;color:#0a246a}
+td.k[data-s="done"]{color:#1f6b2f}
+td.k[data-s="running"]{color:#0a246a}
+td.k[data-s="pending"]{color:#7a7a7a}
+td.k[data-s="blocked"]{color:#8f1d14}
+
 /* ── Notepad ── */
-#w-note{left:14px;top:236px;width:360px}
+#w-note{left:14px;top:258px;width:360px}
 #w-note .pad{background:var(--paper);margin:2px;padding:6px 7px;height:134px;overflow:auto;
   border:2px solid;border-color:var(--md) var(--lt) var(--lt) var(--md);
   font:11px/1.52 var(--ui);color:#000}
