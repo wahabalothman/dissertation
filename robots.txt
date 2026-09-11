@@ -1,1 +1,1 @@
-Sitemap: https://wahabalothman.github.io/dissertation/sitemap.xml
+Sitemap: https://wahabalothman.github.io/sitemap.xml
