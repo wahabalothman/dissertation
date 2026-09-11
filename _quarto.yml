@@ -16,13 +16,14 @@ website:
         text: Record
   page-footer:
     left: "A. AL-OTHMAN &nbsp;·&nbsp; العثمان"
-    right: "2026"
+    right: "working draft"
 
 format:
   html:
-    theme: [darkly, site/custom.scss]
+    theme: [default, site/custom.scss]
     toc: true
     toc-depth: 2
     toc-title: "Contents"
     anchor-sections: false
+    include-after-body: site/assistant.html
     code-fold: true

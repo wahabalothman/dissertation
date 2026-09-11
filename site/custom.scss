@@ -1,177 +1,121 @@
 /*-- scss:defaults --*/
-$font-family-sans-serif: Tahoma, Verdana, "Segoe UI", Geneva, sans-serif;
-$font-family-monospace: "DejaVu Sans Mono", Consolas, "Courier New", monospace;
-
-$body-bg: #0b0b0c;
-$panel: #141416;
-$panel-hi: #1c1c1f;
-$ink: #d6d2c8;
-$dim: #85807a;
-$rule: #2b2b2f;
-$bevel-lt: #3a3a40;
-$bevel-dk: #08080a;
-$amber: #d4a017;
-$gold: #e8c25a;
-$green: #6f9c4a;
-$blood: #8f1d14;
-$navbar-bg: #0e0e10;
-$navbar-fg: $ink;
-$navbar-hl: $amber;
-$link-color: $gold;
+$font-family-sans-serif: Tahoma, Verdana, "Segoe UI", sans-serif;
+$font-family-monospace: "Courier New", monospace;
+$body-bg: #12384f;
+$body-color: #000;
+$link-color: #0000cc;
 $border-radius: 0;
+$navbar-bg: #d4d0c8;
 
 /*-- scss:rules --*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap');
 
-*{border-radius:0!important;box-shadow:none!important}
-html{scrollbar-color:#3a3a40 #0b0b0c}
-body{background:$body-bg;color:$ink;font-size:13.5px;line-height:1.6}
-
-/* ============ top bar: bilingual, beveled ============ */
-body::before{
-  content:"وثائق // DOCUMENTS  ·  أرشيف // ARCHIVE  ·  غير مصنف // UNCLASSIFIED";
-  display:block;background:#111113;color:$dim;
-  font-family:"Noto Kufi Arabic",$font-family-monospace;
-  font-size:10px;letter-spacing:.1em;padding:4px 14px;
-  border-bottom:1px solid $bevel-dk;border-top:1px solid $bevel-lt;
+*{border-radius:0!important}
+body{
+  background:#12384f;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 22%,rgba(110,180,220,.26),transparent 62%),
+    repeating-linear-gradient(135deg,rgba(255,255,255,.022) 0 2px,transparent 2px 7px),
+    linear-gradient(#123a52,#0a2233 68%,#061620);
+  background-attachment:fixed;
+  font:12px Tahoma,Verdana,sans-serif;
+  min-height:100vh;
+  padding:0 0 60px;
 }
 
-/* ============ marquee crawl ============ */
-.crawl{
-  background:#1a0d0c;border-top:1px solid #451a15;border-bottom:1px solid #451a15;
-  overflow:hidden;white-space:nowrap;padding:5px 0;margin:0 0 1.6rem;
-  font-family:$font-family-monospace;font-size:11px;color:#c98a80;letter-spacing:.08em;
+/* ── the page is a window ── */
+main.content, #quarto-content > main{
+  background:#d4d0c8;
+  border:2px solid; border-color:#fff #3a3a3a #3a3a3a #fff;
+  box-shadow:3px 3px 0 rgba(0,0,0,.45);
+  max-width:860px; margin:22px auto 0; padding:0 0 14px;
+  color:#000;
 }
-.crawl span{display:inline-block;padding-left:100%;animation:crawl 38s linear infinite}
-@keyframes crawl{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
-@media(prefers-reduced-motion:reduce){.crawl span{animation:none;padding-left:0}}
-
-/* ============ navbar: forum tabs ============ */
-.navbar{background:#0e0e10!important;border-bottom:2px solid $bevel-dk;padding:0;min-height:0}
-.navbar-brand{
-  font-family:$font-family-monospace;font-size:12px;font-weight:700;letter-spacing:.22em;
-  text-transform:uppercase;color:$ink!important;padding:9px 14px;margin:0 18px 0 0;
-  border-right:1px solid $rule;
+#title-block-header{
+  background:linear-gradient(90deg,#0a246a,#3a6ea5 60%,#5a8ec5);
+  color:#fff; padding:3px 6px; margin:0 0 10px; border-bottom:1px solid #3a3a3a;
 }
-.navbar-nav .nav-link{
-  font-family:$font-family-monospace;font-size:11px!important;letter-spacing:.13em;
-  text-transform:uppercase;color:$dim!important;padding:9px 14px!important;
-  border-left:1px solid $bevel-dk;border-right:1px solid $bevel-dk;
-}
-.navbar-nav .nav-link:hover{color:$ink!important;background:$panel-hi}
-.navbar-nav .nav-link.active{color:#000!important;background:$amber;font-weight:700}
+h1.title{font:bold 11px Tahoma!important;color:#fff;margin:0;letter-spacing:.01em}
+.subtitle{font-family:"Noto Kufi Arabic",sans-serif;font-size:10px;color:#d6e0ee;margin:0}
+main.content > *:not(#title-block-header){margin-left:14px;margin-right:14px}
 
-/* ============ layout ============ */
-main.content{max-width:44rem;padding:1.6rem 0 5rem}
+/* ── navbar as menu bar ── */
+.navbar{background:#d4d0c8!important;border:0;border-bottom:1px solid #9a9a9a;padding:0;min-height:0}
+.navbar-brand{font:bold 11px Tahoma!important;color:#000!important;padding:3px 10px 3px 6px;margin:0;border-right:1px solid #9a9a9a}
+.navbar-nav .nav-link{font:11px Tahoma!important;color:#000!important;padding:3px 11px!important}
+.navbar-nav .nav-link:hover{background:#0a246a;color:#fff!important}
+.navbar-nav .nav-link.active{background:#0a246a;color:#fff!important}
 
-/* ============ headings ============ */
-h1,h2,h3{font-family:$font-family-sans-serif;font-weight:700;color:#efeadf}
-h1.title{font-size:1.5rem;letter-spacing:-.01em;margin:0 0 .2rem}
-.subtitle{font-family:$font-family-monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:$dim}
-#title-block-header{border-bottom:2px solid $rule;padding-bottom:.8rem;margin-bottom:1.6rem}
-h2{
-  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:$dim;
-  background:$panel;border:1px solid $bevel-dk;border-top-color:$bevel-lt;
-  padding:6px 10px;margin:2.6rem 0 1rem;font-weight:700;
-}
-h3{font-size:.95rem;margin:1.8rem 0 .5rem;color:#efeadf}
+/* ── type ── */
+h2{font:bold 12px Tahoma;color:#000;margin:20px 0 7px;padding:2px 6px;
+  background:#d4d0c8;border:1px solid;border-color:#fff #808080 #808080 #fff}
+h3{font:bold 11px Tahoma;margin:14px 0 5px}
+p,li{font:11px Tahoma;line-height:1.6;color:#000}
+a{color:#0000cc}
+a:visited{color:#551a8b}
+hr{border-top:1px solid #808080;border-bottom:1px solid #fff;opacity:1;margin:16px 0}
+blockquote{border-left:3px solid #808080;padding-left:10px;margin-left:0;color:#333}
 
-/* ============ text ============ */
-a{color:$gold;text-decoration:none;border-bottom:1px dotted rgba(232,194,90,.4)}
-a:hover{border-bottom-style:solid}
-hr{border-top:1px solid $rule;opacity:1;margin:2rem 0}
-strong{color:#efeadf}
-blockquote{border-left:3px solid $amber;padding-left:1rem;color:$dim;margin-left:0}
+/* ── tables ── */
+table{width:100%;border-collapse:collapse;font:11px Tahoma;margin:10px 0 14px;
+  background:#fff;border:2px solid;border-color:#808080 #fff #fff #808080}
+th{background:#d4d0c8;border:1px solid;border-color:#fff #808080 #808080 #fff;
+  text-align:left;padding:2px 5px;font-weight:400;color:#000}
+td{padding:2px 5px;border-bottom:1px solid #e4e1da;color:#000}
+tr:hover td{background:#0a246a;color:#fff}
+tr:hover td a{color:#fff}
 
-/* ============ tables: 2008 forum ============ */
-table{width:100%;font-size:12px;border-collapse:collapse;margin:1.2rem 0 1.6rem;
-  border:1px solid $bevel-dk;border-top-color:$bevel-lt}
-thead th{background:$panel-hi;color:$dim;font-family:$font-family-monospace;font-size:10px;
-  letter-spacing:.13em;text-transform:uppercase;text-align:left;padding:6px 9px;
-  border-bottom:1px solid $bevel-dk;font-weight:700}
-tbody td{padding:6px 9px;border-bottom:1px solid #1b1b1e;vertical-align:top}
-tbody tr:nth-child(even){background:#121214}
-tbody tr:hover{background:#191a1d}
+/* ── code ── */
+code{font:11px "Courier New",monospace;background:#fff;border:1px solid #808080;padding:0 3px;color:#000}
+pre{background:#fff;border:2px solid;border-color:#808080 #fff #fff #808080;padding:7px;font:11px "Courier New",monospace}
 
-/* ============ code ============ */
-code{font-family:$font-family-monospace;font-size:.87em;color:$green;background:#151517;padding:1px 4px}
-pre{background:#0e0e10;border:1px solid $bevel-dk;border-top-color:$bevel-lt;padding:.8rem}
+/* ── file rows ── */
+.frow{background:#fff;border:2px solid;border-color:#808080 #fff #fff #808080;padding:5px 7px;margin-bottom:4px}
+.frow .n{font:10px Tahoma;color:#555}
+.frow a.t{display:block;font:bold 11px Tahoma;color:#0000cc;margin:1px 0}
+.frow p{margin:0;font:11px Tahoma;color:#333}
 
-/* ============ beveled record panel ============ */
-.rec{
-  background:$panel;border:1px solid $bevel-dk;border-top-color:$bevel-lt;border-left-color:$bevel-lt;
-  padding:9px 12px;margin:0 0 1.6rem;font-family:$font-family-monospace;font-size:11px;line-height:1.9;color:$dim;
-}
-.rec .k{display:inline-block;min-width:9rem;color:#63605c;text-transform:uppercase;letter-spacing:.1em;font-size:10px}
-.rec .v{color:$ink}.rec .v.hot{color:$amber}
+/* ── arabic ── */
+.ar{font-family:"Noto Kufi Arabic",sans-serif;direction:rtl}
 
-/* ============ file rows ============ */
-.frow{
-  display:block;background:$panel;border:1px solid $bevel-dk;border-top-color:$bevel-lt;
-  padding:9px 12px;margin-bottom:4px;border-left:3px solid $rule;
-}
-.frow:hover{background:$panel-hi;border-left-color:$amber}
-.frow .n{font-family:$font-family-monospace;font-size:10px;letter-spacing:.14em;color:#63605c}
-.frow a.t{display:block;font-weight:700;color:#efeadf;border:0;font-size:13.5px;margin:2px 0}
-.frow:hover a.t{color:$gold}
-.frow p{margin:0;font-size:12px;color:$dim}
+/* ── callout = dialog box ── */
+.callout{background:#d4d0c8!important;border:2px solid!important;
+  border-color:#fff #3a3a3a #3a3a3a #fff!important;box-shadow:2px 2px 0 rgba(0,0,0,.4)}
+.callout .callout-title{background:linear-gradient(90deg,#7d0f12,#c1272d 60%,#e04a44)!important;
+  color:#fff!important;font:bold 11px Tahoma!important;padding:2px 6px!important;border:0!important}
+.callout-body{font:11px Tahoma!important;padding:8px!important;color:#000}
 
-/* ============ arabic ============ */
-.ar{font-family:"Noto Kufi Arabic",sans-serif;direction:rtl;color:$dim}
+/* ── assistant ── */
+#assistant{position:fixed;right:18px;bottom:18px;z-index:900;width:126px;
+  background:#d4d0c8;border:2px solid;border-color:#fff #3a3a3a #3a3a3a #fff;box-shadow:2px 2px 0 rgba(0,0,0,.5)}
+#assistant .t{background:linear-gradient(90deg,#0a246a,#3a6ea5);color:#fff;font:bold 10px Tahoma;
+  padding:2px 4px;display:flex;align-items:center}
+#assistant .t i{margin-left:auto;width:14px;height:12px;background:#d4d0c8;border:1px solid;
+  border-color:#fff #000 #000 #fff;font-style:normal;color:#000;font:bold 8px Tahoma;text-align:center;
+  line-height:10px;cursor:pointer}
+#assistant .c{background:#f4f2ec;padding:7px;display:flex;justify-content:center}
+#assistant img{width:64px;image-rendering:pixelated;image-rendering:-moz-crisp-edges;display:block}
+#balloon{position:fixed;right:22px;bottom:146px;z-index:901;background:#fff;border:1px solid #000;
+  border-radius:11px!important;padding:9px 11px 8px;font:11px Tahoma;color:#000;width:190px;
+  box-shadow:2px 2px 0 rgba(0,0,0,.3)}
+#balloon p{margin:0 0 8px;line-height:1.35;font:11px Tahoma}
+#balloon .op{display:flex;gap:6px;align-items:flex-start;margin-bottom:7px;line-height:1.3}
+#balloon .op i{width:9px;height:9px;border-radius:50%!important;
+  background:radial-gradient(#7fb0e8,#1b4f9c);border:1px solid #123a72;flex:0 0 auto;margin-top:2px;font-style:normal}
+#balloon .op.off{color:#9a9a9a}
+#balloon .op.off i{background:#e4e4e4;border-color:#bdbdbd}
+#balloon .cb{display:flex;gap:6px;align-items:flex-start;padding-top:3px;line-height:1.3}
+#balloon .cb i{width:10px;height:10px;background:#fff;border:1px solid #7a7a7a;flex:0 0 auto;margin-top:2px;font-style:normal}
+#balloon .tail{position:absolute;width:0;height:0;border:10px solid transparent;left:28px}
+@media(max-width:820px){#assistant,#balloon{display:none}}
 
-/* ================================================================
-   CONSPIRACY BOARD — research section only
-   ================================================================ */
-.board{
-  background:
-    repeating-linear-gradient(45deg,#17120c 0 2px,#1a140d 2px 4px);
-  border:6px solid #0a0a0b;outline:1px solid #2a2016;
-  padding:1.6rem 1.4rem 1.8rem;margin:1.4rem 0 2rem;position:relative;overflow:hidden;
-}
-.board::before{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    linear-gradient(115deg,transparent 46%,rgba(210,210,220,.05) 47%,transparent 48%),
-    linear-gradient(112deg,transparent 60%,rgba(210,210,220,.04) 61%,transparent 62%),
-    linear-gradient(118deg,transparent 74%,rgba(210,210,220,.045) 75%,transparent 76%);
-}
-.board>*{position:relative}
-.board h2{background:transparent;border:0;color:#c0392b;letter-spacing:.24em;padding:0;margin:1.6rem 0 .6rem}
+/* ── footer as status bar ── */
+.nav-footer{background:#d4d0c8;border-top:2px solid #fff;color:#000;font:11px Tahoma;
+  padding:4px 10px;margin-top:24px;letter-spacing:0;text-transform:none}
+.nav-footer a{color:#0000cc}
 
-.eye{display:block;margin:.4rem auto 1.2rem;width:120px;height:auto;opacity:.85}
-
-.stamp{
-  display:inline-block;border:3px solid #a02b1f;color:#c0392b;
-  font-family:$font-family-monospace;font-weight:700;font-size:12px;letter-spacing:.2em;
-  padding:5px 12px;transform:rotate(-6deg);opacity:.9;margin:.3rem .6rem .8rem 0;
-}
-.stamp.b{border-color:#7a6a2a;color:#b39227;transform:rotate(3deg)}
-
-.redact{background:#000;color:#000;padding:0 .28em;user-select:none}
-.redact:hover{color:#4a4a4a}
-
-.note{
-  display:block;background:#f3e9c6;color:#1a1408;font-family:$font-family-monospace;
-  font-size:11.5px;line-height:1.55;padding:10px 12px;margin:.9rem 0;
-  border:1px solid #b9a878;transform:rotate(-.5deg);
-}
-.note.r{transform:rotate(.6deg);background:#efe0cf}
-.note b{color:#7a1c12}
-
-.thread{border-left:2px dashed #8f1d14;padding-left:1rem;margin:1.2rem 0}
-.shout{
-  font-family:$font-family-monospace;font-weight:700;color:#d9534f;letter-spacing:.06em;
-  font-size:13px;line-height:1.5;text-transform:uppercase;margin:.8rem 0;
-}
-.wake{text-align:center;font-family:$font-family-monospace;color:#8f1d14;letter-spacing:.5em;font-size:11px;margin:1.4rem 0 0}
-
-/* ============ footer ============ */
-.nav-footer{background:#0e0e10;border-top:2px solid $bevel-dk;color:#5c5955;
-  font-family:$font-family-monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:1rem 0;margin-top:3rem}
-.nav-footer a{color:#5c5955;border:0}
-
-/* ============ toc ============ */
-nav[role=doc-toc]{font-family:$font-family-monospace;font-size:10px}
-nav[role=doc-toc] a{color:$dim;border:0;text-transform:uppercase;letter-spacing:.08em}
-nav[role=doc-toc] a:hover,nav[role=doc-toc] a.active{color:$amber}
-.sidebar-title{font-family:$font-family-monospace;font-size:10px;letter-spacing:.18em;color:#5c5955;text-transform:uppercase}
+/* toc */
+nav[role=doc-toc]{font:11px Tahoma;background:#d4d0c8;border:2px solid;
+  border-color:#fff #3a3a3a #3a3a3a #fff;padding:6px}
+nav[role=doc-toc] a{color:#0000cc;text-decoration:none}
+.sidebar-title{font:bold 11px Tahoma;color:#000}
