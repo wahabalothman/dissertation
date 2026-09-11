@@ -111,11 +111,9 @@ ul.task-list li input[type="checkbox"] {
   var on;
   try{
     var saved = localStorage.getItem("fx");
-    on = saved === null
-       ? !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-       : saved === "on";
+    on = saved === null ? true : saved === "on";
   }catch(e){
-    on = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    on = true;
   }
   document.documentElement.dataset.fx = on ? "on" : "off";
 })();
@@ -297,7 +295,7 @@ window.Quarto = {
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-listing-date-sort="1789084800000" data-listing-file-modified-sort="1789157779349" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="146" data-listing-title-sort="Week 37: gap paper, design memos, data inventory" data-listing-filename-sort="2026-09-week-37.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="0" data-listing-date-sort="1789084800000" data-listing-file-modified-sort="1789157843813" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="146" data-listing-title-sort="Week 37: gap paper, design memos, data inventory" data-listing-filename-sort="2026-09-week-37.qmd" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <span class="listing-date">2026-09-11</span>
