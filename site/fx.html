@@ -14,3 +14,23 @@
   document.documentElement.dataset.fx = on ? "on" : "off";
 })();
 </script>
+<style>
+/* The infection's flash pass. It lives here rather than in the theme so the
+   rule loads before the stylesheet it extends. site/desk.js forces the
+   effects flag on for the duration, because the infection is opt-in.
+   Deliberately held under three flashes per second. */
+body.infected #desk{
+  animation:vxshake .3s steps(2,end) infinite,
+            vxflash 1.9s steps(1,end) infinite !important;
+}
+@keyframes vxflash{
+  0%,84%{filter:none}
+  86%{filter:invert(1) hue-rotate(90deg)}
+  90%{filter:none}
+  93%{filter:invert(1) saturate(3)}
+  96%{filter:none}
+}
+body.infected #icons,
+body.infected #taskbar{animation:vxjitter .42s steps(2,end) infinite}
+@keyframes vxjitter{0%{transform:translateX(0)}50%{transform:translateX(3px)}100%{transform:translateX(-2px)}}
+</style>
