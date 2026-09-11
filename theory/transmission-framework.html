@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Transmission framework: theory and methods by stage – Conspiracy Transmission Project</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-83e87784b17aa38b39524cfbf601949c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Conspiracy Transmission Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../theory/index.html" aria-current="page"> 
+<span class="menu-text">Theory</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../design/index.html"> 
+<span class="menu-text">Design</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data/index.html"> 
+<span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../notes/index.html"> 
+<span class="menu-text">Log</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../site/cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/wahabalothman/dissertation"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../theory/transmission-framework.html">Transmission framework: theory and methods by stage</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Theory</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/gap-summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/transmission-framework.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Transmission framework: theory and methods by stage</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#transmission-framework-theory-and-methods-by-stage" id="toc-transmission-framework-theory-and-methods-by-stage" class="nav-link active" data-scroll-target="#transmission-framework-theory-and-methods-by-stage">Transmission Framework: Theory and Methods by Stage</a>
+  <ul class="collapse">
+  <li><a href="#the-claim-stated-as-something-that-can-be-wrong" id="toc-the-claim-stated-as-something-that-can-be-wrong" class="nav-link" data-scroll-target="#the-claim-stated-as-something-that-can-be-wrong">0. The claim, stated as something that can be wrong</a></li>
+  <li><a href="#fringe-origin-enumerate-dont-select" id="toc-fringe-origin-enumerate-dont-select" class="nav-link" data-scroll-target="#fringe-origin-enumerate-dont-select">1. Fringe origin: enumerate, don’t select</a>
+  <ul class="collapse">
+  <li><a href="#three-ways-to-enumerate-claims-from-a-fringe-corpus" id="toc-three-ways-to-enumerate-claims-from-a-fringe-corpus" class="nav-link" data-scroll-target="#three-ways-to-enumerate-claims-from-a-fringe-corpus">Three ways to enumerate claims from a fringe corpus</a></li>
+  <li><a href="#the-case-definition-the-part-epidemiologists-get-right" id="toc-the-case-definition-the-part-epidemiologists-get-right" class="nav-link" data-scroll-target="#the-case-definition-the-part-epidemiologists-get-right">The case definition (the part epidemiologists get right)</a></li>
+  </ul></li>
+  <li><a href="#intermediaries-what-laundering-means-operationally" id="toc-intermediaries-what-laundering-means-operationally" class="nav-link" data-scroll-target="#intermediaries-what-laundering-means-operationally">2. Intermediaries: what laundering means operationally</a>
+  <ul class="collapse">
+  <li><a href="#coding-sheet-per-claim-per-appearance" id="toc-coding-sheet-per-claim-per-appearance" class="nav-link" data-scroll-target="#coding-sheet-per-claim-per-appearance">Coding sheet, per claim, per appearance</a></li>
+  <li><a href="#measuring-the-allegation-survived-with-embeddings" id="toc-measuring-the-allegation-survived-with-embeddings" class="nav-link" data-scroll-target="#measuring-the-allegation-survived-with-embeddings">Measuring “the allegation survived” with embeddings</a></li>
+  </ul></li>
+  <li><a href="#the-cohort-the-massive-corpus-question" id="toc-the-cohort-the-massive-corpus-question" class="nav-link" data-scroll-target="#the-cohort-the-massive-corpus-question">The cohort: the massive corpus question</a>
+  <ul class="collapse">
+  <li><a href="#scale-honestly" id="toc-scale-honestly" class="nav-link" data-scroll-target="#scale-honestly">Scale, honestly</a></li>
+  </ul></li>
+  <li><a href="#elite-adoption-selection-among-available-claims" id="toc-elite-adoption-selection-among-available-claims" class="nav-link" data-scroll-target="#elite-adoption-selection-among-available-claims">3. Elite adoption: selection among available claims</a></li>
+  <li><a href="#electorate-acceptance-is-not-belief-and-rhetoric-is-not-either" id="toc-electorate-acceptance-is-not-belief-and-rhetoric-is-not-either" class="nav-link" data-scroll-target="#electorate-acceptance-is-not-belief-and-rhetoric-is-not-either">4. Electorate: acceptance is not belief, and rhetoric is not either</a></li>
+  <li><a href="#the-epidemiology-analogy-used-carefully" id="toc-the-epidemiology-analogy-used-carefully" class="nav-link" data-scroll-target="#the-epidemiology-analogy-used-carefully">The epidemiology analogy, used carefully</a>
+  <ul class="collapse">
+  <li><a href="#on-training-an-llm-to-be-an-epidemiologist" id="toc-on-training-an-llm-to-be-an-epidemiologist" class="nav-link" data-scroll-target="#on-training-an-llm-to-be-an-epidemiologist">On training an LLM “to be an epidemiologist”</a></li>
+  </ul></li>
+  <li><a href="#falsifiability-and-reproducibility-in-one-table" id="toc-falsifiability-and-reproducibility-in-one-table" class="nav-link" data-scroll-target="#falsifiability-and-reproducibility-in-one-table">Falsifiability and reproducibility, in one table</a></li>
+  <li><a href="#what-to-do-first" id="toc-what-to-do-first" class="nav-link" data-scroll-target="#what-to-do-first">What to do first</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Transmission framework: theory and methods by stage</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The four diagrams are in the <a href="transmission-framework-figures.html">figure version</a> of this memo. This page carries the text.</p>
+</div>
+</div>
+<section id="transmission-framework-theory-and-methods-by-stage" class="level1" role="main">
+<h1>Transmission Framework: Theory and Methods by Stage</h1>
+<p>Working memo. How conspiratorial claims move from fringe origin through intermediaries to elite adoption, what “laundering” means operationally, how to build a cohort that includes failures, and how to keep the whole thing falsifiable without conflating online rhetoric with belief.</p>
+<section id="the-claim-stated-as-something-that-can-be-wrong" class="level2">
+<h2 class="anchored" data-anchor-id="the-claim-stated-as-something-that-can-be-wrong">0. The claim, stated as something that can be wrong</h2>
+<p>Among conspiratorial allegations circulating on the fringe in a given window, the ones that reach elite political speech are disproportionately those that were transformed by an intermediary in three specific ways: the allegation survived, the attributed source was obscured, and the stigmatized wording was replaced. Obscuring the source raises the political acceptability of the claim more than it raises belief in it. Each clause is a separate test with a separate way to fail.</p>
+<figure class="figure">
+<img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Ym94PSIwIDAgODIwIDMzMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJGb3VyLXN0YWdlIHBpcGVsaW5lIHdpdGggdGhyZWUgYWx0ZXJuYXRpdmUgcm91dGVzIHRocm91Z2ggdGhlIGludGVybWVkaWFyeSBzdGFnZSI+CjxkZWZzPjxtYXJrZXIgaWQ9ImEiIHZpZXdib3g9IjAgMCAxMCAxMCIgcmVmeD0iOCIgcmVmeT0iNSIgbWFya2Vyd2lkdGg9IjYiIG1hcmtlcmhlaWdodD0iNiIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNMiAxTDggNUwyIDkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iY29udGV4dC1zdHJva2UiIHN0cm9rZS13aWR0aD0iMS41Ij48L3BhdGg+PC9tYXJrZXI+PC9kZWZzPgo8cmVjdCB4PSIyMCIgeT0iNDAiIHdpZHRoPSIxNjAiIGhlaWdodD0iNTYiIHJ4PSI4IiBmaWxsPSJ2YXIoLS10ZWFsYmcpIiBzdHJva2U9InZhcigtLXRlYWwpIj48L3JlY3Q+Cjx0ZXh0IHg9IjEwMCIgeT0iNjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0aCI+MSBGcmluZ2Ugb3JpZ2luPC90ZXh0Pgo8dGV4dCB4PSIxMDAiIHk9IjgyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idHMiPi9wb2wvLCBUZWxlZ3JhbSwgUmVkZGl0PC90ZXh0Pgo8cmVjdCB4PSIyMzAiIHk9IjQwIiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0idmFyKC0tYWNjYmcpIiBzdHJva2U9InZhcigtLWFjYykiPjwvcmVjdD4KPHRleHQgeD0iMzEwIiB5PSI2MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRoIj4yIEludGVybWVkaWFyeTwvdGV4dD4KPHRleHQgeD0iMzEwIiB5PSI4MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRzIj5SdW1ibGUsIHBvZGNhc3RzLCBjYWJsZTwvdGV4dD4KPHJlY3QgeD0iNDQwIiB5PSI0MCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSI1NiIgcng9IjgiIGZpbGw9InZhcigtLWNvcmFsYmcpIiBzdHJva2U9InZhcigtLWNvcmFsKSI+PC9yZWN0Pgo8dGV4dCB4PSI1MjAiIHk9IjYyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idGgiPjMgRWxpdGUgYWRvcHRpb248L3RleHQ+Cjx0ZXh0IHg9IjUyMCIgeT0iODIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0cyI+c3BlZWNoZXMsIHBvc3RzLCBkZWJhdGVzPC90ZXh0Pgo8cmVjdCB4PSI2NTAiIHk9IjQwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0idmFyKC0tYW1iZXJiZykiIHN0cm9rZT0idmFyKC0tYW1iZXIpIj48L3JlY3Q+Cjx0ZXh0IHg9IjcyNSIgeT0iNjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0aCI+NCBFbGVjdG9yYXRlPC90ZXh0Pgo8dGV4dCB4PSI3MjUiIHk9IjgyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idHMiPmFjY2VwdGFuY2UgdnMgYmVsaWVmPC90ZXh0Pgo8bGluZSB4MT0iMTgwIiB5MT0iNjgiIHgyPSIyMjgiIHkyPSI2OCIgY2xhc3M9ImxpbmUiIG1hcmtlci1lbmQ9InVybCgjYSkiPjwvbGluZT4KPGxpbmUgeDE9IjM5MCIgeTE9IjY4IiB4Mj0iNDM4IiB5Mj0iNjgiIGNsYXNzPSJsaW5lIiBtYXJrZXItZW5kPSJ1cmwoI2EpIj48L2xpbmU+CjxsaW5lIHgxPSI2MDAiIHkxPSI2OCIgeDI9IjY0OCIgeTI9IjY4IiBjbGFzcz0ibGluZSIgbWFya2VyLWVuZD0idXJsKCNhKSI+PC9saW5lPgo8dGV4dCB4PSIzMTAiIHk9IjEzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRoIj5UaHJlZSByb3V0ZXMgdGhhdCBwcm9kdWNlIHRoZSBzYW1lIHRpbWUgc2VyaWVzPC90ZXh0Pgo8cmVjdCB4PSI2MCIgeT0iMTUwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjYwIiByeD0iOCIgY2xhc3M9ImJveCI+PC9yZWN0Pgo8dGV4dCB4PSIxNjAiIHk9IjE3MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InQiPkF0dGVudGlvbiByb3V0ZTwvdGV4dD4KPHRleHQgeD0iMTYwIiB5PSIxOTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0cyI+cHJvZHVjZXJzIGZvbGxvdyB3aGF0IHRyZW5kczwvdGV4dD4KPHJlY3QgeD0iMzEwIiB5PSIxNTAiIHdpZHRoPSIyMDAiIGhlaWdodD0iNjAiIHJ4PSI4IiBjbGFzcz0iYm94Ij48L3JlY3Q+Cjx0ZXh0IHg9IjQxMCIgeT0iMTcyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idCI+UGVyc29ubmVsIHJvdXRlPC90ZXh0Pgo8dGV4dCB4PSI0MTAiIHk9IjE5MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRzIj5vbmUgcGVyc29uIGluIHR3byBzZXR0aW5ncyAoTmVmZik8L3RleHQ+CjxyZWN0IHg9IjU2MCIgeT0iMTUwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjYwIiByeD0iOCIgY2xhc3M9ImJveCI+PC9yZWN0Pgo8dGV4dCB4PSI2NjAiIHk9IjE3MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InQiPkVsaXRlIGRpcmVjdGlvbjwvdGV4dD4KPHRleHQgeD0iNjYwIiB5PSIxOTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0cyI+bWVkaWEgc2VydmUgYSBwcmlvciBzdHJhdGVneTwvdGV4dD4KPHRleHQgeD0iNDEwIiB5PSIyNDUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0Ij5QbGF0Zm9ybSBkYXRhIGFsb25lIGNhbm5vdCB0ZWxsIHRoZXNlIGFwYXJ0LiBPbmx5IGlkZW50aXR5IGZpZWxkcyBhbmQgcHJvY2VzcyB0cmFjaW5nIGNhbi48L3RleHQ+Cjx0ZXh0IHg9IjQxMCIgeT0iMjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idHMiPkF0dGVudGlvbjogZnJpbmdlIHZvbHVtZSBsZWFkcyBlZGl0b3JpYWwgcGlja3VwLiBQZXJzb25uZWw6IHBpY2t1cCB0cmFja3MgbmFtZWQgaW5kaXZpZHVhbHMsIG5vdCB2b2x1bWUuPC90ZXh0Pgo8dGV4dCB4PSI0MTAiIHk9IjI4NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRzIj5FbGl0ZSBkaXJlY3Rpb246IGVsaXRlIGZyYW1pbmcgb3IgY29vcmRpbmF0aW9uIHByZWNlZGVzIHRoZSBtZWRpYSB0cmVhdG1lbnQuPC90ZXh0Pgo8bGluZSB4MT0iMTYwIiB5MT0iMTUwIiB4Mj0iMjkwIiB5Mj0iOTgiIGNsYXNzPSJkYXNoIj48L2xpbmU+CjxsaW5lIHgxPSI0MTAiIHkxPSIxNTAiIHgyPSIzMzAiIHkyPSI5OCIgY2xhc3M9ImRhc2giPjwvbGluZT4KPGxpbmUgeDE9IjY2MCIgeTE9IjE1MCIgeDI9IjM3MCIgeTI9Ijk4IiBjbGFzcz0iZGFzaCI+PC9saW5lPgo8L3N2Zz4=" class="figure-img">
+<figcaption>
+Figure 1. The four stages are hypotheses about sequence, not assumptions. The intermediary stage can be reached by at least three routes that look identical in a cross-platform timeline (fringe first, mainstream later), which is why the design needs cohort data with identities and matched cases, not only timing.
+</figcaption>
+</figure>
+</section>
+<section id="fringe-origin-enumerate-dont-select" class="level2">
+<h2 class="anchored" data-anchor-id="fringe-origin-enumerate-dont-select">1. Fringe origin: enumerate, don’t select</h2>
+<p>The methodological problem at stage 1 is not tracing; it is sampling. If the claim list comes from fact-checkers, prior literature, or elite speech traced backward, the cohort is selected on visibility or on the outcome. The fix is an enumeration rule applied to the fringe corpus before anything downstream is examined.</p>
+<section id="three-ways-to-enumerate-claims-from-a-fringe-corpus" class="level3">
+<h3 class="anchored" data-anchor-id="three-ways-to-enumerate-claims-from-a-fringe-corpus">Three ways to enumerate claims from a fringe corpus</h3>
+<div class="wrap">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 27%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>What it produces</th>
+<th>Strength</th>
+<th>Weakness</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Manual reading of a random thread sample</strong> (pilot)</td>
+<td>A list of distinct allegations of covert coordination, one row each</td>
+<td>No tooling; you learn the material; the case definition gets sharpened by contact with real posts</td>
+<td>Doesn’t scale past a few weeks; coder fatigue; needs a second coder for reliability</td>
+</tr>
+<tr class="even">
+<td><strong>Semantic objects</strong> (Keim et al.&nbsp;2026: Word2Vec per corpus, HDBSCAN, recursive sub-clustering)</td>
+<td>Dense regions of meaning with no anchor list; each region is a candidate claim family</td>
+<td>Outcome-independent by construction; gives HAD/CSD/LO metrics for later stages</td>
+<td>Needs a large corpus per space; unstable on small corpora (Gonen et al.&nbsp;2020); finds themes more than propositions</td>
+</tr>
+<tr class="odd">
+<td><strong>Actant narrative graphs</strong> (Tangherlini et al.&nbsp;2020, PLOS ONE; Holur et al.&nbsp;INCANT/TAMPA)</td>
+<td>Actors as nodes, alleged relationships as edges; a narrative framework per corpus and window</td>
+<td>Closest to your unit (who did what to whom); designed for conspiracy narratives; handles fragmentation</td>
+<td>Heavy NLP pipeline; entity resolution on /pol/ is ugly; requires validation of extracted relations</td>
+</tr>
+<tr class="even">
+<td><strong>LLM extraction with a case definition</strong></td>
+<td>Structured tuples: conspirators, covert action, purpose, evidence, stance, asserted source</td>
+<td>Directly yields the coding scheme; cheap at scale; open-weight models are competitive for this (arXiv 2605.19275)</td>
+<td>Must be validated against human coding on a held-out sample; prompt drift; hallucinated relations</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note">
+<p>Recommended: LLM extraction with a written case definition, validated by double-coded samples, with Keim-style semantic objects as a robustness check that the extracted claims correspond to real dense regions of discourse. Process tracing is not an enumeration method; it is what you do to a handful of cases after the cohort exists.</p>
+</div>
+</section>
+<section id="the-case-definition-the-part-epidemiologists-get-right" class="level3">
+<h3 class="anchored" data-anchor-id="the-case-definition-the-part-epidemiologists-get-right">The case definition (the part epidemiologists get right)</h3>
+<p>Epidemiology starts with a case definition that can be applied without knowing the outcome. Yours: a passage counts as a conspiratorial claim if it asserts that identifiable actors are secretly coordinating an action for a hidden purpose. Allegations of incompetence, ordinary rumor without covert coordination, and criticism of policy are excluded. Write it before coding; report how often coders disagree on the boundary.</p>
+<p>“First observed appearance” is what the data give you. It is not authorship. Report it as first observed, and treat elite-first claims as part of the cohort rather than as errors.</p>
+</section>
+</section>
+<section id="intermediaries-what-laundering-means-operationally" class="level2">
+<h2 class="anchored" data-anchor-id="intermediaries-what-laundering-means-operationally">2. Intermediaries: what laundering means operationally</h2>
+<p>“Laundering” is a metaphor used by Hemmer, Starbird (2017), and Keim et al.&nbsp;It needs to be broken into components that can vary independently, because they do.</p>
+<figure class="figure">
+<img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Ym94PSIwIDAgODIwIDMwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJEZWNvbXBvc2l0aW9uIG9mIGxhdW5kZXJpbmcgaW50byB0aHJlZSBpbmRlcGVuZGVudCB0cmFuc2Zvcm1hdGlvbnMiPgo8ZGVmcz48bWFya2VyIGlkPSJiIiB2aWV3Ym94PSIwIDAgMTAgMTAiIHJlZng9IjgiIHJlZnk9IjUiIG1hcmtlcndpZHRoPSI2IiBtYXJrZXJoZWlnaHQ9IjYiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTTIgMUw4IDVMMiA5IiBmaWxsPSJub25lIiBzdHJva2U9ImNvbnRleHQtc3Ryb2tlIiBzdHJva2Utd2lkdGg9IjEuNSI+PC9wYXRoPjwvbWFya2VyPjwvZGVmcz4KPHJlY3QgeD0iMjAiIHk9IjExMCIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI4MCIgcng9IjgiIGZpbGw9InZhcigtLXRlYWxiZykiIHN0cm9rZT0idmFyKC0tdGVhbCkiPjwvcmVjdD4KPHRleHQgeD0iMTA1IiB5PSIxNDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0aCI+RnJpbmdlIHZlcnNpb248L3RleHQ+Cjx0ZXh0IHg9IjEwNSIgeT0iMTYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idHMiPmV4cGxpY2l0IGFsbGVnYXRpb248L3RleHQ+Cjx0ZXh0IHg9IjEwNSIgeT0iMTc2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idHMiPm5hbWVkIHNvdXJjZSwgc3RpZ21hdGl6ZWQgd29yZHM8L3RleHQ+CjxyZWN0IHg9IjYzMCIgeT0iMTEwIiB3aWR0aD0iMTcwIiBoZWlnaHQ9IjgwIiByeD0iOCIgZmlsbD0idmFyKC0tY29yYWxiZykiIHN0cm9rZT0idmFyKC0tY29yYWwpIj48L3JlY3Q+Cjx0ZXh0IHg9IjcxNSIgeT0iMTQwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idGgiPkVsaXRlIHZlcnNpb248L3RleHQ+Cjx0ZXh0IHg9IjcxNSIgeT0iMTYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idHMiPiZxdW90O3Blb3BsZSBhcmUgc2F5aW5nJnF1b3Q7PC90ZXh0Pgo8dGV4dCB4PSI3MTUiIHk9IjE3NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRzIj5jb25zdGl0dWVudCBjb25jZXJuPC90ZXh0Pgo8cmVjdCB4PSIyNjAiIHk9IjMwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjUyIiByeD0iOCIgY2xhc3M9ImJveCI+PC9yZWN0Pgo8dGV4dCB4PSI0MTAiIHk9IjUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idCI+QS4gV29yZGluZyBjaGFuZ2VzPC90ZXh0Pgo8dGV4dCB4PSI0MTAiIHk9IjcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idHMiPmV4cGxpY2l0IGNsYWltIGJlY29tZXMgY29kZWQgaW5zaW51YXRpb247IHNsdXJzIGJlY29tZSBldXBoZW1pc21zPC90ZXh0Pgo8cmVjdCB4PSIyNjAiIHk9IjEyNCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSI1MiIgcng9IjgiIGNsYXNzPSJib3giPjwvcmVjdD4KPHRleHQgeD0iNDEwIiB5PSIxNDYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0Ij5CLiBNZXNzZW5nZXIgY2hhbmdlczwvdGV4dD4KPHRleHQgeD0iNDEwIiB5PSIxNjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0cyI+c2FtZSBhbGxlZ2F0aW9uLCBkZWxpdmVyZWQgYnkgYSB0cnVzdGVkIGhvc3Q8L3RleHQ+CjxyZWN0IHg9IjI2MCIgeT0iMjE4IiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjUyIiByeD0iOCIgY2xhc3M9ImJveCI+PC9yZWN0Pgo8dGV4dCB4PSI0MTAiIHk9IjI0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InQiPkMuIEF0dHJpYnV0ZWQgb3JpZ2luIGNoYW5nZXM8L3RleHQ+Cjx0ZXh0IHg9IjQxMCIgeT0iMjU4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idHMiPjRjaGFuIGRpc2FwcGVhcnMgYmVoaW5kICZxdW90O3JlcG9ydHMmcXVvdDsgb3IgJnF1b3Q7Y29uc3RpdHVlbnRzJnF1b3Q7PC90ZXh0Pgo8bGluZSB4MT0iMTkwIiB5MT0iMTUwIiB4Mj0iMjU4IiB5Mj0iNTYiIGNsYXNzPSJsaW5lIiBtYXJrZXItZW5kPSJ1cmwoI2IpIj48L2xpbmU+CjxsaW5lIHgxPSIxOTAiIHkxPSIxNTAiIHgyPSIyNTgiIHkyPSIxNTAiIGNsYXNzPSJsaW5lIiBtYXJrZXItZW5kPSJ1cmwoI2IpIj48L2xpbmU+CjxsaW5lIHgxPSIxOTAiIHkxPSIxNTAiIHgyPSIyNTgiIHkyPSIyNDQiIGNsYXNzPSJsaW5lIiBtYXJrZXItZW5kPSJ1cmwoI2IpIj48L2xpbmU+CjxsaW5lIHgxPSI1NjAiIHkxPSI1NiIgeDI9IjYyOCIgeTI9IjE1MCIgY2xhc3M9ImxpbmUiIG1hcmtlci1lbmQ9InVybCgjYikiPjwvbGluZT4KPGxpbmUgeDE9IjU2MCIgeTE9IjE1MCIgeDI9IjYyOCIgeTI9IjE1MCIgY2xhc3M9ImxpbmUiIG1hcmtlci1lbmQ9InVybCgjYikiPjwvbGluZT4KPGxpbmUgeDE9IjU2MCIgeTE9IjI0NCIgeDI9IjYyOCIgeTI9IjE1MCIgY2xhc3M9ImxpbmUiIG1hcmtlci1lbmQ9InVybCgjYikiPjwvbGluZT4KPHRleHQgeD0iNDEwIiB5PSIyOTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0cyI+UGx1cyBhIGZvdXJ0aCBjb2RlIHRoYXQgaXMgbm90IGxhdW5kZXJpbmc6IEQuIHRoZSBhbGxlZ2F0aW9uIGl0c2VsZiBpcyBhbHRlcmVkIChkaWZmZXJlbnQgY29uc3BpcmF0b3JzLCBhY3Rpb24sIG9yIHB1cnBvc2UpLjwvdGV4dD4KPC9zdmc+" class="figure-img">
+<figcaption>
+Figure 2. Three transformations that can occur separately or together between a fringe version and an elite version of the same allegation. A broadcaster can legitimize a claim while openly naming its fringe source (B without C). Rewording can happen with the messenger held constant (A without B). Coding them separately is what lets the design say which one does the work.
+</figcaption>
+</figure>
+<section id="coding-sheet-per-claim-per-appearance" class="level3">
+<h3 class="anchored" data-anchor-id="coding-sheet-per-claim-per-appearance">Coding sheet, per claim, per appearance</h3>
+<div class="wrap">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 45%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Values</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Claim tuple</td>
+<td>conspirators, covert action, purpose, evidence</td>
+<td>Deciding whether it’s the same allegation (test 1)</td>
+</tr>
+<tr class="even">
+<td>Tier and date</td>
+<td>fringe / intermediary / elite; timestamp</td>
+<td>Sequence; first-observed tier</td>
+</tr>
+<tr class="odd">
+<td>Speaker identity</td>
+<td>account, host, writer, guest, known pseudonyms</td>
+<td>Detecting the personnel route</td>
+</tr>
+<tr class="even">
+<td>Stance</td>
+<td>endorse / raise as concern / neutral quote / reject</td>
+<td>Adoption is endorse or raise-as-concern only; Pyrhönen et al.&nbsp;show visibility often comes from challenge</td>
+</tr>
+<tr class="odd">
+<td>Asserted provenance</td>
+<td>named fringe source / “people are saying” / anonymous reports / constituents / expert / other elite / none</td>
+<td>Test 2 (source obscured)</td>
+</tr>
+<tr class="even">
+<td>Wording register</td>
+<td>explicit / coded / euphemistic; stigmatized terms present (0/1)</td>
+<td>Transformation A</td>
+</tr>
+<tr class="odd">
+<td>Constituency frame</td>
+<td>present / absent</td>
+<td>Responsiveness justification</td>
+</tr>
+<tr class="even">
+<td>Evidence of transmission</td>
+<td>explicit citation / link / distinctive borrowed detail / chronology only</td>
+<td>Separating sequence from borrowing</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="measuring-the-allegation-survived-with-embeddings" class="level3">
+<h3 class="anchored" data-anchor-id="measuring-the-allegation-survived-with-embeddings">Measuring “the allegation survived” with embeddings</h3>
+<p>Keim et al.&nbsp;vary time; you vary tier. Train one embedding space per large corpus (fringe; intermediary transcripts), align them, and compute their three distances for each claim family. Laundering predicts <strong>low CSD</strong> (meaning preserved) with <strong>low lexical overlap</strong> (vocabulary replaced) from fringe to intermediary. Stalled claims should not show this pattern. The elite corpus is too small for its own Word2Vec space; use sentence embeddings for claim matching there and reserve the diachronic metrics for the two large tiers.</p>
+<div class="wrap">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 27%">
+<col style="width: 53%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Keim metric</th>
+<th>What it measures</th>
+<th>Laundering prediction (fringe to intermediary)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HAD</td>
+<td>Old associations weaken</td>
+<td>High: stigmatized associations drop</td>
+</tr>
+<tr class="even">
+<td>CSD</td>
+<td>Core meaning moves</td>
+<td>Low: same allegation</td>
+</tr>
+<tr class="odd">
+<td>NCD</td>
+<td>Neighborhood fragments</td>
+<td>Any</td>
+</tr>
+<tr class="even">
+<td>Lexical overlap</td>
+<td>Same words used</td>
+<td>Low: vocabulary replaced</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>That combination (HAD high, CSD low, LO low) is Keim’s “semantic narrowing with lexical replacement.” It is laundering measured in their terms. Run the Gonen et al.&nbsp;nearest-neighbor stability check because Procrustes alignment is seed-sensitive.</p>
+</section>
+</section>
+<section id="the-cohort-the-massive-corpus-question" class="level2">
+<h2 class="anchored" data-anchor-id="the-cohort-the-massive-corpus-question">The cohort: the massive corpus question</h2>
+<p>You do not need a massive corpus of conspiracy theories. You need a bounded, complete cohort for one window, built by a rule, where most members fail. Think of it as a surveillance system for one region and one season, not a registry of every case ever.</p>
+<figure class="figure">
+<img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Ym94PSIwIDAgODIwIDM0MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJDb2hvcnQgZnVubmVsIGZyb20gb3V0Y29tZS1pbmRlcGVuZGVudCBzYW1wbGUgdG8gdGhyZWUgZmF0ZXMiPgo8ZGVmcz48bWFya2VyIGlkPSJjIiB2aWV3Ym94PSIwIDAgMTAgMTAiIHJlZng9IjgiIHJlZnk9IjUiIG1hcmtlcndpZHRoPSI2IiBtYXJrZXJoZWlnaHQ9IjYiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTTIgMUw4IDVMMiA5IiBmaWxsPSJub25lIiBzdHJva2U9ImNvbnRleHQtc3Ryb2tlIiBzdHJva2Utd2lkdGg9IjEuNSI+PC9wYXRoPjwvbWFya2VyPjwvZGVmcz4KPHJlY3QgeD0iMjAiIHk9IjMwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjcwIiByeD0iOCIgZmlsbD0idmFyKC0tdGVhbGJnKSIgc3Ryb2tlPSJ2YXIoLS10ZWFsKSI+PC9yZWN0Pgo8dGV4dCB4PSIxNDAiIHk9IjU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idGgiPlNhbXBsaW5nIHJ1bGU8L3RleHQ+Cjx0ZXh0IHg9IjE0MCIgeT0iNzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0cyI+cmFuZG9tIHRocmVhZHMgcGVyIHdlZWssIGZpeGVkIGNoYW5uZWxzLDwvdGV4dD4KPHRleHQgeD0iMTQwIiB5PSI4OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRzIj5BdWcgdG8gTm92IDIwMjQ7IGVsaXRlIGNvcnB1cyBzYW1wbGVkIHRvbzwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjE0MCIgd2lkdGg9IjI0MCIgaGVpZ2h0PSI3MCIgcng9IjgiIGNsYXNzPSJib3giPjwvcmVjdD4KPHRleHQgeD0iMTQwIiB5PSIxNjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0aCI+Q2FzZSBkZWZpbml0aW9uIGFwcGxpZWQ8L3RleHQ+Cjx0ZXh0IHg9IjE0MCIgeT0iMTgzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idHMiPmV2ZXJ5IGFsbGVnYXRpb24gb2YgY292ZXJ0IGNvb3JkaW5hdGlvbjwvdGV4dD4KPHRleHQgeD0iMTQwIiB5PSIxOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0cyI+ZXh0cmFjdGVkLCBkZWR1cGxpY2F0ZWQgaW50byB2YXJpYW50czwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjI1MCIgd2lkdGg9IjI0MCIgaGVpZ2h0PSI2MCIgcng9IjgiIGNsYXNzPSJib3giPjwvcmVjdD4KPHRleHQgeD0iMTQwIiB5PSIyNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0aCI+Q29ob3J0OiBOIGNsYWltIHZhcmlhbnRzPC90ZXh0Pgo8dGV4dCB4PSIxNDAiIHk9IjI5MyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRzIj5vdXRjb21lIHVua25vd24gYXQgdGhpcyBwb2ludDwvdGV4dD4KPGxpbmUgeDE9IjE0MCIgeTE9IjEwMCIgeDI9IjE0MCIgeTI9IjEzOCIgY2xhc3M9ImxpbmUiIG1hcmtlci1lbmQ9InVybCgjYykiPjwvbGluZT4KPGxpbmUgeDE9IjE0MCIgeTE9IjIxMCIgeDI9IjE0MCIgeTI9IjI0OCIgY2xhc3M9ImxpbmUiIG1hcmtlci1lbmQ9InVybCgjYykiPjwvbGluZT4KPGxpbmUgeDE9IjI2MCIgeTE9IjI4MCIgeDI9IjMzMCIgeTI9IjI4MCIgY2xhc3M9ImxpbmUiPjwvbGluZT4KPGxpbmUgeDE9IjMzMCIgeTE9IjgwIiB4Mj0iMzMwIiB5Mj0iMjgwIiBjbGFzcz0ibGluZSI+PC9saW5lPgo8bGluZSB4MT0iMzMwIiB5MT0iODAiIHgyPSIzOTgiIHkyPSI4MCIgY2xhc3M9ImxpbmUiIG1hcmtlci1lbmQ9InVybCgjYykiPjwvbGluZT4KPGxpbmUgeDE9IjMzMCIgeTE9IjE4MCIgeDI9IjM5OCIgeTI9IjE4MCIgY2xhc3M9ImxpbmUiIG1hcmtlci1lbmQ9InVybCgjYykiPjwvbGluZT4KPGxpbmUgeDE9IjMzMCIgeTE9IjI4MCIgeDI9IjM5OCIgeTI9IjI4MCIgY2xhc3M9ImxpbmUiIG1hcmtlci1lbmQ9InVybCgjYykiPjwvbGluZT4KPHJlY3QgeD0iNDAwIiB5PSI1MCIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI2MCIgcng9IjgiIGZpbGw9InZhcigtLWdyYXliZykiIHN0cm9rZT0idmFyKC0tbGluZSkiPjwvcmVjdD4KPHRleHQgeD0iNjAwIiB5PSI3MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRoIj5TdGFsbGVkIG9uIHRoZSBmcmluZ2UgKGV4cGVjdGVkIG1ham9yaXR5KTwvdGV4dD4KPHRleHQgeD0iNjAwIiB5PSI5MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRzIj5uZXZlciByZWFjaGVzIGFueSBpbnRlcm1lZGlhcnk7IHRoZSBjb21wYXJpc29uIGdyb3VwPC90ZXh0Pgo8cmVjdCB4PSI0MDAiIHk9IjE1MCIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI2MCIgcng9IjgiIGZpbGw9InZhcigtLWFjY2JnKSIgc3Ryb2tlPSJ2YXIoLS1hY2MpIj48L3JlY3Q+Cjx0ZXh0IHg9IjYwMCIgeT0iMTcyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idGgiPlJlYWNoZWQgaW50ZXJtZWRpYXJ5LCBub3QgZWxpdGVzPC90ZXh0Pgo8dGV4dCB4PSI2MDAiIHk9IjE5MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRzIj5sYXVuZGVyZWQgYnV0IG5vdCBzZWxlY3RlZDogdGVzdHMgc2VsZWN0aW9uIHNlcGFyYXRlbHkgZnJvbSBsYXVuZGVyaW5nPC90ZXh0Pgo8cmVjdCB4PSI0MDAiIHk9IjI1MCIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI2MCIgcng9IjgiIGZpbGw9InZhcigtLWNvcmFsYmcpIiBzdHJva2U9InZhcigtLWNvcmFsKSI+PC9yZWN0Pgo8dGV4dCB4PSI2MDAiIHk9IjI3MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRoIj5BZG9wdGVkIGJ5IGFuIGVsaXRlPC90ZXh0Pgo8dGV4dCB4PSI2MDAiIHk9IjI5MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRzIj5lbmRvcnNlIG9yIHJhaXNlIGFzIGNvbmNlcm47IHRoZSBldmVudCBpbiB0aGUgZXZlbnQtaGlzdG9yeSBtb2RlbDwvdGV4dD4KPC9zdmc+" class="figure-img">
+<figcaption>
+Figure 3. Everything to the left of the vertical line happens before anyone looks at what became of a claim. The three fates on the right are the dependent variable. The middle fate matters: claims that were laundered by an intermediary and still not adopted are what separate “laundering happened” from “laundering caused adoption.”
+</figcaption>
+</figure>
+<section id="scale-honestly" class="level3">
+<h3 class="anchored" data-anchor-id="scale-honestly">Scale, honestly</h3>
+<ul>
+<li>Two weeks of /pol/ hand-read (pilot): 40 to 60 claim variants. Enough to see whether the pattern exists. Not enough for a model.</li>
+<li>One election season, fringe + five shows + fixed elite list, LLM-extracted and validated: a few hundred variants and, realistically, 20 to 60 elite adoption events. That is a small event-history dataset; the model will be thin and the paired process tracing will carry weight.</li>
+<li>Nothing here requires the 169M-comment scale of Keim et al.&nbsp;Their scale serves embedding stability on one platform over a decade. Your question is about one season across tiers.</li>
+</ul>
+</section>
+</section>
+<section id="elite-adoption-selection-among-available-claims" class="level2">
+<h2 class="anchored" data-anchor-id="elite-adoption-selection-among-available-claims">3. Elite adoption: selection among available claims</h2>
+<p>Structure: claim × elite × week panel. Row exists while elite <em>i</em> has not yet adopted claim <em>j</em>. Outcome is first adoption in week <em>t</em>. Discrete-time event history (logit), elite and week fixed effects, standard errors clustered by claim. Week fixed effects absorb the shared news shocks that make Hawkes and Granger designs unreliable here.</p>
+<p>Covariates lagged one to two weeks: fringe volume; intermediary coverage; whether a laundered version exists yet (A, B, C coded separately); prior adoption by other elites; compatibility with the elite’s prior frames; issue salience. The laundering hypothesis is the coefficient on “source-obscured version exists” holding “allegation preserved” constant. Pair the model with four to six matched cases (adopted vs stalled, same family, similar prior visibility) coded for the three routes in Figure 1.</p>
+</section>
+<section id="electorate-acceptance-is-not-belief-and-rhetoric-is-not-either" class="level2">
+<h2 class="anchored" data-anchor-id="electorate-acceptance-is-not-belief-and-rhetoric-is-not-either">4. Electorate: acceptance is not belief, and rhetoric is not either</h2>
+<p>Two things the design refuses to conflate. First, online rhetoric is not public belief; the observational chapters measure what was said, by whom, and in what form, and make no claim about what audiences believe. Second, belief is not acceptance. The literature’s baseline (roughly a tenth of Americans volunteer conspiracy talk unprompted; stable aggregate belief over time) is a scope condition, not an outcome to explain. The outcome at stage 4 is whether it becomes acceptable for a politician to advance a claim, and whether attributed origin moves that.</p>
+<p>Experiment A: same allegation, 2×2 (original vs intermediary wording) × (earlier source hidden vs disclosed), politician and endorsement held constant. The estimand is the interaction. Experiment B: attributed authorship (citizens / campaign staff / unspecified) × politician’s justification (responding to constituents / own judgment). Measure belief, political acceptance, sanction, investigation, and circulation separately; predefine an equivalence margin for belief; define skeptics by baseline belief. Pilot in a student pool; confirmatory via TESS or a quota sample.</p>
+</section>
+<section id="the-epidemiology-analogy-used-carefully" class="level2">
+<h2 class="anchored" data-anchor-id="the-epidemiology-analogy-used-carefully">The epidemiology analogy, used carefully</h2>
+<p>Tangherlini’s earlier vaccine-narrative work was published in <em>JMIR Public Health and Surveillance</em>, so the analogy has precedent. It is useful for design discipline and misleading as a model of mechanism.</p>
+<figure class="figure">
+<img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Ym94PSIwIDAgODIwIDMwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJNYXBwaW5nIG9mIGVwaWRlbWlvbG9naWNhbCBzdXJ2ZWlsbGFuY2UgY29uY2VwdHMgb250byB0aGUgY2xhaW0tdHJhY2tpbmcgZGVzaWduIj4KPGRlZnM+PG1hcmtlciBpZD0iZCIgdmlld2JveD0iMCAwIDEwIDEwIiByZWZ4PSI4IiByZWZ5PSI1IiBtYXJrZXJ3aWR0aD0iNiIgbWFya2VyaGVpZ2h0PSI2IiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0yIDFMOCA1TDIgOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjb250ZXh0LXN0cm9rZSIgc3Ryb2tlLXdpZHRoPSIxLjUiPjwvcGF0aD48L21hcmtlcj48L2RlZnM+Cjx0ZXh0IHg9IjE0MCIgeT0iMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0aCI+RXBpZGVtaW9sb2d5PC90ZXh0Pgo8dGV4dCB4PSI2ODAiIHk9IjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idGgiPlRoaXMgZGVzaWduPC90ZXh0Pgo8cmVjdCB4PSIyMCIgeT0iNTAiIHdpZHRoPSIyNDAiIGhlaWdodD0iNDAiIHJ4PSI2IiBmaWxsPSJ2YXIoLS1ncmF5YmcpIiBzdHJva2U9InZhcigtLWxpbmUpIj48L3JlY3Q+PHRleHQgeD0iMTQwIiB5PSI3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InQiPkNhc2UgZGVmaW5pdGlvbjwvdGV4dD4KPHJlY3QgeD0iNTYwIiB5PSI1MCIgd2lkdGg9IjI0MCIgaGVpZ2h0PSI0MCIgcng9IjYiIGZpbGw9InZhcigtLXRlYWxiZykiIHN0cm9rZT0idmFyKC0tdGVhbCkiPjwvcmVjdD48dGV4dCB4PSI2ODAiIHk9Ijc1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idCI+V3JpdHRlbiBydWxlIGZvciAmcXVvdDtjb25zcGlyYXRvcmlhbCBjbGFpbSZxdW90OzwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjEwMCIgd2lkdGg9IjI0MCIgaGVpZ2h0PSI0MCIgcng9IjYiIGZpbGw9InZhcigtLWdyYXliZykiIHN0cm9rZT0idmFyKC0tbGluZSkiPjwvcmVjdD48dGV4dCB4PSIxNDAiIHk9IjEyNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InQiPlN1cnZlaWxsYW5jZSBwb3B1bGF0aW9uIGFuZCB3aW5kb3c8L3RleHQ+CjxyZWN0IHg9IjU2MCIgeT0iMTAwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjQwIiByeD0iNiIgZmlsbD0idmFyKC0tdGVhbGJnKSIgc3Ryb2tlPSJ2YXIoLS10ZWFsKSI+PC9yZWN0Pjx0ZXh0IHg9IjY4MCIgeT0iMTI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idCI+Rml4ZWQgc291cmNlcywgb25lIHNlYXNvbiwgc2FtcGxpbmcgcnVsZTwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjE1MCIgd2lkdGg9IjI0MCIgaGVpZ2h0PSI0MCIgcng9IjYiIGZpbGw9InZhcigtLWdyYXliZykiIHN0cm9rZT0idmFyKC0tbGluZSkiPjwvcmVjdD48dGV4dCB4PSIxNDAiIHk9IjE3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InQiPkNvaG9ydCB3aXRoIGluY2lkZW50IGNhc2VzIGFuZCBub24tY2FzZXM8L3RleHQ+CjxyZWN0IHg9IjU2MCIgeT0iMTUwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjQwIiByeD0iNiIgZmlsbD0idmFyKC0tYWNjYmcpIiBzdHJva2U9InZhcigtLWFjYykiPjwvcmVjdD48dGV4dCB4PSI2ODAiIHk9IjE3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InQiPkNsYWltcyB0aGF0IHdlcmUgYWRvcHRlZCBhbmQgY2xhaW1zIHRoYXQgd2VyZW4mIzM5O3Q8L3RleHQ+CjxyZWN0IHg9IjIwIiB5PSIyMDAiIHdpZHRoPSIyNDAiIGhlaWdodD0iNDAiIHJ4PSI2IiBmaWxsPSJ2YXIoLS1ncmF5YmcpIiBzdHJva2U9InZhcigtLWxpbmUpIj48L3JlY3Q+PHRleHQgeD0iMTQwIiB5PSIyMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0Ij5FeHBvc3VyZSBpcyBub3QgaW5mZWN0aW9uPC90ZXh0Pgo8cmVjdCB4PSI1NjAiIHk9IjIwMCIgd2lkdGg9IjI0MCIgaGVpZ2h0PSI0MCIgcng9IjYiIGZpbGw9InZhcigtLWNvcmFsYmcpIiBzdHJva2U9InZhcigtLWNvcmFsKSI+PC9yZWN0Pjx0ZXh0IHg9IjY4MCIgeT0iMjI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idCI+UmhldG9yaWMgaXMgbm90IGJlbGllZjsgYmVsaWVmIGlzIG5vdCBhY2NlcHRhbmNlPC90ZXh0Pgo8cmVjdCB4PSIyMCIgeT0iMjUwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjQwIiByeD0iNiIgZmlsbD0idmFyKC0tZ3JheWJnKSIgc3Ryb2tlPSJ2YXIoLS1saW5lKSI+PC9yZWN0Pjx0ZXh0IHg9IjE0MCIgeT0iMjc1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idCI+VHJpYWwgZm9yIHRoZSBpbnRlcnZlbnRpb248L3RleHQ+CjxyZWN0IHg9IjU2MCIgeT0iMjUwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjQwIiByeD0iNiIgZmlsbD0idmFyKC0tYW1iZXJiZykiIHN0cm9rZT0idmFyKC0tYW1iZXIpIj48L3JlY3Q+PHRleHQgeD0iNjgwIiB5PSIyNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0Ij5SYW5kb21pemVkIHByb3ZlbmFuY2UgZXhwZXJpbWVudDwvdGV4dD4KPGxpbmUgeDE9IjI2MCIgeTE9IjcwIiB4Mj0iNTU4IiB5Mj0iNzAiIGNsYXNzPSJkYXNoIj48L2xpbmU+PGxpbmUgeDE9IjI2MCIgeTE9IjEyMCIgeDI9IjU1OCIgeTI9IjEyMCIgY2xhc3M9ImRhc2giPjwvbGluZT48bGluZSB4MT0iMjYwIiB5MT0iMTcwIiB4Mj0iNTU4IiB5Mj0iMTcwIiBjbGFzcz0iZGFzaCI+PC9saW5lPjxsaW5lIHgxPSIyNjAiIHkxPSIyMjAiIHgyPSI1NTgiIHkyPSIyMjAiIGNsYXNzPSJkYXNoIj48L2xpbmU+PGxpbmUgeDE9IjI2MCIgeTE9IjI3MCIgeDI9IjU1OCIgeTI9IjI3MCIgY2xhc3M9ImRhc2giPjwvbGluZT4KPHRleHQgeD0iNDEwIiB5PSI2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRzIj5hcHBsaWVkIGJlZm9yZSBvdXRjb21lIGlzIGtub3duPC90ZXh0Pgo8dGV4dCB4PSI0MTAiIHk9IjExNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRzIj5jb21wbGV0ZW5lc3Mgd2l0aGluIGJvdW5kcyBiZWF0cyBzaXplPC90ZXh0Pgo8dGV4dCB4PSI0MTAiIHk9IjE2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRzIj5kZW5vbWluYXRvcnMgbWFrZSByYXRlcyBwb3NzaWJsZTwvdGV4dD4KPHRleHQgeD0iNDEwIiB5PSIyMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0cyI+bWVhc3VyZWQgc2VwYXJhdGVseSBvciBub3QgYXQgYWxsPC90ZXh0Pgo8dGV4dCB4PSI0MTAiIHk9IjI2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRzIj5vYnNlcnZhdGlvbiBzdWdnZXN0cywgcmFuZG9taXphdGlvbiB0ZXN0czwvdGV4dD4KPC9zdmc+" class="figure-img">
+<figcaption>
+Figure 4. What transfers from epidemiology is discipline about case definitions, denominators, and the difference between exposure and outcome. What does not transfer is the mechanism: claims are not pathogens, transmission is often deliberate, and “reproduction number” style modeling would import assumptions (homogeneous mixing, passive transmission) that Figure 1 says are false.
+</figcaption>
+</figure>
+<section id="on-training-an-llm-to-be-an-epidemiologist" class="level3">
+<h3 class="anchored" data-anchor-id="on-training-an-llm-to-be-an-epidemiologist">On training an LLM “to be an epidemiologist”</h3>
+<p>Don’t train a model; write a protocol and have a model apply it. The useful part of the idea is the surveillance frame: a fixed case definition, fixed sources, fixed window, and a model that reads every passage and flags cases. That is exactly the LLM extraction step in stage 1, and open-weight models handle it. The part to drop is the disease-dynamics modeling (SIR, R<sub>0</sub>); it assumes passive, homogeneous spread, and your Figure 1 says spread here is selective, often deliberate, and sometimes carried by one person between two rooms. Keep the vocabulary of surveillance; leave the epidemic curves.</p>
+</section>
+</section>
+<section id="falsifiability-and-reproducibility-in-one-table" class="level2">
+<h2 class="anchored" data-anchor-id="falsifiability-and-reproducibility-in-one-table">Falsifiability and reproducibility, in one table</h2>
+<div class="wrap">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 23%">
+<col style="width: 35%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>Prediction if the theory is right</th>
+<th>Result that forces revision</th>
+<th>Reproducible because</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Allegation survives</td>
+<td>Adopted claims keep conspirators/action/purpose across tiers</td>
+<td>Elites mostly adopt rebuilt allegations: the theory is about assembly, not transmission</td>
+<td>Case definition, coding sheet, and validation sample are published; embedding metrics follow Keim et al.</td>
+</tr>
+<tr class="even">
+<td>2. Source obscured predicts adoption</td>
+<td>Positive coefficient on “source-obscured version exists,” holding survival constant</td>
+<td>Null or negative with adequate events: laundering is not what elites select on</td>
+<td>Cohort built by a stated sampling rule; panel and code released</td>
+</tr>
+<tr class="odd">
+<td>3. Obscuring moves acceptance more than belief</td>
+<td>Wording × disclosure interaction on acceptance; belief within equivalence margin</td>
+<td>Acceptance and belief move together: persuasion, not normalization; or disclosure has no effect: messenger or wording does the work</td>
+<td>Preregistered; stimuli drawn from documented pairs in the cohort</td>
+</tr>
+<tr class="even">
+<td>0. Provenance cues exist in elite rhetoric at all</td>
+<td>“People are saying” attaches disproportionately to claims with traceable fringe origin</td>
+<td>Elites rarely assert provenance: the experiment tests a counterfactual, not a practice</td>
+<td>Search terms and elite corpus listed; counts reported</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="what-to-do-first" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-do-first">What to do first</h2>
+<ol type="1">
+<li>Write the case definition and the coding sheet (one page, no code).</li>
+<li>Hand-code two weeks of /pol/ from September 2024 with a second coder on a subsample; get a cohort of 40 to 60 variants and their fates. Report agreement.</li>
+<li>Run the provenance-cue search on Trump and Vance 2024 transcripts (test 0).</li>
+<li>Only if 1 and 2 show a pattern: build the extraction pipeline and the season-long cohort.</li>
+<li>Pilot the acceptance measures in Bolsen’s pool in parallel; that is independent of everything above.</li>
+</ol>
+<p>Sources referenced: Keim, Chandio, Khalid &amp; Nithyanand (ICWSM 2026); Tangherlini et al.&nbsp;(PLOS ONE 2020); Holur et al.&nbsp;(INCANT/TAMPA); Gonen et al.&nbsp;(ACL 2020); Hemmer (Amanpour &amp; Company, 9 June 2022); Starbird (ICWSM 2017); Pyrhönen et al.&nbsp;(Social Forces 2026); Muirhead &amp; Rosenblum (2019); arXiv 2605.19275 on open-weight LLM classification.</p>
+</section>
+</section>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/wahabalothman\.github\.io\/dissertation\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Abdulwahab Al-Othman · Georgia State University</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

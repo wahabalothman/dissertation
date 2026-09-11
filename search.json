@@ -1,0 +1,432 @@
+[
+  {
+    "objectID": "notes/2026-09-week-37.html",
+    "href": "notes/2026-09-week-37.html",
+    "title": "Week 37: gap paper, design memos, data inventory",
+    "section": "",
+    "text": "Four-stage sequence is a hypothesis, not a frame. Elite-first and joint-production cases enter the cohort.\nLaundering coded as three separable transformations: wording, messenger, attributed origin. Allegation-altered is a fourth code, not laundering.\nPilot window: 1 Sept to 15 Oct 2024. No scraping, no transcription: USC Telegram + 4plebs (fringe); Tenet transcripts + YouTube captions (intermediary); Truth Social dataset + Factba.se (elite).\nExperiment is a separate chapter; computational cohort is the core.\nRepository + Quarto site is the workspace. Raw data lives in a bucket, never in the repo."
+  },
+  {
+    "objectID": "notes/2026-09-week-37.html#decisions",
+    "href": "notes/2026-09-week-37.html#decisions",
+    "title": "Week 37: gap paper, design memos, data inventory",
+    "section": "",
+    "text": "Four-stage sequence is a hypothesis, not a frame. Elite-first and joint-production cases enter the cohort.\nLaundering coded as three separable transformations: wording, messenger, attributed origin. Allegation-altered is a fourth code, not laundering.\nPilot window: 1 Sept to 15 Oct 2024. No scraping, no transcription: USC Telegram + 4plebs (fringe); Tenet transcripts + YouTube captions (intermediary); Truth Social dataset + Factba.se (elite).\nExperiment is a separate chapter; computational cohort is the core.\nRepository + Quarto site is the workspace. Raw data lives in a bucket, never in the repo."
+  },
+  {
+    "objectID": "notes/2026-09-week-37.html#done",
+    "href": "notes/2026-09-week-37.html#done",
+    "title": "Week 37: gap paper, design memos, data inventory",
+    "section": "Done",
+    "text": "Done\n\nGap paper drafted and revised against three rounds of feedback.\nTransmission framework memo with diagrams.\nData inventory: existing 2024 datasets cover three of four tiers."
+  },
+  {
+    "objectID": "notes/2026-09-week-37.html#open",
+    "href": "notes/2026-09-week-37.html#open",
+    "title": "Week 37: gap paper, design memos, data inventory",
+    "section": "Open",
+    "text": "Open\n\nVerify: Jin & Huang (ICLR 2026); Consoli et al. (Scientific Data); Corso et al. (ACL 2025).\nEmail Bolsen re: student pool pretest, TESS, committee.\nAsk DGS about GSU research computing."
+  },
+  {
+    "objectID": "SETUP.html",
+    "href": "SETUP.html",
+    "title": "Getting the site live (about 45 minutes)",
+    "section": "",
+    "text": "Install Git (git-scm.com), Quarto (quarto.org/docs/get-started), and GitHub Desktop if you prefer clicking to typing.\nCreate a repository on GitHub named dissertation (public if you want Claude to read it directly; private also works and the site can still be public).\nUnzip this folder, open a terminal inside it, and run:\n git init\n git add .\n git commit -m \"Initial structure: theory, design, data manifest, log\"\n git branch -M main\n git remote add origin https://github.com/YOUR-USERNAME/dissertation.git\n git push -u origin main\nReplace YOUR-USERNAME in _quarto.yml (the GitHub link) and push again.\nOn GitHub: Settings &gt; Pages &gt; Source: Deploy from a branch &gt; branch gh-pages. The first push runs the workflow and creates that branch; allow two minutes.\nYour site is at https://YOUR-USERNAME.github.io/dissertation/. A custom domain is Settings &gt; Pages &gt; Custom domain, plus a CNAME record at your registrar.\nPreview locally any time with quarto preview.\n\n\n\n\nOpen the week’s file in notes/ and write what you decided.\nWork in analysis/ or design/.\ngit add . && git commit -m \"what changed\" && git push. The site rebuilds itself."
+  },
+  {
+    "objectID": "SETUP.html#daily-routine",
+    "href": "SETUP.html#daily-routine",
+    "title": "Getting the site live (about 45 minutes)",
+    "section": "",
+    "text": "Open the week’s file in notes/ and write what you decided.\nWork in analysis/ or design/.\ngit add . && git commit -m \"what changed\" && git push. The site rebuilds itself."
+  },
+  {
+    "objectID": "theory/index.html",
+    "href": "theory/index.html",
+    "title": "Theory",
+    "section": "",
+    "text": "Two documents anchor the project.\n\nThe gap in the literature: what the field has established at each stage, what competes with the model, and what remains untested.\nTransmission framework: the four stages as hypotheses, three routes into the intermediary, the decomposition of laundering, the cohort logic, and the falsification table.\n\n\nMechanism, rivals, and disconfirmation\nMechanism. Attributing a claim to grassroots origin lowers the reputational cost of advancing it, for elites and for the citizens who tolerate them, by signaling that the claim is already socially validated and that endorsing it is responsiveness rather than invention.\nRivals. Persuasion: attribution moves acceptance only through belief. Partisan usefulness: acceptance tracks what the claim does for the respondent’s side regardless of attribution. Authenticity (Hahl, Kim & Zuckerman Sivan 2018): a lying elite reads as authentic to voters who see the system as illegitimate. Responsiveness without concealment: “I’m responding to constituents” works even when the fringe source is fully visible.\nWhat would force revision. A null on the grassroots-vs-elite origin contrast with adequate power; acceptance and belief moving together with a direct test of the difference null; a corpus in which elites rarely assert provenance at all.",
+    "crumbs": [
+      "Theory"
+    ]
+  },
+  {
+    "objectID": "design/sampling-rule.html",
+    "href": "design/sampling-rule.html",
+    "title": "Sampling rule (draft, to preregister)",
+    "section": "",
+    "text": "Window: 1 September to 15 October 2024.\nFringe sources: (a) the 500 most central English-language chats in the USC Telegram 2024 dataset, by the authors’ chat-network centrality; (b) /pol/ via the 4plebs archive.\nEnumeration: for each week in the window, draw a random sample of n threads from /pol/ and n messages from the selected Telegram chats. Apply the case definition to every sampled passage. Deduplicate into claim variants. Record sampling probabilities.\nElite-first claims: apply the same case definition to a random sample of Trump Truth Social posts and Factba.se transcripts in the window; enroll qualifying claims in a separate elite cohort. Do not pool the two cohorts.\nFollow-up: search every enrolled claim across the intermediary corpus (Tenet transcripts; YouTube auto-captions for two named shows) and the elite corpus (Truth Social, Factba.se, Congressional Record) through 15 November 2024. Record: first qualifying appearance per tier; “no appearance in complete coverage”; “coverage incomplete”; “censored at end of follow-up.”\nDecision gates (pilot): at least 40 claim variants enumerated; second-coder agreement on same-allegation judgments acceptable; count of elite adoption events reported before any modeling decision.",
+    "crumbs": [
+      "Design",
+      "Sampling rule (draft, to preregister)"
+    ]
+  },
+  {
+    "objectID": "design/falsification.html",
+    "href": "design/falsification.html",
+    "title": "Falsification table",
+    "section": "",
+    "text": "Test\nPrediction if the theory is right\nResult that forces revision\nUninformative result\n\n\n\n\n0. Provenance cues exist in elite rhetoric\n“People are saying” attaches disproportionately to claims with traceable fringe origin\nElites rarely assert provenance\nCorpus too small to count\n\n\n1. Allegation survives\nAdopted claims keep conspirators/action/purpose across tiers\nElites mostly adopt rebuilt allegations\nCoders cannot agree on “same allegation”\n\n\n2. Source obscured predicts adoption\nPositive coefficient on “source-obscured version exists,” holding survival constant\nPrecise null or negative\nNoisy null on few adoption events\n\n\n3. Obscuring moves acceptance more than belief\nWording × disclosure interaction on acceptance; belief within equivalence margin\nAcceptance and belief move together; or disclosure has no effect\nNonsignificant belief result with wide interval",
+    "crumbs": [
+      "Design",
+      "Falsification table"
+    ]
+  },
+  {
+    "objectID": "data/coverage-log.html",
+    "href": "data/coverage-log.html",
+    "title": "Coverage log",
+    "section": "",
+    "text": "One entry per source per window. Record: date range actually present, known gaps, keyword seeding (if the dataset was built from search terms), language filters applied, and retrieval date.\n\n\n\n\n\n\n\n\n\n\nSource\nWindow present\nKnown gaps\nSeeded by keywords?\nRetrieved\n\n\n\n\n(fill in)",
+    "crumbs": [
+      "Data",
+      "Coverage log"
+    ]
+  },
+  {
+    "objectID": "data/index.html",
+    "href": "data/index.html",
+    "title": "Data",
+    "section": "",
+    "text": "Raw data never lives in this repository. It lives in the storage bucket listed in the manifest; the repo holds derived tables small enough to version and the scripts that produce them. The coverage log records what each source does and does not contain for the study window.",
+    "crumbs": [
+      "Data"
+    ]
+  },
+  {
+    "objectID": "site/cv.html",
+    "href": "site/cv.html",
+    "title": "Abdulwahab Al-Othman",
+    "section": "",
+    "text": "PhD student, Political Science, Georgia State University.\nResearch: how conspiratorial claims acquire political authority; political communication; computational text analysis.\n(Paste CV here or link a PDF in this folder.)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "How conspiratorial claims acquire political authority",
+    "section": "",
+    "text": "Which conspiratorial allegations circulating on fringe platforms are taken up by U.S. political elites, what do intermediaries (podcasts, alt-video, cable) do to those allegations on the way, and does a claim’s attributed origin change whether the public accepts a politician using it?"
+  },
+  {
+    "objectID": "index.html#the-question",
+    "href": "index.html#the-question",
+    "title": "How conspiratorial claims acquire political authority",
+    "section": "",
+    "text": "Which conspiratorial allegations circulating on fringe platforms are taken up by U.S. political elites, what do intermediaries (podcasts, alt-video, cable) do to those allegations on the way, and does a claim’s attributed origin change whether the public accepts a politician using it?"
+  },
+  {
+    "objectID": "index.html#the-argument-in-one-paragraph",
+    "href": "index.html#the-argument-in-one-paragraph",
+    "title": "How conspiratorial claims acquire political authority",
+    "section": "The argument, in one paragraph",
+    "text": "The argument, in one paragraph\nAllegations leave the fringe carrying a stigma. Somewhere between an imageboard and a debate stage the stigma comes off: the wording is recoded, the messenger changes, and the source is replaced by “people are saying.” I call this laundering and treat it as a mechanism to test, not a label. The dissertation builds a cohort of claims that includes the ones that went nowhere, asks which claims elites selected and whether laundered versions were selected more, and tests experimentally whether hiding a claim’s origin raises political acceptability more than it raises belief."
+  },
+  {
+    "objectID": "index.html#status",
+    "href": "index.html#status",
+    "title": "How conspiratorial claims acquire political authority",
+    "section": "Status",
+    "text": "Status\n\n\n\n\n\n\n\n\nMilestone\nTarget\nState\n\n\n\n\nGap paper (POLS 8860)\nSept 2026\ndrafted\n\n\nProspectus\nend Oct 2026\nin progress\n\n\nPilot cohort (Sept–Oct 2024 window)\nNov 2026–Jan 2027\nnot started\n\n\nAcceptance-measure pretest\nspring 2027\nnot started"
+  },
+  {
+    "objectID": "index.html#read-next",
+    "href": "index.html#read-next",
+    "title": "How conspiratorial claims acquire political authority",
+    "section": "Read next",
+    "text": "Read next\n\nTheory: the gap in the literature\nTransmission framework: methods by stage\nDesign: codebook, sampling rule, falsification table\nData: what exists and where it lives\nWeekly log"
+  },
+  {
+    "objectID": "data/manifest.html",
+    "href": "data/manifest.html",
+    "title": "Data manifest",
+    "section": "",
+    "text": "Tier\nDataset\nCoverage\nAccess\nLocation\nStatus\n\n\n\n\nFringe\nUSC Telegram 2024 election dataset (Blas, Luceri & Ferrara)\n30k+ chats, 500M+ messages, 2024\nGitHub, CC-BY\nbucket:/raw/telegram-usc-2024/\nnot downloaded\n\n\nFringe\n4plebs /pol/ archive\ncontinuous\npublic API\nbucket:/raw/pol-4plebs/\nnot pulled\n\n\nIntermediary\nTenet Media corpus (Kurek et al.)\n560 videos, Nov 2023 to Sep 2024, transcribed\nZenodo\nbucket:/raw/tenet/\nnot downloaded\n\n\nIntermediary\nYouTube auto-captions, two shows\nwindow\nyt-dlp\nbucket:/raw/captions/\nnot pulled\n\n\nElite\nTruth Social 2024 (Shah et al.)\n1.5M posts, Feb to Oct 2024\nGitHub\nbucket:/raw/truthsocial-usc-2024/\nnot downloaded\n\n\nElite\nFactba.se transcripts\nTrump/Vance speech\nweb export\nbucket:/raw/factbase/\nnot pulled\n\n\nElite\nCongressional Record\ncomplete\ngovinfo API\nbucket:/raw/congrec/\noptional\n\n\nSkip\nUSC X 2024 (tweet IDs)\nneeds hydration\nnone\nnone\nskipped\n\n\n\nPrecedent to read before touching Truth Social data: arXiv 2601.04631, “Beyond the ‘Truth’: Investigating Election Rumors on Truth Social During the 2024 Election.”",
+    "crumbs": [
+      "Data",
+      "Data manifest"
+    ]
+  },
+  {
+    "objectID": "design/index.html",
+    "href": "design/index.html",
+    "title": "Research design",
+    "section": "",
+    "text": "Three empirical chapters sharing one database.\n\n\n\n\n\n\n\n\n\nChapter\nQuestion\nMethod\nData\n\n\n\n\n1. Claim cohort\nWhat happens to allegations between fringe and elite?\nOutcome-independent enumeration; claim-tuple coding; transformation coding (wording, messenger, attributed origin)\nTelegram (USC 2024), /pol/ (4plebs), podcast transcripts, Truth Social, Factba.se\n\n\n2. Elite selection\nWhy these claims and not others?\nDiscrete-time event history (claim × elite × week); paired process tracing of adopted vs. stalled cases\nSame database\n\n\n3. Provenance experiment\nDoes attributed origin change acceptability independent of belief?\n2×2 (wording × source disclosed), preregistered; acceptance and belief measured separately\nStudent-pool pretest; TESS or quota sample for confirmatory\n\n\n\nPages: Codebook · Sampling rule · Falsification table",
+    "crumbs": [
+      "Design",
+      "Research design"
+    ]
+  },
+  {
+    "objectID": "design/codebook.html",
+    "href": "design/codebook.html",
+    "title": "Codebook (v0.1, draft)",
+    "section": "",
+    "text": "A passage counts as a conspiratorial claim if it asserts that identifiable actors are secretly coordinating an action for a hidden purpose. Excluded: allegations of incompetence without coordination; ordinary rumor without a covert actor; policy criticism.",
+    "crumbs": [
+      "Design",
+      "Codebook (v0.1, draft)"
+    ]
+  },
+  {
+    "objectID": "design/codebook.html#case-definition",
+    "href": "design/codebook.html#case-definition",
+    "title": "Codebook (v0.1, draft)",
+    "section": "",
+    "text": "A passage counts as a conspiratorial claim if it asserts that identifiable actors are secretly coordinating an action for a hidden purpose. Excluded: allegations of incompetence without coordination; ordinary rumor without a covert actor; policy criticism.",
+    "crumbs": [
+      "Design",
+      "Codebook (v0.1, draft)"
+    ]
+  },
+  {
+    "objectID": "design/codebook.html#unit",
+    "href": "design/codebook.html#unit",
+    "title": "Codebook (v0.1, draft)",
+    "section": "Unit",
+    "text": "Unit\nThe claim variant: (alleged conspirators, covert action, target, stated purpose, evidence offered). A change in conspirators, action, or purpose creates a new variant with a recorded parent.",
+    "crumbs": [
+      "Design",
+      "Codebook (v0.1, draft)"
+    ]
+  },
+  {
+    "objectID": "design/codebook.html#fields-coded-per-occurrence",
+    "href": "design/codebook.html#fields-coded-per-occurrence",
+    "title": "Codebook (v0.1, draft)",
+    "section": "Fields coded per occurrence",
+    "text": "Fields coded per occurrence\n\n\n\n\n\n\n\n\nField\nValues\nNotes\n\n\n\n\nTier\nfringe / intermediary / elite\nSource role, fixed before coding\n\n\nTimestamp\nISO datetime; recording vs. upload noted\nRetain uncertainty\n\n\nSpeaker identity\naccount / host / guest / writer / pseudonym\nFor the personnel route\n\n\nStance\nendorse / raise as concern / neutral quote / reject\nAdoption = endorse or raise-as-concern only\n\n\nAsserted provenance\nnamed fringe source / “people are saying” / anonymous reports / constituents / expert / other elite / none\nTransformation C\n\n\nWording register\nexplicit / coded / euphemistic; stigmatized terms present (0/1)\nTransformation A\n\n\nMessenger\nsame actor as prior occurrence / new actor\nTransformation B\n\n\nConstituency frame\npresent / absent\nResponsiveness justification\n\n\nEvidence of transmission\nexplicit citation / link or screenshot / distinctive borrowed detail / chronology only\nSequence is not borrowing\n\n\nExact span\nquoted text or audio time\nRequired for every coded field",
+    "crumbs": [
+      "Design",
+      "Codebook (v0.1, draft)"
+    ]
+  },
+  {
+    "objectID": "design/codebook.html#reliability-plan",
+    "href": "design/codebook.html#reliability-plan",
+    "title": "Codebook (v0.1, draft)",
+    "section": "Reliability plan",
+    "text": "Reliability plan\nTwo coders on a 300-passage subsample; report Krippendorff’s alpha for stance and same-allegation judgments; freeze rules before the held-out evaluation set.",
+    "crumbs": [
+      "Design",
+      "Codebook (v0.1, draft)"
+    ]
+  },
+  {
+    "objectID": "theory/gap-summary.html",
+    "href": "theory/gap-summary.html",
+    "title": "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature",
+    "section": "",
+    "text": "This dissertation asks under what conditions political elites adopt conspiratorial claims circulating outside established institutions, and whether the origin attributed to such a claim affects its political acceptability independently of its content and its endorser. I approach it through a four-stage sequence: fringe origin (imageboards such as 4chan/pol), spread through alt-media (Rumble, long-form podcasts, Telegram), elite uptake, and non-uniform electorate response. The sequence is a hypothesis, not an organizing assumption. The literature reviewed below already documents claims that begin with elites, claims assembled jointly by elites and audiences, and claims that never reach elites, and a design that cannot represent those cases cannot test the pathway. The gap this review identifies is bounded. It is not that transmission, elite amplification, or heterogeneous response are unstudied; each is. It is that, within the population of claims circulating in the U.S. alt-media ecosystem, no located study explains which claims elites select against a comparison set of claims they did not, or tests whether attributed origin moves political acceptance separately from belief.",
+    "crumbs": [
+      "Theory",
+      "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature"
+    ]
+  },
+  {
+    "objectID": "theory/gap-summary.html#the-question-and-the-model",
+    "href": "theory/gap-summary.html#the-question-and-the-model",
+    "title": "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature",
+    "section": "",
+    "text": "This dissertation asks under what conditions political elites adopt conspiratorial claims circulating outside established institutions, and whether the origin attributed to such a claim affects its political acceptability independently of its content and its endorser. I approach it through a four-stage sequence: fringe origin (imageboards such as 4chan/pol), spread through alt-media (Rumble, long-form podcasts, Telegram), elite uptake, and non-uniform electorate response. The sequence is a hypothesis, not an organizing assumption. The literature reviewed below already documents claims that begin with elites, claims assembled jointly by elites and audiences, and claims that never reach elites, and a design that cannot represent those cases cannot test the pathway. The gap this review identifies is bounded. It is not that transmission, elite amplification, or heterogeneous response are unstudied; each is. It is that, within the population of claims circulating in the U.S. alt-media ecosystem, no located study explains which claims elites select against a comparison set of claims they did not, or tests whether attributed origin moves political acceptance separately from belief.",
+    "crumbs": [
+      "Theory",
+      "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature"
+    ]
+  },
+  {
+    "objectID": "theory/gap-summary.html#origin-legitimacy-is-five-constructs",
+    "href": "theory/gap-summary.html#origin-legitimacy-is-five-constructs",
+    "title": "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature",
+    "section": "Origin: “legitimacy” is five constructs",
+    "text": "Origin: “legitimacy” is five constructs\nBarkun (2003; 2016) supplies the anchor: conspiracy theories as “stigmatized knowledge,” rejected by truth-validating institutions and “mainstreamed” when fringe and center merge. He offers a category, not a measure, and no located study follows the same claims over time and dates that crossing. Adjacent work measures adjacent things. Buehling, Zhang, and Heft (2026), comparing New World Order and Great Replacement discourse across 4chan, Twitter, and alternative news media over 2011–2021, find both platform-specific styles and convergence in how conspiracism is expressed, without identifying what drives a platform’s boundary to move. Ekman (2022) shows replacement claims being rebuilt for mainstream-right audiences, so what crosses is an argument structure, not a verbatim proposition. Pyrhönen, Bauvois, Berg, and Holley (2026), in 1,612 life-course interviews, find unprompted conspiracy talk in a tenth of transcripts and that its pandemic-era rise came substantially from passages challenging conspiracy theories. Visibility is not acceptance.\nTwo literatures outside conspiracy research bear directly on what “acceptance” means. Bursztyn, Egorov, and Fiorin (2020) show that shifting perceptions of public support changed willingness to express xenophobic views and the sanctions attached to doing so. Muirhead and Rosenblum (2019) describe a “new conspiracism” that works by repetition and social validation (“a lot of people are saying”) rather than by evidence, with consequences for political standing and institutions rather than for belief. Both are close precursors to the argument here, and both are theoretical or adjacent in domain. The origin stage therefore has to keep separate at least five constructs the conspiracy literature conflates as “legitimacy”: institutional endorsement, elite political endorsement, reduced social stigma, public visibility, and perceived credibility. The dissertation’s contribution beyond Bursztyn et al. and Muirhead and Rosenblum is to specify what conspiratorial content, intermediary transformation, and attributed provenance add to their mechanisms, and to test propositions that both leave untested.",
+    "crumbs": [
+      "Theory",
+      "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature"
+    ]
+  },
+  {
+    "objectID": "theory/gap-summary.html#spread-what-intermediaries-do-to-a-claim",
+    "href": "theory/gap-summary.html#spread-what-intermediaries-do-to-a-claim",
+    "title": "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature",
+    "section": "Spread: what intermediaries do to a claim",
+    "text": "Spread: what intermediaries do to a claim\nThe second stage asks what happens to a claim between its first appearance and its arrival in elite speech. The computational literature has answered the descriptive half of that question. Zannettou et al. (2018) estimated cross-platform influence among 4chan/pol, Reddit, Twitter, and Gab with Hawkes processes on hashed image memes, and coverage has since reached the platforms this model names: Telegram forwarding (Hoseini et al. 2024), Rumble podcast transcripts (Balci et al. 2025), and political podcasts, where election-fraud claims appeared in more than a quarter of episodes from 79 major shows between the 2020 election and January 6 (Wirtschafter 2023). The unit of analysis has moved from memes and links to text: Hanley and Durumeric (2024a) apply Hawkes modeling to paragraph-level embeddings across 732 Telegram channels, and Gerard, Luceri, Blas, and Ferrara (2026) build platform-invariant discourse networks from 5.7 million posts across X, TikTok, Truth Social, and Telegram during the 2024 election, predict cross-platform narrative emergence days ahead with Springfield as a demonstration, and have announced an extension to podcasts (USC Viterbi, 24 June 2026). Heft and Buehling (2022) have already set out the choice between reference-based and content-based diffusion measurement and the risks of selecting predefined actors and topics. That a claim moves across platforms, and roughly how fast, is established.\nWhat is not established is what the claim is when it arrives. Every study above measures whether a narrative reappears, not how it changed on the way. Ekman (2022) shows in the Great Replacement case that intermediaries rebuild the argument for a new audience, but as a single-case reading, not as a coded comparison across many claims. And no located study includes elite speech as a node, so none can say whether the version an elite adopts is the fringe version, the podcast version, or something assembled at the point of adoption. Gerard et al.’s own result cuts the same way: adoption is predictable from network proximity even without direct cross-platform influence, which means reappearance can be forecast while transmission remains unidentified, and first observed appearance is not authorship.\nThat is the job of stage two in this dissertation. The corpus is coded at the level of the proposition (alleged conspirators, covert action, purpose, evidence offered, speaker stance, and any attributed source), and each claim’s successive versions are compared. The question is whether intermediaries supply evidence, strip stigmatized language, alter the alleged conspiracy, or attribute the claim to a source other than where it was first observed. The last of these is where stage two feeds the rest of the model: if podcasts and alt-media are where “people are saying” gets attached to claims, then asserted provenance is manufactured at this stage, elite selection at stage three can be tested against which transformed version was available, and the experiment at stage four tests a cue that the corpus shows is actually in circulation.",
+    "crumbs": [
+      "Theory",
+      "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature"
+    ]
+  },
+  {
+    "objectID": "theory/gap-summary.html#elite-uptake-the-literature-already-argues-against-a-one-way-pipeline",
+    "href": "theory/gap-summary.html#elite-uptake-the-literature-already-argues-against-a-one-way-pipeline",
+    "title": "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature",
+    "section": "Elite uptake: the literature already argues against a one-way pipeline",
+    "text": "Elite uptake: the literature already argues against a one-way pipeline\nHere prior work competes rather than leaves a gap. Starbird, DiResta, and DeButts (2023) reconstruct three 2020 voter-fraud rumors and find “participatory disinformation”: elites set a frame, ordinary users supply apparent evidence, intermediaries select and reframe it, elites amplify the result. Benkler et al. (2020), on 55,000 stories, five million tweets, and 75,000 Facebook posts, conclude the mail-in fraud campaign was led by elites and mass media with social media in support. Bergmann (2025) argues strategic weaponization from above. Uscinski et al. (2022) find no systematic increase in aggregate conspiracy belief across their measures, which does not show supply is inconsequential but does mean any supply-side claim must be about which claims, which believers, and which elites, not about more belief overall. On the elite side, Blackington and Cayton (2025) code a decade of Polish Law and Justice speech into dog-whistles and open “barks,” and Blackington and Cayton (2024) find, against the elite-cue literature, that ruling-party tweets endorsing conspiracy theories earned less engagement than non-official ones and that threat frames, not elite identity, drove longevity. Elite endorsement does not uniformly confer an advantage, which is relevant to selection even though explaining engagement is not explaining an elite’s first adoption.\nWhat none of this answers is selection. Why do some circulating claims receive elite endorsement while comparable claims stall? Showing that an ordinary user posted first establishes neither that the elite felt compelled to adopt it (audience capture), nor that the elite chose it to fit a prior frame (strategic selection), nor that the elite had solicited such material (joint production). Answering that requires a sample of claims identified independently of whether they became prominent, including claims first observed with grassroots users, with intermediaries, and with elites, and including claims that failed to cross a stage. A trace that starts from elite speech and works backward selects on the outcome. Springfield, documented step by step by NewsGuard, NBC, and ABC, still exists only as journalism and as a demonstration case, and any analysis of it needs stalled comparison cases beside it.",
+    "crumbs": [
+      "Theory",
+      "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature"
+    ]
+  },
+  {
+    "objectID": "theory/gap-summary.html#response-factual-backfire-is-unreliable-provenance-and-acceptance-are-untested",
+    "href": "theory/gap-summary.html#response-factual-backfire-is-unreliable-provenance-and-acceptance-are-untested",
+    "title": "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature",
+    "section": "Response: factual backfire is unreliable; provenance and acceptance are untested",
+    "text": "Response: factual backfire is unreliable; provenance and acceptance are untested\nFactual backfire is not a reliable general expectation. Wood and Porter (2019) found none across 52 issues and 10,100 subjects; Prike, Blackley, Swire-Thompson, and Ecker (2023) found none on rating-scale measures in three experiments, with a measure-dependent exception on an open-ended response designed to elicit it; Nyhan (2021) concedes it is rare. The model should rest on non-uniform belief movement, for which there is direct evidence: Berlinski et al. (2023) show fraud allegations reduced election confidence particularly among Republicans; Lyons and Workman (2022) show explicit fraud cues raise co-partisan belief while depressing confidence broadly, and implicit cues do nothing; Radnitz (2022) finds official conspiracy claims had little effect in Georgia and Kazakhstan once motivated reasoning was accounted for. Fahey (2023) matters for how the belief measure is read: accuracy-oriented treatments failed to reduce endorsement of 2020-election and COVID misperceptions among Republicans and in one condition increased it, so reported belief is substantially sincere. Any argument that acceptance moves separately from belief has to be compatible with that.\nOn origin and acceptance, the nearest studies are close but not on target. Bram (2021) shows experimentally that official legitimization of a formerly fringe claim (the 2021 UFO report) warmed attitudes toward conspiracy theorists; this is the closest precursor to a normalization argument, and the expectation that attributed origin shifts acceptance is derived from it, though attitudes toward believers are not permission for politicians to advance a claim. Connor Desai and Reimers (2023) vary whether misinformation is explained as deliberate or accidental and find no difference, which concerns the falsehood’s cause, not its authorship. No located experiment holds claim and endorser constant while randomizing attributed origin, and none measures political acceptance separately from belief. Those are distinct constructs, and acceptance itself needs decomposing: permission to investigate, permission to assert publicly, willingness to excuse an unsupported assertion, and support for acting on it are different, and a respondent endorsing free inquiry is not endorsing the allegation.",
+    "crumbs": [
+      "Theory",
+      "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature"
+    ]
+  },
+  {
+    "objectID": "theory/gap-summary.html#three-meanings-of-origin",
+    "href": "theory/gap-summary.html#three-meanings-of-origin",
+    "title": "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature",
+    "section": "Three meanings of origin",
+    "text": "Three meanings of origin\nThe review to this point, and the four-stage model itself, slide between three things. Documented provenance is where a claim’s development can actually be traced. Asserted provenance is where elites and intermediaries say it came from. Perceived provenance is where an audience thinks it came from. These diverge: an elite-originated claim can be presented as something ordinary people discovered, and audiences can infer grassroots origin with no explicit cue. Muirhead and Rosenblum’s title is asserted provenance as rhetoric. This distinction connects the chapters. The observational chapter codes how speakers attribute claims (to citizens, experts, anonymous sources, other elites) as part of the text already being coded, which also establishes whether provenance cues occur often enough outside an experiment to matter. The experiment tests whether those attributions move acceptance while holding the allegation, stated evidence, and apparent breadth of public support constant.",
+    "crumbs": [
+      "Theory",
+      "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature"
+    ]
+  },
+  {
+    "objectID": "theory/gap-summary.html#two-problems-any-answer-must-survive",
+    "href": "theory/gap-summary.html#two-problems-any-answer-must-survive",
+    "title": "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature",
+    "section": "Two problems any answer must survive",
+    "text": "Two problems any answer must survive\nFirst, identification. Shojaie and Fox (2022) lay out why predictive time-series relationships are not causal; regime changes masquerade as Hawkes self-excitation (Filimonov and Sornette 2015); unobserved subprocesses create spurious cross-platform edges (Jin and Huang 2026). A finding that 4chan “led” a podcast is, without a control for the offline event that moved both, consistent with both reacting to the same cable segment, which is why causal weight cannot rest on transmission modeling. Second, the conspiratorial specificity question. A committee member will ask whether the same result would follow for any unverified accusation or partisan message. The experiment therefore needs a non-conspiratorial accusation arm, and the theory needs to say why allegations of covert coordination should behave differently from ordinary accusations of incompetence. A third, forward-looking problem: Hanley and Durumeric (2024b) estimate machine-generated articles grew sharply on small misinformation sites after ChatGPT’s release, and Costello et al. (2026, preprint) show language-model dialogues can increase as well as decrease conspiracy belief, so a human fringe incubator is an assumption to defend.",
+    "crumbs": [
+      "Theory",
+      "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature"
+    ]
+  },
+  {
+    "objectID": "theory/gap-summary.html#mechanism-rivals-and-what-would-force-revision",
+    "href": "theory/gap-summary.html#mechanism-rivals-and-what-would-force-revision",
+    "title": "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature",
+    "section": "Mechanism, rivals, and what would force revision",
+    "text": "Mechanism, rivals, and what would force revision\nThe central mechanism: attributing a claim to grassroots origin lowers the reputational cost of advancing it, for elites and for the citizens who tolerate them, by signaling that the claim is already socially validated and that endorsing it is responsiveness rather than invention. This predicts that grassroots attribution raises political acceptance more than it raises belief, that the effect is larger among co-partisans and among respondents high in perceived social sanction, and that elites attribute claims to citizens more often when the claim is stigmatized.\nTwo serious rivals. Persuasion: attribution moves acceptance only through belief, because “many people say it” is treated as evidence; if so, acceptance and belief move together and the difference between them is not distinguishable from zero. Partisan usefulness: acceptance tracks what the claim does for the respondent’s side regardless of attribution; if so, the origin manipulation does nothing once partisan alignment is controlled, and the observational chapter finds elites attribute claims to citizens no more often when stigmatized than when not.\nThree findings that would force revision. If the C-versus-D contrast (grassroots versus elite origin, endorsement held constant) is null on acceptance with adequate power, the provenance mechanism fails and the dissertation becomes a study of selection alone. If acceptance and belief move together and a direct test of the difference is null, the normalization framing gives way to persuasion. If the coded corpus shows elites rarely assert provenance at all, the cue is not part of political rhetoric and the experiment measures a counterfactual, not a practice. The pilot exists to see the third before the other two are built.\n\n\nWorks cited\nBalci, U., Patel, J., Balci, B., & Blackburn, J. (2025). Podcast outcasts: Understanding Rumble’s podcast dynamics. Proc. NLP4DH, 48–62. Barkun, M. (2003). A culture of conspiracy. University of California Press. Barkun, M. (2016). Conspiracy theories as stigmatized knowledge. Diogenes, 62(3–4), 114–120. Benkler, Y., Tilton, C., Etling, B., Roberts, H., Clark, J., Faris, R., Kaiser, J., & Schmitt, C. (2020). Mail-in voter fraud: Anatomy of a disinformation campaign. Berkman Klein Center Research Publication 2020-6. Bergmann, E. (2025). Weaponizing conspiracy theories. Routledge. Berlinski, N., Doyle, M., Guess, A. M., Levy, G., Lyons, B., Montgomery, J. M., Nyhan, B., & Reifler, J. (2023). The effects of unsubstantiated claims of voter fraud on confidence in elections. Journal of Experimental Political Science, 10(1), 34–49. Blackington, C., & Cayton, F. (2024). How to stay popular: Threat, framing, and conspiracy theory longevity. Perspectives on Politics, 22(4), 1118–1139. Blackington, C., & Cayton, F. (2025). To dog-whistle or to bark? Elite communication strategies when invoking conspiracy theories. Government and Opposition, 60(2), 382–403. Bram, C. (2021). When a conspiracy theory goes mainstream, people feel more positive toward conspiracy theorists. Research & Politics, 8(4). Buehling, K., Zhang, X., & Heft, A. (2026). Veiled conspiracism. New Media & Society. Bursztyn, L., Egorov, G., & Fiorin, S. (2020). From extreme to mainstream: The erosion of social norms. American Economic Review, 110(11), 3522–3548. Connor Desai, S., & Reimers, S. (2023). Does explaining the origins of misinformation improve the effectiveness of a given correction? Memory & Cognition, 51(2), 422–436. Costello, T. H., Pelrine, K., Kowal, M., et al. (2026). Large language models can effectively convince people to believe conspiracies. arXiv:2601.05050 (preprint). Ekman, M. (2022). The great replacement: Strategic mainstreaming of far-right conspiracy claims. Convergence, 28(4), 1127–1143. Fahey, J. J. (2023). The Big Lie: Expressive responding and misperceptions in the United States. Journal of Experimental Political Science, 10(2), 267–278. Filimonov, V., & Sornette, D. (2015). Apparent criticality and calibration issues in the Hawkes self-excited point process model. Quantitative Finance, 15(8), 1293–1314. Gerard, P., Luceri, L., Blas, L., & Ferrara, E. (2026). Cross-platform narrative prediction. Proc. ACM Web Conference 2026. Hanley, H. W. A., & Durumeric, Z. (2024a). Partial mobilization: Tracking multilingual information flows amongst Russian media outlets and Telegram. ICWSM, 18(1), 528–541. Hanley, H. W. A., & Durumeric, Z. (2024b). Machine-made media. ICWSM, 18(1), 542–556. Heft, A., & Buehling, K. (2022). Measuring the diffusion of conspiracy theories in digital information ecologies. Convergence, 28(4). Hoseini, M., et al. (2024). Characterizing information propagation in fringe communities on Telegram. ICWSM, 18(1), 583–595. Jin, S., & Huang, B. (2026). Causal structure learning in Hawkes processes with complex latent confounder networks. ICLR. [verify proceedings entry] Lyons, B. A., & Workman, K. S. (2022). Explicit voter fraud conspiracy cues. HKS Misinformation Review. Muirhead, R., & Rosenblum, N. L. (2019). A lot of people are saying: The new conspiracism and the assault on democracy. Princeton University Press. Nyhan, B. (2021). Why the backfire effect does not explain the durability of political misperceptions. PNAS, 118(15). Prike, T., Blackley, P., Swire-Thompson, B., & Ecker, U. K. H. (2023). Examining the replicability of backfire effects after standalone corrections. Cognitive Research: Principles and Implications, 8, 39. Pyrhönen, N., Bauvois, G., Berg, A., & Holley, P. (2026). Conspiracy talk in the lives of ordinary Americans. Social Forces, advance article. Radnitz, S. (2022). Dilemmas of distrust. Political Research Quarterly, 75(4), 1143–1157. Shojaie, A., & Fox, E. B. (2022). Granger causality: A review and recent advances. Annual Review of Statistics and Its Application, 9, 289–319. Starbird, K., DiResta, R., & DeButts, M. (2023). Influence and improvisation: Participatory disinformation during the 2020 US election. Social Media + Society, 9(2). USC Viterbi School of Engineering. (2026, June 24). What if we could see disinformation coming? USC scientists say we can. News release. Uscinski, J., et al. (2022). Have beliefs in conspiracy theories increased over time? PLOS ONE, 17(7). Wirtschafter, V. (2023). Audible reckoning. Brookings. Wood, T. J., & Porter, E. (2019). The elusive backfire effect. Political Behavior, 41, 135–163. Zannettou, S., et al. (2018). On the origins of memes by means of fringe web communities. Proc. IMC.",
+    "crumbs": [
+      "Theory",
+      "How Conspiratorial Claims Acquire Political Authority: A Gap in the Literature"
+    ]
+  },
+  {
+    "objectID": "theory/transmission-framework.html",
+    "href": "theory/transmission-framework.html",
+    "title": "Transmission framework: theory and methods by stage",
+    "section": "",
+    "text": "Note\n\n\n\nThe four diagrams are in the figure version of this memo. This page carries the text.",
+    "crumbs": [
+      "Theory",
+      "Transmission framework: theory and methods by stage"
+    ]
+  },
+  {
+    "objectID": "theory/transmission-framework.html#the-claim-stated-as-something-that-can-be-wrong",
+    "href": "theory/transmission-framework.html#the-claim-stated-as-something-that-can-be-wrong",
+    "title": "Transmission framework: theory and methods by stage",
+    "section": "0. The claim, stated as something that can be wrong",
+    "text": "0. The claim, stated as something that can be wrong\nAmong conspiratorial allegations circulating on the fringe in a given window, the ones that reach elite political speech are disproportionately those that were transformed by an intermediary in three specific ways: the allegation survived, the attributed source was obscured, and the stigmatized wording was replaced. Obscuring the source raises the political acceptability of the claim more than it raises belief in it. Each clause is a separate test with a separate way to fail.\n\n\n\nFigure 1. The four stages are hypotheses about sequence, not assumptions. The intermediary stage can be reached by at least three routes that look identical in a cross-platform timeline (fringe first, mainstream later), which is why the design needs cohort data with identities and matched cases, not only timing.",
+    "crumbs": [
+      "Theory",
+      "Transmission framework: theory and methods by stage"
+    ]
+  },
+  {
+    "objectID": "theory/transmission-framework.html#fringe-origin-enumerate-dont-select",
+    "href": "theory/transmission-framework.html#fringe-origin-enumerate-dont-select",
+    "title": "Transmission framework: theory and methods by stage",
+    "section": "1. Fringe origin: enumerate, don’t select",
+    "text": "1. Fringe origin: enumerate, don’t select\nThe methodological problem at stage 1 is not tracing; it is sampling. If the claim list comes from fact-checkers, prior literature, or elite speech traced backward, the cohort is selected on visibility or on the outcome. The fix is an enumeration rule applied to the fringe corpus before anything downstream is examined.\n\nThree ways to enumerate claims from a fringe corpus\n\n\n\n\n\n\n\n\n\n\nMethod\nWhat it produces\nStrength\nWeakness\n\n\n\n\nManual reading of a random thread sample (pilot)\nA list of distinct allegations of covert coordination, one row each\nNo tooling; you learn the material; the case definition gets sharpened by contact with real posts\nDoesn’t scale past a few weeks; coder fatigue; needs a second coder for reliability\n\n\nSemantic objects (Keim et al. 2026: Word2Vec per corpus, HDBSCAN, recursive sub-clustering)\nDense regions of meaning with no anchor list; each region is a candidate claim family\nOutcome-independent by construction; gives HAD/CSD/LO metrics for later stages\nNeeds a large corpus per space; unstable on small corpora (Gonen et al. 2020); finds themes more than propositions\n\n\nActant narrative graphs (Tangherlini et al. 2020, PLOS ONE; Holur et al. INCANT/TAMPA)\nActors as nodes, alleged relationships as edges; a narrative framework per corpus and window\nClosest to your unit (who did what to whom); designed for conspiracy narratives; handles fragmentation\nHeavy NLP pipeline; entity resolution on /pol/ is ugly; requires validation of extracted relations\n\n\nLLM extraction with a case definition\nStructured tuples: conspirators, covert action, purpose, evidence, stance, asserted source\nDirectly yields the coding scheme; cheap at scale; open-weight models are competitive for this (arXiv 2605.19275)\nMust be validated against human coding on a held-out sample; prompt drift; hallucinated relations\n\n\n\n\n\nRecommended: LLM extraction with a written case definition, validated by double-coded samples, with Keim-style semantic objects as a robustness check that the extracted claims correspond to real dense regions of discourse. Process tracing is not an enumeration method; it is what you do to a handful of cases after the cohort exists.\n\n\n\nThe case definition (the part epidemiologists get right)\nEpidemiology starts with a case definition that can be applied without knowing the outcome. Yours: a passage counts as a conspiratorial claim if it asserts that identifiable actors are secretly coordinating an action for a hidden purpose. Allegations of incompetence, ordinary rumor without covert coordination, and criticism of policy are excluded. Write it before coding; report how often coders disagree on the boundary.\n“First observed appearance” is what the data give you. It is not authorship. Report it as first observed, and treat elite-first claims as part of the cohort rather than as errors.",
+    "crumbs": [
+      "Theory",
+      "Transmission framework: theory and methods by stage"
+    ]
+  },
+  {
+    "objectID": "theory/transmission-framework.html#intermediaries-what-laundering-means-operationally",
+    "href": "theory/transmission-framework.html#intermediaries-what-laundering-means-operationally",
+    "title": "Transmission framework: theory and methods by stage",
+    "section": "2. Intermediaries: what laundering means operationally",
+    "text": "2. Intermediaries: what laundering means operationally\n“Laundering” is a metaphor used by Hemmer, Starbird (2017), and Keim et al. It needs to be broken into components that can vary independently, because they do.\n\n\n\nFigure 2. Three transformations that can occur separately or together between a fringe version and an elite version of the same allegation. A broadcaster can legitimize a claim while openly naming its fringe source (B without C). Rewording can happen with the messenger held constant (A without B). Coding them separately is what lets the design say which one does the work.\n\n\n\nCoding sheet, per claim, per appearance\n\n\n\n\n\n\n\n\n\nField\nValues\nUsed for\n\n\n\n\nClaim tuple\nconspirators, covert action, purpose, evidence\nDeciding whether it’s the same allegation (test 1)\n\n\nTier and date\nfringe / intermediary / elite; timestamp\nSequence; first-observed tier\n\n\nSpeaker identity\naccount, host, writer, guest, known pseudonyms\nDetecting the personnel route\n\n\nStance\nendorse / raise as concern / neutral quote / reject\nAdoption is endorse or raise-as-concern only; Pyrhönen et al. show visibility often comes from challenge\n\n\nAsserted provenance\nnamed fringe source / “people are saying” / anonymous reports / constituents / expert / other elite / none\nTest 2 (source obscured)\n\n\nWording register\nexplicit / coded / euphemistic; stigmatized terms present (0/1)\nTransformation A\n\n\nConstituency frame\npresent / absent\nResponsiveness justification\n\n\nEvidence of transmission\nexplicit citation / link / distinctive borrowed detail / chronology only\nSeparating sequence from borrowing\n\n\n\n\n\n\nMeasuring “the allegation survived” with embeddings\nKeim et al. vary time; you vary tier. Train one embedding space per large corpus (fringe; intermediary transcripts), align them, and compute their three distances for each claim family. Laundering predicts low CSD (meaning preserved) with low lexical overlap (vocabulary replaced) from fringe to intermediary. Stalled claims should not show this pattern. The elite corpus is too small for its own Word2Vec space; use sentence embeddings for claim matching there and reserve the diachronic metrics for the two large tiers.\n\n\n\n\n\n\n\n\n\nKeim metric\nWhat it measures\nLaundering prediction (fringe to intermediary)\n\n\n\n\nHAD\nOld associations weaken\nHigh: stigmatized associations drop\n\n\nCSD\nCore meaning moves\nLow: same allegation\n\n\nNCD\nNeighborhood fragments\nAny\n\n\nLexical overlap\nSame words used\nLow: vocabulary replaced\n\n\n\n\nThat combination (HAD high, CSD low, LO low) is Keim’s “semantic narrowing with lexical replacement.” It is laundering measured in their terms. Run the Gonen et al. nearest-neighbor stability check because Procrustes alignment is seed-sensitive.",
+    "crumbs": [
+      "Theory",
+      "Transmission framework: theory and methods by stage"
+    ]
+  },
+  {
+    "objectID": "theory/transmission-framework.html#the-cohort-the-massive-corpus-question",
+    "href": "theory/transmission-framework.html#the-cohort-the-massive-corpus-question",
+    "title": "Transmission framework: theory and methods by stage",
+    "section": "The cohort: the massive corpus question",
+    "text": "The cohort: the massive corpus question\nYou do not need a massive corpus of conspiracy theories. You need a bounded, complete cohort for one window, built by a rule, where most members fail. Think of it as a surveillance system for one region and one season, not a registry of every case ever.\n\n\n\nFigure 3. Everything to the left of the vertical line happens before anyone looks at what became of a claim. The three fates on the right are the dependent variable. The middle fate matters: claims that were laundered by an intermediary and still not adopted are what separate “laundering happened” from “laundering caused adoption.”\n\n\n\nScale, honestly\n\nTwo weeks of /pol/ hand-read (pilot): 40 to 60 claim variants. Enough to see whether the pattern exists. Not enough for a model.\nOne election season, fringe + five shows + fixed elite list, LLM-extracted and validated: a few hundred variants and, realistically, 20 to 60 elite adoption events. That is a small event-history dataset; the model will be thin and the paired process tracing will carry weight.\nNothing here requires the 169M-comment scale of Keim et al. Their scale serves embedding stability on one platform over a decade. Your question is about one season across tiers.",
+    "crumbs": [
+      "Theory",
+      "Transmission framework: theory and methods by stage"
+    ]
+  },
+  {
+    "objectID": "theory/transmission-framework.html#elite-adoption-selection-among-available-claims",
+    "href": "theory/transmission-framework.html#elite-adoption-selection-among-available-claims",
+    "title": "Transmission framework: theory and methods by stage",
+    "section": "3. Elite adoption: selection among available claims",
+    "text": "3. Elite adoption: selection among available claims\nStructure: claim × elite × week panel. Row exists while elite i has not yet adopted claim j. Outcome is first adoption in week t. Discrete-time event history (logit), elite and week fixed effects, standard errors clustered by claim. Week fixed effects absorb the shared news shocks that make Hawkes and Granger designs unreliable here.\nCovariates lagged one to two weeks: fringe volume; intermediary coverage; whether a laundered version exists yet (A, B, C coded separately); prior adoption by other elites; compatibility with the elite’s prior frames; issue salience. The laundering hypothesis is the coefficient on “source-obscured version exists” holding “allegation preserved” constant. Pair the model with four to six matched cases (adopted vs stalled, same family, similar prior visibility) coded for the three routes in Figure 1.",
+    "crumbs": [
+      "Theory",
+      "Transmission framework: theory and methods by stage"
+    ]
+  },
+  {
+    "objectID": "theory/transmission-framework.html#electorate-acceptance-is-not-belief-and-rhetoric-is-not-either",
+    "href": "theory/transmission-framework.html#electorate-acceptance-is-not-belief-and-rhetoric-is-not-either",
+    "title": "Transmission framework: theory and methods by stage",
+    "section": "4. Electorate: acceptance is not belief, and rhetoric is not either",
+    "text": "4. Electorate: acceptance is not belief, and rhetoric is not either\nTwo things the design refuses to conflate. First, online rhetoric is not public belief; the observational chapters measure what was said, by whom, and in what form, and make no claim about what audiences believe. Second, belief is not acceptance. The literature’s baseline (roughly a tenth of Americans volunteer conspiracy talk unprompted; stable aggregate belief over time) is a scope condition, not an outcome to explain. The outcome at stage 4 is whether it becomes acceptable for a politician to advance a claim, and whether attributed origin moves that.\nExperiment A: same allegation, 2×2 (original vs intermediary wording) × (earlier source hidden vs disclosed), politician and endorsement held constant. The estimand is the interaction. Experiment B: attributed authorship (citizens / campaign staff / unspecified) × politician’s justification (responding to constituents / own judgment). Measure belief, political acceptance, sanction, investigation, and circulation separately; predefine an equivalence margin for belief; define skeptics by baseline belief. Pilot in a student pool; confirmatory via TESS or a quota sample.",
+    "crumbs": [
+      "Theory",
+      "Transmission framework: theory and methods by stage"
+    ]
+  },
+  {
+    "objectID": "theory/transmission-framework.html#the-epidemiology-analogy-used-carefully",
+    "href": "theory/transmission-framework.html#the-epidemiology-analogy-used-carefully",
+    "title": "Transmission framework: theory and methods by stage",
+    "section": "The epidemiology analogy, used carefully",
+    "text": "The epidemiology analogy, used carefully\nTangherlini’s earlier vaccine-narrative work was published in JMIR Public Health and Surveillance, so the analogy has precedent. It is useful for design discipline and misleading as a model of mechanism.\n\n\n\nFigure 4. What transfers from epidemiology is discipline about case definitions, denominators, and the difference between exposure and outcome. What does not transfer is the mechanism: claims are not pathogens, transmission is often deliberate, and “reproduction number” style modeling would import assumptions (homogeneous mixing, passive transmission) that Figure 1 says are false.\n\n\n\nOn training an LLM “to be an epidemiologist”\nDon’t train a model; write a protocol and have a model apply it. The useful part of the idea is the surveillance frame: a fixed case definition, fixed sources, fixed window, and a model that reads every passage and flags cases. That is exactly the LLM extraction step in stage 1, and open-weight models handle it. The part to drop is the disease-dynamics modeling (SIR, R0); it assumes passive, homogeneous spread, and your Figure 1 says spread here is selective, often deliberate, and sometimes carried by one person between two rooms. Keep the vocabulary of surveillance; leave the epidemic curves.",
+    "crumbs": [
+      "Theory",
+      "Transmission framework: theory and methods by stage"
+    ]
+  },
+  {
+    "objectID": "theory/transmission-framework.html#falsifiability-and-reproducibility-in-one-table",
+    "href": "theory/transmission-framework.html#falsifiability-and-reproducibility-in-one-table",
+    "title": "Transmission framework: theory and methods by stage",
+    "section": "Falsifiability and reproducibility, in one table",
+    "text": "Falsifiability and reproducibility, in one table\n\n\n\n\n\n\n\n\n\n\nTest\nPrediction if the theory is right\nResult that forces revision\nReproducible because\n\n\n\n\n1. Allegation survives\nAdopted claims keep conspirators/action/purpose across tiers\nElites mostly adopt rebuilt allegations: the theory is about assembly, not transmission\nCase definition, coding sheet, and validation sample are published; embedding metrics follow Keim et al.\n\n\n2. Source obscured predicts adoption\nPositive coefficient on “source-obscured version exists,” holding survival constant\nNull or negative with adequate events: laundering is not what elites select on\nCohort built by a stated sampling rule; panel and code released\n\n\n3. Obscuring moves acceptance more than belief\nWording × disclosure interaction on acceptance; belief within equivalence margin\nAcceptance and belief move together: persuasion, not normalization; or disclosure has no effect: messenger or wording does the work\nPreregistered; stimuli drawn from documented pairs in the cohort\n\n\n0. Provenance cues exist in elite rhetoric at all\n“People are saying” attaches disproportionately to claims with traceable fringe origin\nElites rarely assert provenance: the experiment tests a counterfactual, not a practice\nSearch terms and elite corpus listed; counts reported",
+    "crumbs": [
+      "Theory",
+      "Transmission framework: theory and methods by stage"
+    ]
+  },
+  {
+    "objectID": "theory/transmission-framework.html#what-to-do-first",
+    "href": "theory/transmission-framework.html#what-to-do-first",
+    "title": "Transmission framework: theory and methods by stage",
+    "section": "What to do first",
+    "text": "What to do first\n\nWrite the case definition and the coding sheet (one page, no code).\nHand-code two weeks of /pol/ from September 2024 with a second coder on a subsample; get a cohort of 40 to 60 variants and their fates. Report agreement.\nRun the provenance-cue search on Trump and Vance 2024 transcripts (test 0).\nOnly if 1 and 2 show a pattern: build the extraction pipeline and the season-long cohort.\nPilot the acceptance measures in Bolsen’s pool in parallel; that is independent of everything above.\n\nSources referenced: Keim, Chandio, Khalid & Nithyanand (ICWSM 2026); Tangherlini et al. (PLOS ONE 2020); Holur et al. (INCANT/TAMPA); Gonen et al. (ACL 2020); Hemmer (Amanpour & Company, 9 June 2022); Starbird (ICWSM 2017); Pyrhönen et al. (Social Forces 2026); Muirhead & Rosenblum (2019); arXiv 2605.19275 on open-weight LLM classification.",
+    "crumbs": [
+      "Theory",
+      "Transmission framework: theory and methods by stage"
+    ]
+  },
+  {
+    "objectID": "notes/index.html",
+    "href": "notes/index.html",
+    "title": "Weekly log",
+    "section": "",
+    "text": "One file per week. Decisions go under a Decisions heading so they can be found later; everything else is scratch.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\n\n\n\n\n\nSep 11, 2026\n\n\nWeek 37: gap paper, design memos, data inventory\n\n\n\n\n\n\nNo matching items"
+  }
+]
