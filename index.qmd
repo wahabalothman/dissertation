@@ -1,24 +1,331 @@
 ---
-title: "Abdulwahab Al-Othman"
-subtitle: "عبد الوهاب العثمان"
+pagetitle: "Abdulwahab Al-Othman · عبد الوهاب العثمان"
+description: "Archive of a dissertation on how conspiratorial claims acquire political authority."
+page-layout: custom
 toc: false
 ---
 
 ```{=html}
-<div class="crawl"><span>ARCHIVE ONLINE  ·  الأرشيف متاح  ·  RECORDS UPDATED 2026-09-11  ·  WORKING DRAFT — NOT FOR CITATION  ·  مسودة عمل  ·  ARCHIVE ONLINE  ·  الأرشيف متاح  ·  RECORDS UPDATED 2026-09-11  ·  WORKING DRAFT — NOT FOR CITATION  ·  مسودة عمل  · </span></div>
+<div id="desk">
+
+  <div id="icons">
+    <button class="icon" data-open="w-archive" type="button">
+      <svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><path d="M1 5h11l3 3h18v20H1z" fill="#e8c34a" stroke="#7a5c10" stroke-width="1.5" stroke-linejoin="round"/><path d="M1 13h32v15H1z" fill="#f6dd8e" stroke="#7a5c10" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <span>ARCHIVE</span>
+    </button>
+    <a class="icon" href="/research/" data-nav data-icon="research">
+      <svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><path d="M1 5h11l3 3h18v20H1z" fill="#e8c34a" stroke="#7a5c10" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <span>research</span>
+    </a>
+    <a class="icon" href="/notes/" data-nav>
+      <svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><path d="M8 2h13l6 6v20H8z" fill="#fff" stroke="#5a5a5a" stroke-width="1.5" stroke-linejoin="round"/><path d="M21 2v6h6" fill="none" stroke="#5a5a5a" stroke-width="1.5"/><path d="M12 13h11M12 17h11M12 21h7" stroke="#8f8f8f" stroke-width="1.5"/></svg>
+      <span>log.txt</span>
+    </a>
+    <a class="icon" href="/site/cv.html" data-nav>
+      <svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><path d="M8 2h13l6 6v20H8z" fill="#fff" stroke="#5a5a5a" stroke-width="1.5" stroke-linejoin="round"/><path d="M21 2v6h6" fill="none" stroke="#5a5a5a" stroke-width="1.5"/><rect x="9" y="18" width="17" height="9" fill="#c1272d"/><text x="17.5" y="25" font-family="Tahoma,sans-serif" font-size="7" font-weight="bold" fill="#fff" text-anchor="middle">PDF</text></svg>
+      <span>cv.pdf</span>
+    </a>
+  </div>
+
+  <section class="win" id="w-archive" data-task="ARCHIVE">
+    <header class="tb">
+      <span class="ti"><i aria-hidden="true"><svg width="13" height="12" viewBox="0 0 34 30"><path d="M1 5h11l3 3h18v20H1z" fill="#e8c34a" stroke="#5a4208" stroke-width="2" stroke-linejoin="round"/></svg></i>ARCHIVE — \\AL-OTHMAN\files<em>الأرشيف</em></span>
+      <span class="btns">
+        <button type="button" data-act="min" title="Minimize">_</button>
+        <button type="button" data-act="max" title="Maximize">&#9633;</button>
+        <button type="button" data-act="close" title="Close">&#10005;</button>
+      </span>
+    </header>
+    <nav class="mb"><span>File</span><span>Edit</span><span>View</span><span>Records</span><span>Help</span></nav>
+    <div class="body">
+      <table class="fl">
+        <thead><tr><th>ID</th><th>Name</th><th class="ar">العنوان</th><th style="text-align:right">Status</th></tr></thead>
+        <tbody>
+          <tr class="sel"><td class="id">01</td><td class="nm"><a href="/research/" data-nav>conspiratorial_claims</a></td><td class="ar">سلطة الادعاءات</td><td class="st">OPEN</td></tr>
+          <tr><td class="id">02</td><td class="nm"><a href="/theory/" data-nav>transmission_theory</a></td><td class="ar">نظرية الانتقال</td><td class="st">OPEN</td></tr>
+          <tr><td class="id">03</td><td class="nm"><a href="/design/" data-nav>research_design</a></td><td class="ar">تصميم البحث</td><td class="st">OPEN</td></tr>
+          <tr><td class="id">04</td><td class="nm"><a href="/data/" data-nav>data_sources</a></td><td class="ar">مصادر البيانات</td><td class="st">OPEN</td></tr>
+          <tr><td class="id">05</td><td class="nm"><a href="/notes/" data-nav>working_log</a></td><td class="ar">سجل العمل</td><td class="st">OPEN</td></tr>
+          <tr><td class="id">06</td><td class="nm"><a href="/site/cv.html" data-nav>curriculum_vitae</a></td><td class="ar">سيرة ذاتية</td><td class="st">PENDING</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="sb"><i>6 object(s) · 1 selected</i><i style="flex:0 0 96px">\\AL-OTHMAN</i></footer>
+  </section>
+
+  <section class="win" id="w-feed" data-task="RESEARCH FEED">
+    <header class="tb red">
+      <span class="ti">media — RESEARCH FEED<em>بث</em></span>
+      <span class="btns">
+        <button type="button" data-act="min" title="Minimize">_</button>
+        <button type="button" data-act="max" title="Maximize">&#9633;</button>
+        <button type="button" data-act="close" title="Close">&#10005;</button>
+      </span>
+    </header>
+    <div style="padding:2px">
+      <div class="screen">
+        <div class="scr-top">
+          <span class="excl">EXCLUSIVE</span>
+          <span class="live"><i></i>LIVE</span>
+        </div>
+        <span class="wmk">TRUTHCAST.NET</span>
+        <div class="hl">
+          <h2 id="f-head">THEY PUT IT IN THE <em>WATER</em></h2>
+          <p id="f-sub">and they are counting on you not to look up</p>
+          <span class="src"><b>SOURCE</b><u id="f-src">posted by @deep_well_44 · 03:12</u></span>
+        </div>
+        <div class="bands">
+          <div class="band b1"><span class="m" id="f-b1">WAKE UP AMERICA</span><span class="r" id="f-t1">DEVELOPING</span></div>
+          <div class="band b2"><span class="m" id="f-b2">WHAT THEY DON'T WANT YOU TO SEE</span><span class="r">SHARE THIS NOW</span></div>
+          <div class="band b3"><span class="m">SOURCES SAY · INDEPENDENT · MAINSTREAM SILENT</span><span class="r">UNVERIFIED</span></div>
+          <div class="tick"><div id="f-tick"></div></div>
+        </div>
+      </div>
+    </div>
+    <footer class="sb"><i class="warn">SIMULATED BROADCAST — fabricated example, not a real claim or outlet · مثال مُصطنع</i></footer>
+  </section>
+
+  <section class="win" id="w-note" data-task="statement.txt">
+    <header class="tb">
+      <span class="ti">statement.txt — Notepad</span>
+      <span class="btns">
+        <button type="button" data-act="min" title="Minimize">_</button>
+        <button type="button" data-act="max" title="Maximize">&#9633;</button>
+        <button type="button" data-act="close" title="Close">&#10005;</button>
+      </span>
+    </header>
+    <nav class="mb"><span>File</span><span>Edit</span><span>Format</span><span>Help</span></nav>
+    <div class="pad">
+      <p>Claims that begin outside legitimate institutions end up inside them. Allegations are laundered in transit: the wording is recoded, the messenger changes, the named source is replaced with no source at all.</p>
+      <p>This archive documents that process. Nothing reproduced here is endorsed.<span class="caret"></span></p>
+    </div>
+    <footer class="sb"><i>Ln 1, Col 1</i><i style="flex:0 0 62px">draft</i></footer>
+  </section>
+
+  <section class="win" id="w-props" data-task="Properties">
+    <header class="tb">
+      <span class="ti">Properties</span>
+      <span class="btns"><button type="button" data-act="close" title="Close">&#10005;</button></span>
+    </header>
+    <div class="body">
+      <p class="lead"><b>Attributed origin</b><em>نسبة المصدر</em></p>
+      <div class="tiers">
+        <div class="tier" data-t="0"><b>Tier 01</b><span>named</span></div>
+        <div class="tier" data-t="1"><b>Tier 02</b><span>obscured</span></div>
+        <div class="tier" data-t="2"><b>Tier 03</b><span>"people are saying"</span></div>
+      </div>
+      <div class="ok"><button type="button" data-act="close">OK</button></div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var wide   = function(){ return window.matchMedia("(min-width: 981px)").matches; };
+  var desk   = document.getElementById("desk");
+  var wins   = Array.prototype.slice.call(document.querySelectorAll(".win"));
+  var z      = 10;
+  /* The taskbar is injected after this block (include-after-body), so it is
+     looked up lazily and filled again once the document has finished parsing. */
+  function tasksEl(){ return document.getElementById("tasks"); }
+
+  /* ── focus / z-order ── */
+  function focusWin(w){
+    wins.forEach(function(o){ o.classList.add("blur"); });
+    w.classList.remove("blur");
+    w.style.zIndex = ++z;
+    syncTasks();
+  }
+  wins.forEach(function(w){
+    w.classList.add("blur");
+    w.addEventListener("pointerdown", function(){ focusWin(w); });
+  });
+
+  /* ── open / close / minimize ── */
+  function openWin(id){
+    var w = document.getElementById(id);
+    if(!w) return;
+    w.style.display = "";
+    w.dataset.min = "";
+    focusWin(w);
+    if(!wide()) w.scrollIntoView({behavior: reduce ? "auto" : "smooth", block:"center"});
+  }
+  function closeWin(w){ w.style.display = "none"; w.dataset.min = ""; syncTasks(); }
+  function minWin(w){ w.style.display = "none"; w.dataset.min = "1"; syncTasks(); }
+  document.addEventListener("desk:open", function(e){ openWin(e.detail); });
+
+  document.addEventListener("click", function(e){
+    var act = e.target.closest("[data-act]");
+    if(act){
+      e.preventDefault();
+      var w = act.closest(".win"), a = act.dataset.act;
+      if(a === "close") closeWin(w);
+      else if(a === "min") minWin(w);
+      else if(a === "max" && wide()){
+        if(w.dataset.max === "1"){
+          w.style.cssText = w.dataset.prev || "";
+          w.dataset.max = "";
+        } else {
+          w.dataset.prev = w.style.cssText;
+          w.dataset.max = "1";
+          var r = desk.getBoundingClientRect();
+          w.style.left = "10px"; w.style.top = "10px";
+          w.style.right = "auto"; w.style.bottom = "auto";
+          w.style.width = (r.width - 36) + "px";
+        }
+        focusWin(w);
+      }
+      return;
+    }
+    var op = e.target.closest("[data-open]");
+    if(op){ e.preventDefault(); markIcon(op); openWin(op.dataset.open); return; }
+    var nav = e.target.closest("[data-nav]");
+    if(nav) markIcon(nav);
+  });
+
+  /* ── desktop icon selection ── */
+  function markIcon(el){
+    var ic = el && el.closest(".icon");
+    document.querySelectorAll(".icon.on").forEach(function(o){ o.classList.remove("on"); });
+    if(ic) ic.classList.add("on");
+  }
+  var firstIcon = document.querySelector('.icon[data-icon="research"]');
+  if(firstIcon) firstIcon.classList.add("on");
+
+  /* ── drag by title bar ── */
+  wins.forEach(function(w){
+    var tb = w.querySelector(".tb");
+    tb.addEventListener("pointerdown", function(e){
+      if(!wide() || e.target.closest("button") || w.dataset.max === "1") return;
+      var r = w.getBoundingClientRect(), dr = desk.getBoundingClientRect();
+      w.style.left = (r.left - dr.left) + "px";
+      w.style.top  = (r.top  - dr.top ) + "px";
+      w.style.right = "auto"; w.style.bottom = "auto";
+      var ox = e.clientX - r.left, oy = e.clientY - r.top;
+      tb.setPointerCapture(e.pointerId);
+      function move(ev){
+        var d = desk.getBoundingClientRect();
+        var x = Math.max(-r.width + 60, Math.min(ev.clientX - d.left - ox, d.width - 60));
+        var y = Math.max(0, Math.min(ev.clientY - d.top - oy, d.height - 24));
+        w.style.left = x + "px"; w.style.top = y + "px";
+      }
+      function up(ev){
+        tb.releasePointerCapture(ev.pointerId);
+        tb.removeEventListener("pointermove", move);
+        tb.removeEventListener("pointerup", up);
+      }
+      tb.addEventListener("pointermove", move);
+      tb.addEventListener("pointerup", up);
+    });
+  });
+
+  /* ── keep windows on the desk ── */
+  function clamp(){
+    if(!wide()) return;
+    var d = desk.getBoundingClientRect();
+    wins.forEach(function(w){
+      if(w.style.display === "none") return;
+      var r = w.getBoundingClientRect();
+      if(r.right > d.right - 6){
+        w.style.left = Math.max(6, d.width - r.width - 12) + "px";
+        w.style.right = "auto";
+      }
+    });
+  }
+  window.addEventListener("resize", clamp);
+
+  /* ── taskbar ── */
+  function syncTasks(){
+    var tasks = tasksEl();
+    if(!tasks) return;
+    tasks.textContent = "";
+    wins.forEach(function(w){
+      if(w.style.display === "none" && w.dataset.min !== "1") return;
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = w.dataset.task;
+      if(w.style.display !== "none" && !w.classList.contains("blur")) b.className = "down";
+      b.addEventListener("click", function(){
+        if(w.style.display === "none") openWin(w.id);
+        else if(!w.classList.contains("blur")) minWin(w);
+        else focusWin(w);
+      });
+      tasks.appendChild(b);
+    });
+  }
+
+  /* ── the feed ── */
+  var STORIES = [
+    { h:"THEY PUT IT IN THE", hi:"WATER",
+      sub:"and they are counting on you not to look up",
+      src:["posted by @deep_well_44 · 03:12","an independent researcher","people are saying"],
+      b1:"WAKE UP AMERICA", b2:"WHAT THEY DON'T WANT YOU TO SEE", tag:"DEVELOPING" },
+    { h:"THE BIRDS WERE REPLACED IN", hi:"1974",
+      sub:"count them. they never land on the same wire twice",
+      src:["posted by u/wirewatch_71 · 22:40","a former employee","people are saying"],
+      b1:"NOBODY IS ASKING THIS", b2:"THE FOOTAGE SPEAKS FOR ITSELF", tag:"BREAKING" },
+    { h:"THE MOON IS", hi:"RENTED",
+      sub:"ask who signed the lease and why it expires in march",
+      src:["posted by @lunar_lease · 01:07","documents obtained","people are saying"],
+      b1:"FOLLOW THE PAPERWORK", b2:"THEY CHANGED THE RECORD", tag:"EXCLUSIVE" },
+    { h:"YOUR MATTRESS IS", hi:"LISTENING",
+      sub:"why else would it know when you wake up",
+      src:["posted by @springcoil_9 · 04:55","a whistleblower","people are saying"],
+      b1:"JUST ASKING QUESTIONS", b2:"WHY IS NOBODY COVERING THIS", tag:"UNCONFIRMED" }
+  ];
+  var TICK = ["THEY DON'T WANT YOU ASKING","DO YOUR OWN RESEARCH","WHY IS NOBODY COVERING THIS",
+              "FOLLOW THE MONEY","JUST ASKING QUESTIONS","CONNECT THE DOTS","SOURCES SAY"];
+
+  var tickEl = document.getElementById("f-tick");
+  var line = TICK.join(" ··· ") + " ··· ";
+  for(var k = 0; k < 2; k++){
+    var sEl = document.createElement("s");
+    sEl.textContent = line;
+    tickEl.appendChild(sEl);
+  }
+
+  var eH = document.getElementById("f-head"), eS = document.getElementById("f-sub"),
+      eR = document.getElementById("f-src"),  e1 = document.getElementById("f-b1"),
+      e2 = document.getElementById("f-b2"),   eT = document.getElementById("f-t1");
+  var tiers = Array.prototype.slice.call(document.querySelectorAll(".tier"));
+  var si = 0, beat = 0;
+
+  function flick(el){
+    if(reduce) return;
+    el.classList.remove("flick");
+    void el.offsetWidth;
+    el.classList.add("flick");
+  }
+  function paint(full){
+    var st = STORIES[si];
+    if(full){
+      eH.innerHTML = st.h + " <em>" + st.hi + "</em>";
+      eS.textContent = st.sub;
+      e1.textContent = st.b1;
+      e2.textContent = st.b2;
+      eT.textContent = st.tag;
+      flick(eH); flick(eS);
+    }
+    eR.textContent = st.src[beat];
+    flick(eR.parentNode);
+    tiers.forEach(function(t){ t.classList.toggle("on", +t.dataset.t === beat); });
+  }
+  paint(true);
+  if(!reduce){
+    setInterval(function(){
+      beat++;
+      if(beat > 2){ beat = 0; si = (si + 1) % STORIES.length; paint(true); }
+      else paint(false);
+    }, 3200);
+  }
+
+  /* ── boot ── */
+  focusWin(document.getElementById("w-archive"));
+  clamp();
+  document.addEventListener("DOMContentLoaded", syncTasks);
+})();
+</script>
 ```
-
-::: {.frow}
-<span class="n">01 // RESEARCH · بحث</span>
-[The political authority of conspiratorial claims](research/index.qmd){.t}
-:::
-
-::: {.frow}
-<span class="n">02 // LOG · سجل</span>
-[Working log](notes/index.qmd){.t}
-:::
-
-::: {.frow}
-<span class="n">03 // RECORD · سيرة</span>
-[Curriculum vitae](site/cv.qmd){.t}
-:::
