@@ -8,39 +8,6 @@ toc: false
 ```{=html}
 <div id="desk">
 
-  <svg class="wall" viewBox="0 0 1240 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-    <g class="wl">
-      <line x1="150" y1="110" x2="352" y2="110"/><path d="M352 110 l-13 -6 v12 z"/>
-      <line x1="452" y1="110" x2="654" y2="110"/><path d="M654 110 l-13 -6 v12 z"/>
-      <line x1="754" y1="110" x2="956" y2="110"/><path d="M956 110 l-13 -6 v12 z"/>
-      <rect x="30" y="72" width="120" height="76"/>
-      <rect x="332" y="72" width="120" height="76"/>
-      <rect x="634" y="72" width="120" height="76"/>
-      <rect x="936" y="72" width="120" height="76"/>
-    </g>
-    <g class="wt">
-      <text x="90"   y="106" text-anchor="middle">FRINGE</text>
-      <text x="90"   y="128" text-anchor="middle" class="s">imageboard</text>
-      <text x="392"  y="106" text-anchor="middle">ALT-MEDIA</text>
-      <text x="392"  y="128" text-anchor="middle" class="s">podcast · stream</text>
-      <text x="694"  y="106" text-anchor="middle">ELITE</text>
-      <text x="694"  y="128" text-anchor="middle" class="s">floor · stage</text>
-      <text x="996"  y="106" text-anchor="middle">ELECTORATE</text>
-      <text x="996"  y="128" text-anchor="middle" class="s">belief · acceptability</text>
-      <text x="90"   y="222">named</text>
-      <text x="392"  y="222">obscured</text>
-      <text x="694"  y="222">"people are saying"</text>
-      <text x="30"   y="266" class="s">attributed origin, by stage — stigma stripped in transit</text>
-      <text x="30"   y="44"  class="s">TRANSMISSION · انتقال · hypothesis under test</text>
-    </g>
-    <g class="wl">
-      <line x1="34" y1="188" x2="1056" y2="188"/>
-      <line x1="90"  y1="182" x2="90"  y2="194"/>
-      <line x1="392" y1="182" x2="392" y2="194"/>
-      <line x1="694" y1="182" x2="694" y2="194"/>
-      <line x1="996" y1="182" x2="996" y2="194"/>
-    </g>
-  </svg>
 
   <div id="icons">
     <button class="icon" data-open="w-archive" type="button">
@@ -130,7 +97,7 @@ toc: false
         </div>
       </div>
     </div>
-    <footer class="sb"><i class="warn">SIMULATED BROADCAST — fabricated example, not a real claim or outlet · مثال مُصطنع</i></footer>
+    <footer class="sb"><i class="warn">SIGNAL STRONG · SOURCE UNVERIFIED · 1,247,882 SHARES · بث</i></footer>
   </section>
 
   <section class="win" id="w-note" data-task="statement.txt">
