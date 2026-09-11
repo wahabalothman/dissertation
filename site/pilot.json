@@ -1,0 +1,46 @@
+{
+  "updated": "2026-09-11",
+  "start": "2026-09-14",
+  "end": "2026-10-25",
+  "title": "claim-tracking demonstration",
+  "href": "/research/pilot.html",
+  "note": "feasibility, not findings",
+  "steps": [
+    {
+      "w": 1,
+      "work": "Access checks · codebook v1",
+      "gate": "All five retrievable, or fallback window invoked",
+      "status": "pending"
+    },
+    {
+      "w": 2,
+      "work": "Enumerate claims · second coder",
+      "gate": "Coders agree on claim identity at an acceptable rate",
+      "status": "pending"
+    },
+    {
+      "w": 3,
+      "work": "Retrieval · match intermediaries",
+      "gate": "Candidate matches recoverable; precision/recall reported",
+      "status": "pending"
+    },
+    {
+      "w": 4,
+      "work": "Follow into elite corpus",
+      "gate": "Enough events to describe, or chapter narrows to cases",
+      "status": "pending"
+    },
+    {
+      "w": 5,
+      "work": "Survey pretest",
+      "gate": "Items load separately",
+      "status": "pending"
+    },
+    {
+      "w": 6,
+      "work": "Validation · error report",
+      "gate": "Demonstration stands on its own",
+      "status": "pending"
+    }
+  ]
+}
